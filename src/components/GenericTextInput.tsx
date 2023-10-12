@@ -1,7 +1,7 @@
 type GenericTextInputProps = {
   placeHolder?: string;
   type: string;
-  label: string;
+  label?: string;
   inputValue: string;
   setInputValue: (input: string) => void;
   isValid?: boolean;

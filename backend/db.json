@@ -86,5 +86,24 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
     }
+  ],
+  "posts": [
+    {
+      "liked": 0,
+      "shared": 0,
+      "category": "",
+      "title": "What can we learn from introverted Lawyers",
+      "opening": "Who knew that the best lawyers in town is actually introverts",
+      "author": "Kenneth J. Jonathan",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697133303/phgj6ll63yrl40l59r3m.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ex a tortor molestie sodales. Quisque viverra dolor ut cursus vestibulum. Donec lacinia sagittis libero, scelerisque pharetra sem consequat vel. Nulla eu sem commodo nibh sagittis iaculis. Aliquam placerat risus ullamcorper efficitur dapibus. Donec quis nisl rutrum, pretium elit eu, imperdiet mauris. Proin imperdiet justo sed eros pulvinar feugiat. In ornare tortor vel eros imperdiet, volutpat tempus nisl viverra. Morbi ultricies neque ac sapien fermentum, ut pharetra tellus scelerisque.",
+        "Aenean porttitor magna quis sagittis tempor. Vivamus tempor gravida tempus. Pellentesque lobortis quis tortor quis convallis. Aliquam tempor lacus sed lorem malesuada iaculis. Nulla vel rhoncus augue. Aenean hendrerit bibendum nunc et rutrum. Morbi vel est ex. Fusce sodales dignissim urna id lacinia. Aliquam pretium augue vel ipsum tristique fringilla. Aliquam imperdiet lacus et diam gravida tempus. Mauris eu pellentesque libero, ac pulvinar purus. Sed sed purus lobortis, tincidunt mauris vitae, auctor risus. Integer efficitur purus eu lacus ornare, non eleifend odio iaculis. Nam dapibus libero in augue elementum, non pulvinar eros commodo.",
+        "Ut eu nunc tempor, vulputate nulla ac, tempor risus. Nunc odio turpis, pharetra sed condimentum eu, lobortis ut arcu. Aenean volutpat ligula eu dui euismod, eget efficitur erat tincidunt. Quisque sodales mi quis tortor commodo volutpat. Etiam sed est vel magna bibendum fringilla. Nam viverra lacinia libero, nec varius sem posuere a. Duis interdum quis dolor non vestibulum. Aenean porta augue nec dolor aliquet, eu aliquet est aliquet. Proin at elementum massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla vel ante ipsum. Nullam suscipit velit et risus maximus, vitae dictum justo facilisis."
+      ],
+      "createdAt": "2023-10-12T17:55:04.346Z",
+      "updatedAt": "2023-10-12T17:55:04.346Z",
+      "id": 1
+    }
   ]
 }
