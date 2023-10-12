@@ -8,7 +8,7 @@ type LoginData = {
   message?: string;
 };
 
-export default async function login(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<LoginData>
 ) {

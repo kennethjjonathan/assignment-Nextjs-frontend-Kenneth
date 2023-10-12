@@ -1,12 +1,18 @@
 import GenericTextInput from "@/components/GenericTextInput";
 import PrimaryButton from "@/components/PrimaryButton";
+import CONSTANTS from "@/constants/constants";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 
 function Login() {
   const [emailValue, setEmailValue] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
   const [passwordValue, setPasswordValue] = useState<string>("");
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(true);
+
+  const router = useRouter();
+  const [cookie, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
 
   const handleSubmit = async (e: React.FormEvent, path: string) => {
     e.preventDefault();
@@ -16,7 +22,15 @@ function Login() {
       body: JSON.stringify({ emailValue, passwordValue }),
     });
     if (response.ok) {
+      const data = await response.json();
+      console.log(data[0]);
+      setCookie(CONSTANTS.COOKIENAME, JSON.stringify(data[0]), {
+        path: "/",
+        maxAge: 3600,
+        sameSite: true,
+      });
       console.log("berhasil");
+      router.push("/");
     } else {
       console.log(response.statusText);
     }
