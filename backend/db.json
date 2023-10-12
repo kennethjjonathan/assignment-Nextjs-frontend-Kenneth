@@ -2,9 +2,89 @@
   "users": [
     {
       "id": 1,
+      "name": "Kenneth",
       "email": "kenneth@gmail.com",
       "password": "12345678",
-      "isAdmin": true
+      "isAdmin": true,
+      "address": "Jl. Danau Towuti No. 74",
+      "phoneNumber": "0812-3456-7899",
+      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+    },
+    {
+      "id": 2,
+      "name": "Agus",
+      "email": "agus@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "Jl. Danau Towuti No. 74",
+      "phoneNumber": "0812-3456-7899",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+      },
+      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+    },
+    {
+      "id": 3,
+      "name": "Michael",
+      "email": "michael@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "Jl. Danau Towuti No. 74",
+      "phoneNumber": "0812-3456-7899",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+      },
+      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+    },
+    {
+      "id": 4,
+      "name": "Jenner",
+      "email": "jenner@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "Jl. Danau Towuti No. 74",
+      "phoneNumber": "0812-3456-7899",
+      "subscription": {
+        "isSubscribed": true,
+        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+      },
+      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+    },
+    {
+      "id": 5,
+      "name": "Lexy",
+      "email": "lexy@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "Jl. Danau Towuti No. 74",
+      "phoneNumber": "0812-3456-7899",
+      "subscription": {
+        "isSubscribed": true,
+        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+      },
+      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+    },
+    {
+      "id": 6,
+      "name": "Dicky",
+      "email": "dicky@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "Jl. Danau Towuti No. 74",
+      "phoneNumber": "0812-3456-7899",
+      "subscription": {
+        "isSubscribed": true,
+        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+      },
+      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
     }
   ]
 }

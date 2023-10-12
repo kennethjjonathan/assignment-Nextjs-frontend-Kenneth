@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server-custom": "json-server --routes routes.json --watch db.json --port 9999"
+    "start-json": "cd backend && json-server --routes routes.json --watch db.json --port 9999"
   },
   "dependencies": {
     "cookie": "^0.5.0",

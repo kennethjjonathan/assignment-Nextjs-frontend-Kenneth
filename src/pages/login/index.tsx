@@ -29,8 +29,11 @@ function Login() {
         maxAge: 3600,
         sameSite: true,
       });
-      console.log("berhasil");
-      router.push("/");
+      if (data[0].isAdmin) {
+        router.replace("/admin");
+      } else {
+        router.replace("/");
+      }
     } else {
       console.log(response.statusText);
     }
