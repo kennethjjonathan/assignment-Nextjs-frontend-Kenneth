@@ -1,3 +1,5 @@
+import IArticle from "@/interface/IArticle";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Head from "next/head";
 import GenericTextInput from "@/components/GenericTextInput";
@@ -6,67 +8,26 @@ import PrimaryButton from "@/components/PrimaryButton";
 import TextAreaInput from "@/components/TextAreaInput";
 import uploadImage from "@/library/helper/uploadImage";
 import CONSTANTS from "@/constants/constants";
-import { useRouter } from "next/router";
 
 function Index() {
+  const router = useRouter();
+  const data: IArticle = JSON.parse(router.query.data?.toString()!);
+
   const optionArr: string[] = ["Unwind", "Lawyers Spotlight", "Curated News"];
-  const [titleValue, setTitleValue] = useState<string>("");
-  const [openingValue, setOpeningValue] = useState<string>("");
-  const [category, setCategory] = useState<string>(optionArr[0]);
-  const [author, setAurhor] = useState<string>("");
+  const [titleValue, setTitleValue] = useState<string>(data.title);
+  const [openingValue, setOpeningValue] = useState<string>(data.opening!);
+  const [category, setCategory] = useState<string>(data.category);
+  const [author, setAurhor] = useState<string>(data.author);
   const [thumbnailFile, setThumbnailFile] = useState<File>();
   const [pricingOption, setPricingOption] = useState<"free" | "premium">(
-    "premium"
+    data.isPremium ? "premium" : "free"
   );
-  const [content, setContent] = useState<string>("");
+  const [content, setContent] = useState<string>(data.content.join("/n"));
 
-  const router = useRouter();
-
-  function handleThumbnailInput(e: React.ChangeEvent<HTMLInputElement>) {
-    if (!e.target.files || e.target.files.length === 0) {
-      return;
-    }
-    setThumbnailFile(e.target.files[0]);
-  }
-
-  function handleChangeThumbnal() {
-    setThumbnailFile(undefined);
-  }
-
-  async function handleCreatePost() {
-    console.log("mulai");
-    try {
-      const thumbnailURL: string = await uploadImage(thumbnailFile);
-      console.log("Ini image url", thumbnailURL);
-      const response = await fetch(`${CONSTANTS.BASELOCALHOST}/posts`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          liked: 0,
-          shared: 0,
-          isPremium: pricingOption === "premium" ? true : false,
-          category: category,
-          title: titleValue,
-          opening: openingValue,
-          author: author,
-          thumbnail: thumbnailURL,
-          content: content.split("/n"),
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        }),
-      });
-      if (!response.ok) throw new Error(response.statusText);
-      router.replace("/admin/manage-posts");
-    } catch (error) {
-      console.error(error);
-    }
-  }
   return (
     <>
       <Head>
-        <title>Create A Post</title>
+        <title>Admin - Create A Post</title>
       </Head>
       <div className="container mx-auto px-3 pt-5 pb-16">
         <h1 className="text-5xl font-[800]">Create a Post</h1>
