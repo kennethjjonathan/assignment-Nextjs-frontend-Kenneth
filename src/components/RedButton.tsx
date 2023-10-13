@@ -1,6 +1,7 @@
+import IArticle from "@/interface/IArticle";
 import React from "react";
 
-type PrimaryButtonProps = {
+type RedButtonProps = {
   children: React.ReactNode;
   type?: "submit";
   additionalStyling?: string;
@@ -8,17 +9,17 @@ type PrimaryButtonProps = {
   callback?: any;
 };
 
-function PrimaryButton({
+function RedButton({
   children,
   type,
   additionalStyling,
   param,
   callback,
-}: PrimaryButtonProps) {
+}: RedButtonProps) {
   return (
     <button
       type={type}
-      className={`bg-blue-500 text-smokewhite-custom border-2 rounded-md border-blue-500 hover:bg-transparent hover:text-blue-500 active:bg-blue-800 duration-300 focus:outline-none ${additionalStyling}`}
+      className={`bg-red-custom text-smokewhite-custom border-2 rounded-md border-red-custom hover:bg-transparent hover:text-red-custom active:bg-red-900 duration-300 focus:outline-none ${additionalStyling}`}
       onClick={() => {
         if (callback !== undefined) callback(param);
       }}
@@ -28,4 +29,4 @@ function PrimaryButton({
   );
 }
 
-export default PrimaryButton;
+export default RedButton;

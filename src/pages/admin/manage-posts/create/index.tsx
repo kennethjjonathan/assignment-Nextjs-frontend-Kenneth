@@ -29,7 +29,7 @@ function Index() {
     setThumbnailFile(e.target.files[0]);
   }
 
-  function handleChangeThumbnal() {
+  function handleChangeThumbnail() {
     setThumbnailFile(undefined);
   }
 
@@ -142,7 +142,7 @@ function Index() {
                     : "Can't load file name"}
                 </p>
                 <PrimaryButton
-                  callback={handleChangeThumbnal}
+                  callback={handleChangeThumbnail}
                   additionalStyling="px-3 py-2 mt-2 text-lg"
                 >
                   Change Thumbnail

@@ -1,6 +1,6 @@
 import IArticle from "@/interface/IArticle";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import GenericTextInput from "@/components/GenericTextInput";
 import SelectOptions from "@/components/SelectOptions";
@@ -8,6 +8,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import TextAreaInput from "@/components/TextAreaInput";
 import uploadImage from "@/library/helper/uploadImage";
 import CONSTANTS from "@/constants/constants";
+import urlToFileConverter from "@/library/helper/urltoFileConverter";
 
 function Index() {
   const router = useRouter();
@@ -17,20 +18,81 @@ function Index() {
   const [titleValue, setTitleValue] = useState<string>(data.title);
   const [openingValue, setOpeningValue] = useState<string>(data.opening!);
   const [category, setCategory] = useState<string>(data.category);
-  const [author, setAurhor] = useState<string>(data.author);
+  const [author, setAuthor] = useState<string>(data.author);
   const [thumbnailFile, setThumbnailFile] = useState<File>();
   const [pricingOption, setPricingOption] = useState<"free" | "premium">(
     data.isPremium ? "premium" : "free"
   );
   const [content, setContent] = useState<string>(data.content.join("/n"));
 
+  async function setInitialThumbnail() {
+    try {
+      const thumbnailFile = await urlToFileConverter(
+        data.thumbnail,
+        data.title
+      );
+      setThumbnailFile(thumbnailFile);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function handleThumbnailInput(e: React.ChangeEvent<HTMLInputElement>) {
+    if (!e.target.files || e.target.files.length === 0) {
+      return;
+    }
+    setThumbnailFile(e.target.files[0]);
+  }
+
+  function handleChangeThumbnail() {
+    setThumbnailFile(undefined);
+  }
+
+  async function handleCreatePost() {
+    console.log("mulai");
+    try {
+      const thumbnailURL: string = await uploadImage(thumbnailFile);
+      console.log("Ini image url", thumbnailURL);
+      const response = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/posts/${data.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            liked: data.liked,
+            shared: data.shared,
+            isPremium: pricingOption === "premium" ? true : false,
+            category: category,
+            title: titleValue,
+            opening: openingValue,
+            author: author,
+            thumbnail: thumbnailURL,
+            content: content.split("/n"),
+            createdAt: data.createdAt,
+            updatedAt: new Date(),
+          }),
+        }
+      );
+      if (!response.ok) throw new Error(response.statusText);
+      router.replace("/admin/manage-posts");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    setInitialThumbnail();
+  }, []);
+
   return (
     <>
       <Head>
-        <title>Admin - Create A Post</title>
+        <title>Edit {data.title}</title>
       </Head>
       <div className="container mx-auto px-3 pt-5 pb-16">
-        <h1 className="text-5xl font-[800]">Create a Post</h1>
+        <h1 className="text-5xl font-[800]">Edit Post (id: {data.id})</h1>
         <div className="mt-8 w-full">
           <div>
             <GenericTextInput
@@ -63,7 +125,7 @@ function Index() {
               label="Post Author"
               type="text"
               inputValue={author}
-              setInputValue={setAurhor}
+              setInputValue={setAuthor}
               placeHolder="Please put in Author's name"
             />
           </div>
@@ -103,7 +165,7 @@ function Index() {
                     : "Can't load file name"}
                 </p>
                 <PrimaryButton
-                  callback={handleChangeThumbnal}
+                  callback={handleChangeThumbnail}
                   additionalStyling="px-3 py-2 mt-2 text-lg"
                 >
                   Change Thumbnail
@@ -164,7 +226,7 @@ function Index() {
               callback={handleCreatePost}
               additionalStyling="py-2 px-2 text-xl w-full"
             >
-              Create Post
+              Save Edit
             </PrimaryButton>
           </div>
         </div>
