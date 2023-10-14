@@ -12,8 +12,8 @@ function Header({ children }: HeaderProps) {
     <>
       <div className="w-full border-b-2 border-text-primary">
         <nav className="flex border-red-500 px-3 py-5 container mx-auto justify-between items-center">
-          <h1 className="font-extrabold text-xl lg:text-3xl md:text-2xl font-fondamento">
-            Terrace
+          <h1 className="font-extrabold text-xl lg:text-3xl md:text-2xl main-text">
+            Teracce
           </h1>
 
           <ul

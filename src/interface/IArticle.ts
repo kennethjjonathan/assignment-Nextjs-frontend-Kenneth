@@ -3,7 +3,7 @@ export default interface IArticle {
   liked: number;
   shared: number;
   isPremium: boolean;
-  category: string;
+  category: "Unwind" | "Lawyers Spotlight" | "Curated News";
   title: string;
   opening?: string;
   author: string;

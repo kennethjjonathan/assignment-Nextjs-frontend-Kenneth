@@ -13,8 +13,6 @@ function Index() {
     fetcher
   );
 
-  // const [posts, setPosts] = useState<IArticle[]>([]);
-
   return (
     <>
       <Head>
