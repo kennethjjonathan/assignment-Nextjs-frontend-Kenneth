@@ -91,7 +91,7 @@
     {
       "liked": 0,
       "shared": 0,
-      "isPremium": false,
+      "pricing": "Free",
       "category": "Curated News",
       "title": "Legal actions for court injustice",
       "opening": "Who knew that the best lawyers in town is actually introverts",
@@ -107,9 +107,9 @@
       "id": 1
     },
     {
-      "liked": 0,
+      "liked": 1,
       "shared": 0,
-      "isPremium": true,
+      "pricing": "Premium",
       "category": "Unwind",
       "title": "What can we learn from introverted Lawyers",
       "opening": "Who knew that the best lawyers in town is actually introverts",
@@ -127,7 +127,7 @@
     {
       "liked": 10,
       "shared": 0,
-      "isPremium": true,
+      "pricing": "Premium",
       "category": "Unwind",
       "title": "Why emphaty is an underated skill for lawyers",
       "opening": "Emphaty can go a long way for you as a lawyer",
@@ -145,7 +145,7 @@
     {
       "liked": 25,
       "shared": 0,
-      "isPremium": false,
+      "pricing": "Premium",
       "category": "Curated News",
       "title": "The new regulation for private law",
       "opening": "A game changer in private law practice",
@@ -163,7 +163,7 @@
     {
       "liked": 102,
       "shared": 0,
-      "isPremium": false,
+      "pricing": "Free",
       "category": "Curated News",
       "title": "Merge and Acquisition is revolutionized",
       "opening": "M&A lawyers just might get home early",
@@ -181,7 +181,7 @@
     {
       "liked": 500,
       "shared": 0,
-      "isPremium": false,
+      "pricing": "Free",
       "category": "Lawyers Spotlight",
       "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
       "opening": "The northstar for corporate law best practices",
@@ -199,10 +199,10 @@
     {
       "liked": 300,
       "shared": 0,
-      "isPremium": false,
+      "pricing": "Free",
       "category": "Lawyers Spotlight",
       "title": "Joaquin leads the way in court debate",
-      "opening": "TGet the ins and outs of one of the best litigators",
+      "opening": "Get the ins and outs of one of the best litigators",
       "author": "Michael Doe",
       "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
       "content": [

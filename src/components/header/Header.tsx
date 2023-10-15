@@ -2,11 +2,7 @@ import React, { ReactNode, useState } from "react";
 import style from "./Header.module.css";
 import Link from "next/link";
 
-type HeaderProps = {
-  children: ReactNode;
-};
-
-function Header({ children }: HeaderProps) {
+function Header() {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   return (
     <>
@@ -53,7 +49,6 @@ function Header({ children }: HeaderProps) {
           </div>
         </nav>
       </div>
-      {children}
     </>
   );
 }

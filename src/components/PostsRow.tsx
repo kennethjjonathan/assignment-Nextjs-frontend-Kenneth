@@ -60,10 +60,10 @@ function PostsRow({ post }: PostsRowProps) {
         </td>
         <td
           className={`border-2 border-text-primary py-2 px-2 ${
-            post.isPremium ? "text-red-custom" : ""
+            post.pricing === "Premium" ? "text-red-custom" : ""
           }`}
         >
-          {post.isPremium ? "Premium" : "Free"}
+          {post.pricing === "Premium" ? "Premium" : "Free"}
         </td>
         <td className="border-2 border-text-primary py-2 px-2">{post.liked}</td>
         <td className="border-2 border-text-primary py-2 px-2">

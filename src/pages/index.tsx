@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next";
 import CONSTANTS from "@/constants/constants";
 import IArticle from "@/interface/IArticle";
 import SpotlightCard from "@/components/SpotlightCard";
+import Discover from "@/components/Discover";
 
 type HomeProps = {
   topFivePosts: IArticle[];
@@ -14,11 +15,11 @@ export default function Home({ topFivePosts }: HomeProps) {
       <section className="h-screen w-full bg-red-500 container mx-auto px-3 py-5">
         <Link href="/login">Login User</Link>
       </section>
-      <section className="container mx-auto px-3 py-5 flex flex-col items-center">
-        <h2 className="main-text font-[1000] text-3xl text-left w-full">
+      <section className="container mx-auto px-3 pt-5 pb-10 flex flex-col items-center">
+        <h2 className="main-text font-[1000] text-3xl text-left w-full sm:text-4xl">
           Spotlight
         </h2>
-        <div className="mt-1 grid grid-cols-1 divide-y-2 divide-solid">
+        <div className="mt-1 w-full grid grid-cols-1 divide-y-2 divide-solid sm:grid-cols-2 sm:divide-y-0 sm:gap-2 lg:grid-cols-3">
           {topFivePosts.map((post, index) => (
             <div
               key={post.id}
@@ -28,6 +29,12 @@ export default function Home({ topFivePosts }: HomeProps) {
             </div>
           ))}
         </div>
+      </section>
+      <section className="container mx-auto px-3 pt-5 pb-10 flex flex-col items-center">
+        <h2 className="main-text font-[1000] text-3xl text-left w-full sm:text-4xl">
+          Discover
+        </h2>
+        <Discover />
       </section>
     </main>
   );

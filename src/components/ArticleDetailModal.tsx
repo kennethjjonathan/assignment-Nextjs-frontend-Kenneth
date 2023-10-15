@@ -35,8 +35,12 @@ function ArticleDetailModal({
             <p>Like(s): {post.liked}</p>
             <p>Share(s): {post.shared}</p>
             <p
-              className={`${post.isPremium ? "text-red-custom" : ""}`}
-            >{`Pricing: ${post.isPremium ? "Premium" : "Free"}`}</p>
+              className={`${
+                post.pricing === "Premium" ? "text-red-custom" : ""
+              }`}
+            >
+              {post.pricing}
+            </p>
           </div>
           <div className="mt-3 flex flex-col text-lg sm:text-xl md:text-2xl">
             <p>Title:</p>

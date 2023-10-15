@@ -1,4 +1,5 @@
 import React from "react";
+import { Dispatch, SetStateAction } from "react";
 
 type SelectOptionsProps = {
   label: string;
