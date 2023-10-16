@@ -1,6 +1,9 @@
 import IArticle from "@/interface/IArticle";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import CONSTANTS from "@/constants/constants";
+import Link from "next/link";
 
 type SpotlightCardProps = {
   rank: number;
@@ -25,9 +28,12 @@ function SpotlightCard({ rank, post }: SpotlightCardProps) {
               </div>
             ) : null}
           </div>
-          <p className="text-base font-[500] leading-tight sm:text-base lg:text-2xl">
-            {post.title}
-          </p>
+          <Link href={`/${post.id}`}>
+            <p className="text-base font-[500] leading-tight sm:text-base lg:text-2xl">
+              {post.title}
+            </p>
+          </Link>
+
           <p className="main-text font-[300] leading-none text-sm text-text-secondary sm:text-base lg:text-xl">
             By {post.author}
           </p>

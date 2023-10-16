@@ -1,14 +1,22 @@
 import React from "react";
 import IArticle from "@/interface/IArticle";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 type PostCardProps = {
   post: IArticle;
 };
 
 function PostCard({ post }: PostCardProps) {
+  const router = useRouter();
+  function handleClick() {
+    router.push(`/${post.id}`);
+  }
   return (
-    <div className="flex items-center min-h-full justify-between w-full p-1 sm:flex-col-reverse sm:items-start sm:justify-end gap-2 border-[1px] border-transparent duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:border-slate-200">
+    <div
+      className="flex items-center min-h-full justify-between w-full p-1 sm:flex-col-reverse sm:items-start sm:justify-end gap-2 border-[1px] border-transparent duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:border-slate-200"
+      onClick={handleClick}
+    >
       <div className="flex flex-col justify-start h-full min-h-full max-w-[70%] sm:max-w-[100%]">
         <div className="flex items-center gap-2">
           <p className="text-red-custom text-sm font-[500] leading-none sm:text-lg lg:text-xl">

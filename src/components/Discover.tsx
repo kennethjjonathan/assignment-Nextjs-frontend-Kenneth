@@ -13,9 +13,10 @@ function Discover() {
     "Lawyers Spotlight",
     "Curated News",
   ];
+  const orderArr = ["asc", "desc"];
   const [category, setCategory] = useState<string>("All");
   const [pricing, setPricing] = useState<string>("All");
-  const [order, setOrder] = useState<"asc" | "desc">("desc");
+  const [order, setOrder] = useState<string>("desc");
   const [searchValue, setSearchValue] = useState<string>("");
 
   const [posts, setPosts] = useState<IArticle[]>([]);
@@ -62,6 +63,12 @@ function Discover() {
         optionArr={categoryOptionArr}
         inputValue={category}
         setInputValue={setCategory}
+      />
+      <SelectOptions
+        label="Order"
+        optionArr={orderArr}
+        inputValue={order}
+        setInputValue={setOrder}
       />
       <GenericTextInput
         label="Search by title"

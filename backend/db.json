@@ -85,6 +85,51 @@
       },
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+    },
+    {
+      "name": "Kenneth",
+      "email": "kennethjjonathan@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "TUE Mantap",
+      "phoneNumber": "0812-9856-2868",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": ""
+      },
+      "createdAt": "2023-10-16T04:47:34.320Z",
+      "updatedAt": "2023-10-16T04:47:34.320Z",
+      "id": 7
+    },
+    {
+      "name": "Jonathan",
+      "email": "jonathan@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "address": "TUE Mantap",
+      "phoneNumber": "1234-5678-9101",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": ""
+      },
+      "createdAt": "2023-10-16T04:48:48.209Z",
+      "updatedAt": "2023-10-16T04:48:48.209Z",
+      "id": 8
+    },
+    {
+      "name": "Jonathan2",
+      "email": "kennethjonathan@gmail.com",
+      "password": "123456789",
+      "isAdmin": false,
+      "address": "TUE Manp",
+      "phoneNumber": "1234-5678-9102",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": ""
+      },
+      "createdAt": "2023-10-16T04:51:31.497Z",
+      "updatedAt": "2023-10-16T04:51:31.497Z",
+      "id": 9
     }
   ],
   "posts": [

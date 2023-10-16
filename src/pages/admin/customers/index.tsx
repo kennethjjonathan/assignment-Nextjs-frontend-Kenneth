@@ -25,11 +25,11 @@ function Index() {
   return (
     <>
       <Head>
-        <title>Admin - Subscribers</title>
+        <title>Subscribers</title>
       </Head>
-      <div className="container mx-auto px-3 py-5">
-        <h1 className="text-5xl font-[800]">Subscribers List</h1>
-        <div className="mt-8 grid grid-cols-1 grid-rows-5 grid-flow-col gap-4">
+      <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
+        <h1 className="text-5xl font-[800]">Customers</h1>
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {usersArray.map((user) => (
             <SubscriptionCard
               user={user}

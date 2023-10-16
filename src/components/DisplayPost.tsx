@@ -13,7 +13,7 @@ function DisplayPost({ post }: DisplayPostProps) {
 
   return (
     <>
-      <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center">
+      <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-20">
         <div className="container mx-auto px-3 py-5 flex flex-col gap-8 items-center justify-center lg:flex-row">
           <div className="flex flex-col justify-center items-center lg:gap-5">
             <p className="text-xl text-center text-red-custom sm:text-2xl lg:text-3xl">

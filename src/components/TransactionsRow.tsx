@@ -95,18 +95,18 @@ function TransactionsRow({
         cancelFunction={handleCancelTransaction}
       />
       <tr
-        className={`duration-300 hover:bg-gray-300 border-2 border-text-primary text-center text-sm sm:text-base lg:text-lg ${
+        className={`duration-300 hover:bg-green-300 border-[1px] border-text-primary text-center text-sm sm:text-base lg:text-lg ${
           index % 2 === 0 ? "bg-white" : "bg-slate-300"
         }`}
       >
-        <td className="border-2 border-text-primary py-2 px-2">
+        <td className="border-[1px] border-text-primary py-2 px-2">
           {transaction.id}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2">
+        <td className="border-[1px] border-text-primary py-2 px-2">
           {transaction.user.email}
         </td>
         <td
-          className={`border-2 border-text-primary py-2 px-2 ${
+          className={`border-[1px] border-text-primary py-2 px-2 ${
             transaction.status === "process"
               ? "text-yellow-500"
               : transaction.status === "canceled"
@@ -117,22 +117,22 @@ function TransactionsRow({
           {transaction.status.toUpperCase()}
         </td>
         <td
-          className={`border-2 border-text-primary py-2 px-2 ${
+          className={`border-[1px] border-text-primary py-2 px-2 ${
             transaction.paymentCompletion ? "text-green-500" : "text-red-custom"
           }`}
         >
           {transaction.paymentCompletion ? "PAID" : "WAITING"}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2">
+        <td className="border-[1px] border-text-primary py-2 px-2">
           {transaction.package}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2">
+        <td className="border-[1px] border-text-primary py-2 px-2">
           {dateFormatter(transaction.createdAt.toString())}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2">
+        <td className="border-[1px] border-text-primary py-2 px-2">
           {dateFormatter(transaction.updatedAt.toString())}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
+        <td className="border-[1px] border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
           <PrimaryButton
             additionalStyling={`py-1 px-1 ${
               transaction.status === "completed" ||
@@ -145,7 +145,7 @@ function TransactionsRow({
             Complete
           </PrimaryButton>
         </td>
-        <td className="border-2 border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
+        <td className="border-[1px] border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
           <RedButton
             additionalStyling={`py-1 px-1 ${
               transaction.status === "canceled" || transaction.paymentCompletion

@@ -6,7 +6,14 @@ const isAdminRoute = (pathname: string) => {
 };
 
 export async function middleware(req: NextRequest) {
-  const user = JSON.parse(req.cookies.get(CONSTANTS.COOKIENAME)?.value!);
+  const cookieData = req.cookies.get(CONSTANTS.COOKIENAME)?.value!;
+
+  if (!cookieData) {
+    return NextResponse.redirect(new URL("/login", req.url));
+  }
+
+  const user = JSON.parse(cookieData);
+
   const { pathname } = req.nextUrl;
   if (isAdminRoute(pathname) && !user.isAdmin) {
     return NextResponse.redirect(new URL("/login", req.url));

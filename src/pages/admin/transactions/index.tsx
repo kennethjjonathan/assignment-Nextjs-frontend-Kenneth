@@ -28,31 +28,35 @@ function Index() {
       <Head>
         <title>Manage Transactions</title>
       </Head>
-      <div className="container mx-auto px-3 pt-5 pb-16">
+      <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
         <h1 className="text-5xl font-[800]">Manage Transactions</h1>
         <div className="mt-8 w-full overflow-x-auto">
-          <table className="w-full border-collapse border-4 border-text-primary bg-slate-500">
-            <thead className="text-sm font-bold md:text-lg lg:text-xl">
+          <table className="w-full border-collapse border-[1px] border-text-primary">
+            <thead className="text-sm font-bold md:text-lg lg:text-xl bg-slate-500">
               <tr>
-                <th className="py-2 px-2 border-4 border-text-primary">ID</th>
-                <th className="py-2 px-2 border-4 border-text-primary">User</th>
-                <th className="py-2 px-2 border-4 border-text-primary">
+                <th className="py-2 px-2 border-[1px] border-text-primary">
+                  ID
+                </th>
+                <th className="py-2 px-2 border-[1px] border-text-primary">
+                  User
+                </th>
+                <th className="py-2 px-2 border-[1px] border-text-primary">
                   Status
                 </th>
-                <th className="py-2 px-2 border-4 border-text-primary">
+                <th className="py-2 px-2 border-[1px] border-text-primary">
                   Payment Completion
                 </th>
-                <th className="py-2 px-2 border-4 border-text-primary">
+                <th className="py-2 px-2 border-[1px] border-text-primary">
                   Package
                 </th>
-                <th className="py-2 px-2 border-4 border-text-primary">
+                <th className="py-2 px-2 border-[1px] border-text-primary">
                   Transaction Date
                 </th>
-                <th className="py-2 px-2 border-4 border-text-primary">
+                <th className="py-2 px-2 border-[1px] border-text-primary">
                   Last Updated At
                 </th>
                 <th
-                  className="py-2 px-2 border-4 border-text-primary"
+                  className="py-2 px-2 border-[1px] border-text-primary"
                   colSpan={2}
                 ></th>
               </tr>

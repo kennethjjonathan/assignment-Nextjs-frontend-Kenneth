@@ -41,7 +41,7 @@
   background-color: #252222;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 64em) {
   .hamburger {
     display: inline-block;
   }

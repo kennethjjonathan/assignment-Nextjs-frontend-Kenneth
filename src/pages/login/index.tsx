@@ -4,6 +4,7 @@ import CONSTANTS from "@/constants/constants";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
+import Link from "next/link";
 
 function Login() {
   const [emailValue, setEmailValue] = useState<string>("");
@@ -12,7 +13,7 @@ function Login() {
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(true);
 
   const router = useRouter();
-  const [cookie, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
+  const [_, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
 
   const handleSubmit = async (e: React.FormEvent, path: string) => {
     e.preventDefault();
@@ -40,7 +41,7 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen px-10">
+    <div className="flex flex-col justify-center items-center px-3 pb-5 pt-20 container mx-auto sm:pt-40">
       <h1 className="font-[800] text-3xl">Log In</h1>
       <form
         className="mt-2 w-full lg:w-3/6"
@@ -73,6 +74,12 @@ function Login() {
           </PrimaryButton>
         </div>
       </form>
+      <p className="mt-3 text-base sm:text-xl">
+        Don't have an account?{" "}
+        <Link href="/register" className="underline">
+          Sign Up
+        </Link>
+      </p>
     </div>
   );
 }

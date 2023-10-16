@@ -10,9 +10,10 @@ import DeleteConfirmationModal from "./DeleteConfirmationModal";
 
 type PostsRowProps = {
   post: IArticle;
+  index: number;
 };
 
-function PostsRow({ post }: PostsRowProps) {
+function PostsRow({ post, index }: PostsRowProps) {
   const router = useRouter();
   const [isDetailOpen, setIsDetailOpen] = useState<boolean>(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState<boolean>(false);
@@ -53,33 +54,39 @@ function PostsRow({ post }: PostsRowProps) {
         post={post}
         deleteFunction={handleDeletePost}
       />
-      <tr className="border-2 border-text-primary text-center text-sm sm:text-base lg:text-lg">
-        <td className="border-2 border-text-primary py-2 px-2">{post.id}</td>
-        <td className="py-2 px-2 text-ellipsis line-clamp-1 cursor-pointer duration-300 hover:bg-blue-200 active:bg-blue-800">
-          {post.title}
+      <tr
+        className={`duration-300 hover:bg-green-300 border-[1px] border-text-primary text-center text-sm sm:text-base lg:text-lg ${
+          index % 2 === 0 ? "bg-white" : "bg-slate-300"
+        }`}
+      >
+        <td className="border-[1px] border-text-primary py-2 px-2">
+          {post.id}
         </td>
+        <td className="py-2 px-2 text-ellipsis line-clamp-1">{post.title}</td>
         <td
-          className={`border-2 border-text-primary py-2 px-2 ${
+          className={`border-[1px] border-text-primary py-2 px-2 ${
             post.pricing === "Premium" ? "text-red-custom" : ""
           }`}
         >
           {post.pricing === "Premium" ? "Premium" : "Free"}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2">{post.liked}</td>
-        <td className="border-2 border-text-primary py-2 px-2">
+        <td className="border-[1px] border-text-primary py-2 px-2">
+          {post.liked}
+        </td>
+        <td className="border-[1px] border-text-primary py-2 px-2">
           {post.shared}
         </td>
-        <td className="border-2 border-text-primary py-2 px-2 text-blue-500 duration-300 hover:text-blue-800 text-sm sm:text-base lg:text-lg">
+        <td className="border-[1px] border-text-primary py-2 px-2 text-blue-500 duration-300 hover:text-blue-800 text-sm sm:text-base lg:text-lg">
           <button onClick={() => setIsDetailOpen(true)}>
             <BsInfoLg />
           </button>
         </td>
-        <td className="border-2 border-text-primary py-2 px-2 text-blue-500 duration-300 hover:text-blue-800 text-sm sm:text-base lg:text-lg">
+        <td className="border-[1px] border-text-primary py-2 px-2 text-blue-500 duration-300 hover:text-blue-800 text-sm sm:text-base lg:text-lg">
           <button onClick={handleEdit}>
             <TbEdit />
           </button>
         </td>
-        <td className="border-2 border-text-primary py-2 px-2 text-red-custom duration-300 hover:text-red-900 text-sm sm:text-base lg:text-lg">
+        <td className="border-[1px] border-text-primary py-2 px-2 text-red-custom duration-300 hover:text-red-900 text-sm sm:text-base lg:text-lg">
           <button onClick={() => setIsDeleteOpen(true)}>
             <BiTrash />
           </button>
