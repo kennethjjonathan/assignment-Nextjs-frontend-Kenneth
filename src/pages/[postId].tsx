@@ -2,20 +2,33 @@ import CONSTANTS from "@/constants/constants";
 import IArticle from "@/interface/IArticle";
 import IUser from "@/interface/IUser";
 import { GetServerSideProps } from "next";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import dateOnlyFormatter from "@/library/helper/dateOnlyFormatter";
 import * as cookie from "cookie";
+import NotSubscribed from "@/components/NotSubscribed";
+import LikeButton from "@/components/LikeButton";
 
 type PostDetailProps = {
   post: IArticle;
-  user: IUser | undefined;
+  user: IUser | null;
 };
 
 const openingParagraphClass: string =
-  "first-line:uppercase first-line:tracking-widest first-letter:text-6xl first-letter:font-bold first-letter:text-red-custom first-letter:mr-3 first-letter:float-left sm:first-letter:text-7xl";
+  "first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:font-bold first-letter:text-red-custom first-letter:mr-2 first-letter:float-left sm:first-letter:text-7xl";
 
 function Index({ post, user }: PostDetailProps) {
+  const [userState, setUserState] = useState<IUser | undefined>(undefined);
+
+  function setUser() {
+    if (user !== null) {
+      setUserState(user);
+    }
+  }
+
+  useEffect(() => {
+    setUser();
+  }, []);
   return (
     <>
       <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-20">
@@ -46,16 +59,23 @@ function Index({ post, user }: PostDetailProps) {
         </div>
       </section>
       <section className="container mx-auto px-3 py-5 flex flex-col">
+        <div>
+          <LikeButton post={post} user={user} />
+        </div>
         {post.content.map((content: string, index: number) => (
           <p
             key={index}
             className={`${
               index === 0 ? openingParagraphClass : ""
-            } text-lg text-justify mt-3`}
+            } text-base text-justify mt-3 sm:text-lg`}
           >
             {content}
           </p>
         ))}
+        {post.pricing === "Premium" &&
+        !userState?.subscription?.isSubscribed ? (
+          <NotSubscribed />
+        ) : null}
       </section>
     </>
   );
@@ -65,23 +85,29 @@ export const getServerSideProps: GetServerSideProps = async ({
   req,
   params,
 }) => {
-  let user: IUser | undefined = undefined;
+  let user: IUser | null;
   const cookieData = cookie.parse(req.headers.cookie!);
-  console.log(JSON.parse(cookieData.USER));
-
-  // if (!cookieData) {
-  //   user = undefined;
-  // } else {
-  //   console.log(cookieData);
-  //   // const parsedCookie = JSON.parse(cookieData);
-  //   user = JSON.parse(cookieData);
-  // }
+  console.log("Ini cookie data", cookieData);
+  if (cookieData.USER === undefined) {
+    user = null;
+  } else {
+    user = JSON.parse(cookieData.USER);
+  }
   const response = await fetch(
     `${CONSTANTS.BASELOCALHOST}/posts/${params?.postId}`
   );
-
   if (!response.ok) throw new Error(response.statusText);
   const post = await response.json();
+
+  if (
+    (user === undefined || !user?.subscription?.isSubscribed) &&
+    post.pricing === "Premium"
+  ) {
+    post.content = [
+      post.content[0].slice(0, post.content[0].length / 2) + "...",
+    ];
+  }
+
   if (!post.id) {
     return {
       notFound: true,
@@ -89,8 +115,8 @@ export const getServerSideProps: GetServerSideProps = async ({
   } else {
     return {
       props: {
-        post,
-        // user,
+        post: post,
+        user: user || null,
       },
     };
   }

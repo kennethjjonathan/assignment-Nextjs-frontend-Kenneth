@@ -5,6 +5,7 @@ import IArticle from "@/interface/IArticle";
 import SpotlightCard from "@/components/SpotlightCard";
 import Discover from "@/components/Discover";
 import Head from "next/head";
+import Image from "next/image";
 
 type HomeProps = {
   topFivePosts: IArticle[];

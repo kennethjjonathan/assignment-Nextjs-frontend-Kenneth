@@ -9,6 +9,7 @@ export default interface IUser {
     isSubscribed: boolean;
     expiration: Date;
   };
+  liked: number[];
   createdAt: Date;
   updatedAt: Date;
 }
