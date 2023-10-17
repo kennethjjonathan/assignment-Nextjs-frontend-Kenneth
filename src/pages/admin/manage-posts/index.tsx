@@ -23,7 +23,9 @@ function Index() {
       </Head>
       <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
         <div className="flex flex-col justify-between items-baseline gap-2">
-          <h1 className="text-5xl font-[800] text-left w-full">Manage Posts</h1>
+          <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
+            Manage Posts
+          </h1>
           <PrimaryButton
             callback={router.push}
             param={"/admin/manage-posts/create"}

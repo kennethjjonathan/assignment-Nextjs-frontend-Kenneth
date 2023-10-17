@@ -42,7 +42,7 @@ function Index() {
             <PriceCard
               title="Monthly Plan"
               price={50000}
-              duration="perMonth"
+              duration="Monthly"
               points={monthlyPoints}
             />
           </div>
@@ -50,7 +50,7 @@ function Index() {
             <PriceCard
               title="Yearly Plan"
               price={600000}
-              duration="perYear"
+              duration="Yearly"
               points={yearlyPoints}
             />
           </div>

@@ -18,7 +18,7 @@ function Header() {
 
   function handleLogout() {
     setUser(undefined);
-    removeCookies(CONSTANTS.COOKIENAME);
+    removeCookies(CONSTANTS.COOKIENAME, { path: "/" });
     router.replace("/");
   }
 
@@ -36,11 +36,11 @@ function Header() {
   return (
     <div className="w-full border-b-2 border-text-primary fixed z-50 bg-smokewhite-custom top-0 left-0">
       <nav className="flex border-red-500 px-3 py-5 container mx-auto justify-between items-center">
-        <div className="flex justify-center items-baseline gap-2">
+        <div className="flex justify-center items-center gap-2">
           <TeracceLogo textColor="text-text-primary" />
           {/\/admin\/*/gi.test(pathname) ? (
             <p className="main-text text-text-secondary font-[800] text-lg sm:text-xl">
-              -Admin
+              (Admin)
             </p>
           ) : null}
         </div>

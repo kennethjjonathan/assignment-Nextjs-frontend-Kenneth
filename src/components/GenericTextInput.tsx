@@ -1,9 +1,11 @@
+import { Dispatch, SetStateAction } from "react";
+
 type GenericTextInputProps = {
   placeHolder?: string;
   type: string;
   label?: string;
-  inputValue: string;
-  setInputValue: (input: string) => void;
+  inputValue: string | number;
+  setInputValue: Dispatch<SetStateAction<any>>;
   isValid?: boolean;
   errorMessage?: string;
 };

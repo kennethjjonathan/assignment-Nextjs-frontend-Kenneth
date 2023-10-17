@@ -5,6 +5,10 @@ const isAdminRoute = (pathname: string) => {
   return pathname.startsWith("/admin");
 };
 
+const isPaymentRoute = (pathname: string) => {
+  return pathname.startsWith("/subscribe/payment");
+};
+
 export async function middleware(req: NextRequest) {
   const cookieData = req.cookies.get(CONSTANTS.COOKIENAME)?.value!;
 
@@ -23,5 +27,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/admin/:path*", "/subscribe/payment"],
 };

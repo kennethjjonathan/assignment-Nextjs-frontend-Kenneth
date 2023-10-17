@@ -14,7 +14,7 @@ function Index() {
   }
   return (
     <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
-      <h1 className="text-5xl font-[800]">Admin</h1>
+      <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">Admin</h1>
       <RedButton callback={handleLogout} additionalStyling="py-1 px-2 text-lg">
         Log Out
       </RedButton>

@@ -6,6 +6,7 @@ import RedButton from "./RedButton";
 import CONSTANTS from "@/constants/constants";
 import CompleteTransactionModal from "./CompleteTransactionModal";
 import CancelTransactionModal from "./CancelTransactionModal";
+import generateOneMonth from "@/library/helper/generateOneMonth";
 
 type TransactionsRowProps = {
   transaction: ITransaction;
@@ -20,12 +21,32 @@ function TransactionsRow({
 }: TransactionsRowProps) {
   const [isCompleteOpen, setIsCompleteOpen] = useState<boolean>(false);
   const [isCancelOpen, setIsCancelOpen] = useState<boolean>(false);
-  function handleCompleteButtonClick() {
-    if (transaction.status === "completed" || !transaction.paymentCompletion) {
-      return;
+
+  function completeButtonValidator(): boolean {
+    if (transaction.status === "canceled") {
+      return true;
+    } else if (transaction.status === "completed") {
+      return true;
+    } else if (!transaction.paymentCompletion) {
+      return true;
     } else {
-      setIsCompleteOpen(true);
+      return false;
     }
+  }
+
+  function cancelButtonValidator(): boolean {
+    if (transaction.status === "canceled") {
+      return true;
+    } else if (transaction.status === "completed") {
+      return true;
+    } else if (transaction.paymentCompletion) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function handleCompleteButtonClick() {
+    setIsCompleteOpen(true);
   }
   async function handleCompleteTransaction() {
     setIsCompleteOpen(false);
@@ -40,10 +61,34 @@ function TransactionsRow({
           body: JSON.stringify({
             status: "completed",
             updatedAt: new Date(),
+            user: {
+              subscription: {
+                isSubscribe: true,
+                expiration: generateOneMonth(),
+              },
+              updatedAt: new Date(),
+            },
           }),
         }
       );
       if (!response.ok) throw new Error(response.statusText);
+      const userResponse = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/users/${transaction.user?.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            updatedAt: new Date(),
+            subscription: {
+              isSubscribed: true,
+              expiration: generateOneMonth(),
+            },
+          }),
+        }
+      );
+      if (!userResponse.ok) throw new Error(userResponse.statusText);
       setUpdateToggle((prev) => !prev);
     } catch (error) {
       console.error(error);
@@ -51,11 +96,7 @@ function TransactionsRow({
   }
 
   function handleCancelButton() {
-    if (transaction.status === "canceled" || transaction.paymentCompletion) {
-      return;
-    } else {
-      setIsCancelOpen(true);
-    }
+    setIsCancelOpen(true);
   }
 
   async function handleCancelTransaction() {
@@ -103,7 +144,7 @@ function TransactionsRow({
           {transaction.id}
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2">
-          {transaction.user.email}
+          {transaction.user?.email}
         </td>
         <td
           className={`border-[1px] border-text-primary py-2 px-2 ${
@@ -134,25 +175,18 @@ function TransactionsRow({
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
           <PrimaryButton
-            additionalStyling={`py-1 px-1 ${
-              transaction.status === "completed" ||
-              !transaction.paymentCompletion
-                ? "cursor-not-allowed"
-                : ""
-            }`}
+            additionalStyling={`py-1 px-2`}
             callback={handleCompleteButtonClick}
+            isDisabled={completeButtonValidator()}
           >
             Complete
           </PrimaryButton>
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
           <RedButton
-            additionalStyling={`py-1 px-1 ${
-              transaction.status === "canceled" || transaction.paymentCompletion
-                ? "cursor-not-allowed"
-                : ""
-            }`}
+            additionalStyling={`px-2 py-1`}
             callback={handleCancelButton}
+            isDisabled={cancelButtonValidator()}
           >
             Cancel
           </RedButton>

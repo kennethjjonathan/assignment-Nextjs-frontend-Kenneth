@@ -2,11 +2,12 @@ import IUser from "./IUser";
 
 export default interface ITransaction {
   id: number;
-  user: IUser;
+  userId: number;
   status: "process" | "completed" | "canceled";
   paymentCompletion: boolean;
   price: 50000 | 600000;
-  package: "perMonth" | "perYear";
+  package: "Monthly" | "Yearly";
+  user?: IUser;
   createdAt: Date;
   updatedAt: Date;
 }

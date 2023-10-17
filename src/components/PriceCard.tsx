@@ -8,7 +8,7 @@ import CONSTANTS from "@/constants/constants";
 type PriceCardProps = {
   bestValue?: boolean;
   title: string;
-  duration: "perMonth" | "perYear";
+  duration: "Monthly" | "Yearly";
   price: number;
   points?: string[];
 };
@@ -27,7 +27,6 @@ function PriceCard({
       <QrCodeModal
         isOpen={isOpenQr}
         setIsOpen={setIsOpenQr}
-        value={`${CONSTANTS.BASEURL}/subscribe/${duration}`}
         duration={duration}
       />
       <div className="border-2 w-full h-full flex flex-col justify-center items-center p-2 relative xl:p-5">
@@ -50,7 +49,7 @@ function PriceCard({
           param={true}
         >
           <p className="text-xl font-thin">{`IDR ${moneyFormatter(price)} / ${
-            duration === "perMonth" ? "month" : "year"
+            duration === "Monthly" ? "month" : "year"
           }`}</p>
         </PrimaryButton>
       </div>

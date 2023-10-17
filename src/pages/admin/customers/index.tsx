@@ -28,7 +28,9 @@ function Index() {
         <title>Subscribers</title>
       </Head>
       <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
-        <h1 className="text-5xl font-[800]">Customers</h1>
+        <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
+          Customers
+        </h1>
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {usersArray.map((user) => (
             <SubscriptionCard

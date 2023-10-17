@@ -94,11 +94,11 @@
       "address": "TUE Mantap",
       "phoneNumber": "0812-9856-2868",
       "subscription": {
-        "isSubscribed": false,
-        "expiration": ""
+        "isSubscribed": true,
+        "expiration": "2023-11-17T06:41:42.611Z"
       },
       "createdAt": "2023-10-16T04:47:34.320Z",
-      "updatedAt": "2023-10-16T04:47:34.320Z",
+      "updatedAt": "2023-10-17T06:41:42.611Z",
       "id": 7
     },
     {
@@ -263,27 +263,100 @@
   "transactions": [
     {
       "id": 1,
-      "user": {
-        "id": 5,
-        "name": "Lexy",
-        "email": "lexy@gmail.com",
-        "password": "12345678",
-        "isAdmin": false,
-        "address": "Jl. Danau Towuti No. 74",
-        "phoneNumber": "0812-3456-7899",
-        "subscription": {
-          "isSubscribed": true,
-          "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
-        },
-        "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
-        "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
-      },
+      "userId": 5,
       "status": "canceled",
       "paymentCompletion": false,
       "price": 50000,
-      "package": "perMonth",
+      "package": "Monthly",
       "createdAt": "2023-10-13T03:35:42.724Z",
       "updatedAt": "2023-10-14T09:59:56.735Z"
+    },
+    {
+      "userId": 7,
+      "status": "process",
+      "paymentCompletion": false,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-16T14:48:22.463Z",
+      "updatedAt": "2023-10-16T14:48:22.463Z",
+      "id": 2
+    },
+    {
+      "userId": 7,
+      "status": "process",
+      "paymentCompletion": false,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-16T14:51:26.410Z",
+      "updatedAt": "2023-10-16T14:51:26.410Z",
+      "id": 3
+    },
+    {
+      "userId": 7,
+      "status": "canceled",
+      "paymentCompletion": false,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-16T15:02:23.199Z",
+      "updatedAt": "2023-10-17T05:45:13.007Z",
+      "id": 4
+    },
+    {
+      "userId": 7,
+      "status": "process",
+      "paymentCompletion": false,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-16T15:29:28.525Z",
+      "updatedAt": "2023-10-16T15:29:28.525Z",
+      "id": 5
+    },
+    {
+      "userId": 7,
+      "status": "process",
+      "paymentCompletion": false,
+      "price": 600000,
+      "package": "Yearly",
+      "createdAt": "2023-10-16T15:30:31.285Z",
+      "updatedAt": "2023-10-16T15:30:31.285Z",
+      "id": 6
+    },
+    {
+      "userId": 7,
+      "status": "process",
+      "paymentCompletion": false,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-16T15:44:19.292Z",
+      "updatedAt": "2023-10-16T15:44:19.292Z",
+      "id": 7
+    },
+    {
+      "userId": 7,
+      "status": "completed",
+      "paymentCompletion": true,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-16T16:40:10.201Z",
+      "updatedAt": "2023-10-17T06:41:42.590Z",
+      "id": 8,
+      "user": {
+        "subscription": {
+          "isSubscribe": true,
+          "expiration": "2023-11-17T06:41:42.591Z"
+        },
+        "updatedAt": "2023-10-17T06:41:42.591Z"
+      }
+    },
+    {
+      "userId": 7,
+      "status": "process",
+      "paymentCompletion": true,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-17T03:40:00.277Z",
+      "updatedAt": "2023-10-17T06:34:21.160Z",
+      "id": 9
     }
   ]
 }

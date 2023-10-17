@@ -6,6 +6,7 @@ type PrimaryButtonProps = {
   additionalStyling?: string;
   param?: any;
   callback?: any;
+  isDisabled?: boolean;
 };
 
 function PrimaryButton({
@@ -14,7 +15,18 @@ function PrimaryButton({
   additionalStyling,
   param,
   callback,
+  isDisabled,
 }: PrimaryButtonProps) {
+  if (isDisabled) {
+    return (
+      <button
+        type={type}
+        className={`bg-slate-700 text-slate-500 border-2 rounded-md border-slate-700 focus:outline-none cursor-not-allowed ${additionalStyling}`}
+      >
+        {children}
+      </button>
+    );
+  }
   return (
     <button
       type={type}
