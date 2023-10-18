@@ -1,0 +1,16 @@
+function checkIfToday(input: string): boolean {
+  const today: Date = new Date();
+  const inputDate: Date = new Date(input);
+
+  if (
+    today.getDate() === inputDate.getDate() &&
+    today.getMonth() === inputDate.getMonth() &&
+    today.getFullYear() === inputDate.getFullYear()
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+export default checkIfToday;
