@@ -52,6 +52,8 @@ function Index() {
             isSubscribed: false,
             expiration: "",
           },
+          liked: [],
+          history: [],
           createdAt: new Date(),
           updatedAt: new Date(),
         }),

@@ -17,6 +17,7 @@ function Login() {
 
   const handleSubmit = async (e: React.FormEvent, path: string) => {
     e.preventDefault();
+    console.log("Manggil");
     const response = await fetch(`/api/${path}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

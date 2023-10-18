@@ -9,6 +9,7 @@ import TextAreaInput from "@/components/TextAreaInput";
 import uploadImage from "@/library/helper/uploadImage";
 import CONSTANTS from "@/constants/constants";
 import urlToFileConverter from "@/library/helper/urltoFileConverter";
+import generateRandomString from "@/library/helper/generateRandomString";
 
 function Index() {
   const router = useRouter();
@@ -20,8 +21,8 @@ function Index() {
   const [category, setCategory] = useState<string>(data.category);
   const [author, setAuthor] = useState<string>(data.author);
   const [thumbnailFile, setThumbnailFile] = useState<File>();
-  const [pricingOption, setPricingOption] = useState<"free" | "premium">(
-    data.isPremium ? "premium" : "free"
+  const [pricingOption, setPricingOption] = useState<"Free" | "Premium">(
+    data.pricing ? "Premium" : "Free"
   );
   const [content, setContent] = useState<string>(data.content.join("/n"));
 
@@ -63,13 +64,15 @@ function Index() {
           body: JSON.stringify({
             liked: data.liked,
             shared: data.shared,
-            isPremium: pricingOption === "premium" ? true : false,
+            pricing: pricingOption,
             category: category,
             title: titleValue,
             opening: openingValue,
             author: author,
             thumbnail: thumbnailURL,
             content: content.split("/n"),
+            identifier:
+              titleValue.split(" ").join("-") + "-" + generateRandomString(),
             createdAt: data.createdAt,
             updatedAt: new Date(),
           }),
@@ -189,32 +192,32 @@ function Index() {
             </p>
             <div className="flex items-center gap-8">
               <label
-                htmlFor="premium-post"
+                htmlFor="Premium-post"
                 className="cursor-pointer text-lg font-[600]"
               >
                 <input
                   type="radio"
-                  id="premium-post"
-                  value="premium"
+                  id="Premium-post"
+                  value="Premium"
                   name="pricing-option"
                   className="cursor-pointer"
                   onChange={(e) =>
-                    setPricingOption(e.target.value as "premium")
+                    setPricingOption(e.target.value as "Premium")
                   }
                   checked
                 />
                 Premium Post
               </label>
               <label
-                htmlFor="free-post"
+                htmlFor="Free-post"
                 className="cursor-pointer text-lg font-[600]"
               >
                 <input
                   type="radio"
-                  id="free-post"
-                  value="free"
+                  id="Free-post"
+                  value="Free"
                   name="pricing-option"
-                  onChange={(e) => setPricingOption(e.target.value as "free")}
+                  onChange={(e) => setPricingOption(e.target.value as "Free")}
                   className="cursor-pointer"
                 />
                 Free Post

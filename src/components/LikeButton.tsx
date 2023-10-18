@@ -13,7 +13,6 @@ type LikeButtonProps = {
 
 function LikeButton({ post, user }: LikeButtonProps) {
   const [_, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
-
   const router = useRouter();
   const [liked, setLiked] = useState<boolean>(false);
   const [likeAmount, setLikeAmount] = useState<number>(post.liked);
@@ -46,7 +45,8 @@ function LikeButton({ post, user }: LikeButtonProps) {
           }
           100% {
             top: -100px;
-            left: ${left + 100}px
+            left: ${left + 100}px;
+            transform: rotate(-90deg);
           }
         }`);
     const cloneStyle: CSSProperties = {
@@ -54,17 +54,17 @@ function LikeButton({ post, user }: LikeButtonProps) {
       top: `${top}px`,
       left: `${left}px`,
       zIndex: "60",
-      animation: "fly-heart 1s ease-in-out forwards",
+      animation: "fly-heart 1.5s ease-in-out forwards",
     };
     const clone = (
       <div style={cloneStyle} className="text-red-custom">
-        <AiFillHeart className="text-2xl md:text-3xl lg:text-4xl" />
+        <AiFillHeart className="text-2xl md:text-3xl" />
       </div>
     );
     setFlyClone(clone);
     setTimeout(() => {
       setFlyClone(null);
-    }, 2000);
+    }, 1500);
   }
 
   useEffect(() => {
@@ -81,7 +81,9 @@ function LikeButton({ post, user }: LikeButtonProps) {
 
     if (!liked) {
       setLikeAmount((prev) => prev + 1);
-      const newUser: IUser = { ...user, liked: [...user.liked, post.id] };
+      console.log(user.liked);
+      const newLikeArr: number[] = [...user.liked, post.id];
+      const newUser: IUser = { ...user, liked: newLikeArr };
       setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
         path: "/",
         maxAge: 3600,
@@ -108,7 +110,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ newUser }),
+            body: JSON.stringify(newUser),
           }
         );
         if (!userResponse.ok) throw new Error(userResponse.statusText);
@@ -118,6 +120,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
     } else {
       const filtered: number[] = user.liked.filter((item) => item !== post.id);
       const newUser: IUser = { ...user, liked: filtered };
+      console.log("ini unlike", newUser);
       setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
         path: "/",
         maxAge: 3600,
@@ -145,7 +148,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ newUser }),
+            body: JSON.stringify(newUser),
           }
         );
         if (!userResponse.ok) throw new Error(userResponse.statusText);
@@ -166,7 +169,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
           onClick={handleLike}
         >
           <div ref={heartRef}>
-            <AiFillHeart className="text-2xl md:text-3xl lg:text-4xl" />{" "}
+            <AiFillHeart className="text-2xl md:text-3xl" />{" "}
           </div>
           {likeAmount}
         </button>
@@ -180,7 +183,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
       onClick={handleLike}
     >
       <div ref={heartRef}>
-        <AiOutlineHeart className="text-2xl md:text-3xl lg:text-4xl" />
+        <AiOutlineHeart className="text-2xl md:text-3xl" />
       </div>
       {likeAmount}
     </button>

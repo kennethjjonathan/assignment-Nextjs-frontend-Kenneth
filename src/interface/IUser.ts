@@ -1,3 +1,5 @@
+import IHistory from "./IHistory";
+
 export default interface IUser {
   id: number;
   name: string;
@@ -10,6 +12,7 @@ export default interface IUser {
     expiration: Date;
   };
   liked: number[];
+  history: IHistory[];
   createdAt: Date;
   updatedAt: Date;
 }

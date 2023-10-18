@@ -8,6 +8,8 @@ import dateOnlyFormatter from "@/library/helper/dateOnlyFormatter";
 import * as cookie from "cookie";
 import NotSubscribed from "@/components/NotSubscribed";
 import LikeButton from "@/components/LikeButton";
+import { useCookies } from "react-cookie";
+import historyUpdater from "@/library/helper/historyUpdater";
 
 type PostDetailProps = {
   post: IArticle;
@@ -18,11 +20,33 @@ const openingParagraphClass: string =
   "first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:font-bold first-letter:text-red-custom first-letter:mr-2 first-letter:float-left sm:first-letter:text-7xl";
 
 function Index({ post, user }: PostDetailProps) {
-  const [userState, setUserState] = useState<IUser | undefined>(undefined);
+  const [_, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
 
-  function setUser() {
-    if (user !== null) {
-      setUserState(user);
+  async function setUser() {
+    if (!post.id || user === null) {
+      return;
+    }
+    const newUser = historyUpdater(user, post);
+    setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
+      path: "/",
+      maxAge: 3600,
+      sameSite: true,
+    });
+    console.log(newUser);
+    try {
+      const userResponse = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        }
+      );
+      if (!userResponse.ok) throw new Error(userResponse.statusText);
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -72,8 +96,7 @@ function Index({ post, user }: PostDetailProps) {
             {content}
           </p>
         ))}
-        {post.pricing === "Premium" &&
-        !userState?.subscription?.isSubscribed ? (
+        {post.pricing === "Premium" && !user?.subscription?.isSubscribed ? (
           <NotSubscribed />
         ) : null}
       </section>
@@ -87,18 +110,17 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   let user: IUser | null;
   const cookieData = cookie.parse(req.headers.cookie!);
-  console.log("Ini cookie data", cookieData);
   if (cookieData.USER === undefined) {
     user = null;
   } else {
     user = JSON.parse(cookieData.USER);
   }
   const response = await fetch(
-    `${CONSTANTS.BASELOCALHOST}/posts/${params?.postId}`
+    `${CONSTANTS.BASELOCALHOST}/posts?identifier=${params?.postIdentifier}`
   );
   if (!response.ok) throw new Error(response.statusText);
-  const post = await response.json();
-
+  const data = await response.json();
+  const post = data[0];
   if (
     (user === undefined || !user?.subscription?.isSubscribed) &&
     post.pricing === "Premium"

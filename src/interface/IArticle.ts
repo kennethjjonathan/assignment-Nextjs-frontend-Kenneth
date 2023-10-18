@@ -9,6 +9,7 @@ export default interface IArticle {
   author: string;
   thumbnail: string;
   content: string[];
+  identifier: string;
   createdAt: Date;
   updatedAt: Date;
 }

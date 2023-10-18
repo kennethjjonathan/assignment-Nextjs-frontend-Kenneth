@@ -10,7 +10,7 @@ type PostCardProps = {
 function PostCard({ post }: PostCardProps) {
   const router = useRouter();
   function handleClick() {
-    router.push(`/${post.id}`);
+    router.push(`/${post.identifier}`);
   }
   return (
     <div

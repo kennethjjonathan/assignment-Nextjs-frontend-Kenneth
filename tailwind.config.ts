@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      padding: {
+        "generic-top-mobile": "6rem",
+        "generic-horizontal-mobile": "0.75rem",
+      },
       colors: {
         primary: "#f8f4ec",
         "text-primary": "#252222",

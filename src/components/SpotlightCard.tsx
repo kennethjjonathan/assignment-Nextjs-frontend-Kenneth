@@ -28,7 +28,7 @@ function SpotlightCard({ rank, post }: SpotlightCardProps) {
               </div>
             ) : null}
           </div>
-          <Link href={`/${post.id}`}>
+          <Link href={`/${post.identifier}`}>
             <p className="text-base font-[500] leading-tight sm:text-base lg:text-2xl">
               {post.title}
             </p>
