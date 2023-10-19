@@ -8,6 +8,7 @@ import uploadImage from "@/library/helper/uploadImage";
 import CONSTANTS from "@/constants/constants";
 import { useRouter } from "next/router";
 import generateRandomString from "@/library/helper/generateRandomString";
+import Image from "next/image";
 
 function Index() {
   const optionArr: string[] = ["Unwind", "Lawyers Spotlight", "Curated News"];
@@ -133,10 +134,11 @@ function Index() {
             ) : (
               <>
                 <p className="text-lg font-[700]">Thumbnail:</p>
-                <img
-                  className="w-72 h-48 rounded-md shadow-2xl mt-3 sm:w-auto sm:h-60 md:h-96"
+                <div className="w-72 h-48 rounded-md shadow-2xl mt-3 sm:w-auto sm:h-60 md:h-96 relative"></div>
+                <Image
                   src={URL.createObjectURL(thumbnailFile)}
                   alt="chosen thumbnail"
+                  fill={true}
                 />
                 <p className="text-base font-[500] mt-3">
                   {thumbnailFile.name !== undefined
@@ -159,7 +161,7 @@ function Index() {
               setInputValue={setContent}
             />
             <p className="text-base font-[500] mt-3">
-              Please type in "/n" to seperate paragraphs.
+              Please type in &quot;/n&quot; to seperate paragraphs.
             </p>
           </div>
           <div className="mt-3">

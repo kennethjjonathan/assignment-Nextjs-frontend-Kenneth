@@ -7,6 +7,7 @@ import ArticleDetailModal from "./ArticleDetailModal";
 import { useRouter } from "next/router";
 import CONSTANTS from "@/constants/constants";
 import DeleteConfirmationModal from "./DeleteConfirmationModal";
+import Link from "next/link";
 
 type PostsRowProps = {
   post: IArticle;
@@ -33,14 +34,14 @@ function PostsRow({ post, index }: PostsRowProps) {
     }
   }
 
-  function handleEdit() {
-    router.push({
-      pathname: `/admin/manage-posts/edit/${post.id}`,
-      query: {
-        data: JSON.stringify(post),
-      },
-    });
-  }
+  // function handleEdit() {
+  //   router.push({
+  //     pathname: `/admin/manage-posts/edit/${post.id}`,
+  //     query: {
+  //       data: JSON.stringify(post),
+  //     },
+  //   });
+  // }
   return (
     <>
       <ArticleDetailModal
@@ -82,9 +83,9 @@ function PostsRow({ post, index }: PostsRowProps) {
           </button>
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-blue-500 duration-300 hover:text-blue-800 text-sm sm:text-base lg:text-lg">
-          <button onClick={handleEdit}>
+          <Link href={`/admin/manage-posts/edit/${post.id}`}>
             <TbEdit />
-          </button>
+          </Link>
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-red-custom duration-300 hover:text-red-900 text-sm sm:text-base lg:text-lg">
           <button onClick={() => setIsDeleteOpen(true)}>

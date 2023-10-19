@@ -76,7 +76,7 @@ function Login() {
         </div>
       </form>
       <p className="mt-3 text-base sm:text-xl">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/register" className="underline">
           Sign Up
         </Link>

@@ -10,10 +10,15 @@ import uploadImage from "@/library/helper/uploadImage";
 import CONSTANTS from "@/constants/constants";
 import urlToFileConverter from "@/library/helper/urltoFileConverter";
 import generateRandomString from "@/library/helper/generateRandomString";
+import Image from "next/image";
+import { GetServerSideProps } from "next";
 
-function Index() {
+type EditPost = {
+  data: IArticle;
+};
+
+const EditPost = ({ data }: EditPost) => {
   const router = useRouter();
-  const data: IArticle = JSON.parse(router.query.data?.toString()!);
 
   const optionArr: string[] = ["Unwind", "Lawyers Spotlight", "Curated News"];
   const [titleValue, setTitleValue] = useState<string>(data.title);
@@ -26,7 +31,7 @@ function Index() {
   );
   const [content, setContent] = useState<string>(data.content.join("/n"));
 
-  async function setInitialThumbnail() {
+  const setInitialThumbnail = async () => {
     try {
       const thumbnailFile = await urlToFileConverter(
         data.thumbnail,
@@ -36,20 +41,20 @@ function Index() {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
-  function handleThumbnailInput(e: React.ChangeEvent<HTMLInputElement>) {
+  const handleThumbnailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files || e.target.files.length === 0) {
       return;
     }
     setThumbnailFile(e.target.files[0]);
-  }
+  };
 
-  function handleChangeThumbnail() {
+  const handleChangeThumbnail = () => {
     setThumbnailFile(undefined);
-  }
+  };
 
-  async function handleCreatePost() {
+  const handleCreatePost = async () => {
     console.log("mulai");
     try {
       const thumbnailURL: string = await uploadImage(thumbnailFile);
@@ -83,16 +88,16 @@ function Index() {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   useEffect(() => {
     setInitialThumbnail();
   }, []);
 
   return (
-    <>
+    <div>
       <Head>
-        <title>Edit {data.title}</title>
+        <title>Edit</title>
       </Head>
       <div className="container mx-auto px-3 pt-5 pb-16">
         <h1 className="text-5xl font-[800]">Edit Post (id: {data.id})</h1>
@@ -157,11 +162,14 @@ function Index() {
             ) : (
               <>
                 <p className="text-lg font-[700]">Thumbnail:</p>
-                <img
-                  className="w-72 h-48 rounded-md shadow-2xl mt-3 sm:w-auto sm:h-60 md:h-96"
-                  src={URL.createObjectURL(thumbnailFile)}
-                  alt="chosen thumbnail"
-                />
+                <div className="w-72 h-48 rounded-md shadow-2xl mt-3 sm:w-auto sm:h-60 md:h-96 overflow-hidden relative">
+                  <img
+                    src={URL.createObjectURL(thumbnailFile)}
+                    alt="chosen thumbnail"
+                    className="h-full w-full"
+                  />
+                </div>
+
                 <p className="text-base font-[500] mt-3">
                   {thumbnailFile.name !== undefined
                     ? thumbnailFile.name
@@ -183,7 +191,7 @@ function Index() {
               setInputValue={setContent}
             />
             <p className="text-base font-[500] mt-3">
-              Please type in "/n" to seperate paragraphs.
+              Please type in &quot;/n&quot; to seperate paragraphs.
             </p>
           </div>
           <div className="mt-3">
@@ -234,8 +242,27 @@ function Index() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
-export default Index;
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const response = await fetch(
+    `${CONSTANTS.BASELOCALHOST}/posts/${params?.editId}`
+  );
+  if (!response.ok) throw new Error(response.statusText);
+  const data = await response.json();
+  if (!data.id) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+};
+
+export default EditPost;

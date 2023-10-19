@@ -21,11 +21,11 @@ const SelectOptions = ({
   return (
     <>
       <label
-        className={`text-xl font-[700] ${labelAdditionalStyling} group hover:text-blue-custom duration-300 cursor-pointer`}
+        className={`text-lg font-[700] ${labelAdditionalStyling} group hover:text-blue-custom duration-300 cursor-pointer md:text-xl`}
       >
         {label}
         <select
-          className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-lg focus:outline-none border-transparent bg-white ${additionalStyling} group-hover:border-blue-custom cursor-pointer`}
+          className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-base focus:outline-none border-transparent bg-white ${additionalStyling} group-hover:border-blue-custom cursor-pointer md:text-lg lg:text-xl group-hover:text-text-primary`}
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);

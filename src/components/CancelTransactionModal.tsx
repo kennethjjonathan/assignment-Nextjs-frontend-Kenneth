@@ -37,7 +37,7 @@ function CancelTransactionModal({
             </div>
             <div className="w-full px-3 py-3 h-auto">
               <p className="text-lg sm:text-xl md:text-2xl">
-                Are you sure want to cancel {transaction.user?.email}'s
+                Are you sure want to cancel {transaction.user?.email}&apos;s
                 transaction
                 <span className="text-red-custom font-[500]">
                   {" "}

@@ -51,7 +51,7 @@ function QrCodeModal({ isOpen, setIsOpen, duration }: QrCodeModalProps) {
       <div className="fixed h-full w-full top-0 left-0 flex items-center justify-center bg-[rgba(0,0,0,0.2)] z-[1000]">
         <div className="w-3/4 py-3 bg-smokewhite-custom rounded-xl">
           <div className="w-full border-b-2 border-dark-custom flex justify-between px-3 pb-3 text-lg sm:text-xl md:text-2xl">
-            <p>{duration}'s Payment Confirmation</p>
+            <p>{duration}&apos;s Payment Confirmation</p>
             <button
               className="text-blue-500 duration-300 hover:text-blue-800 active:text-blue-950"
               onClick={() => setIsOpen(false)}
@@ -98,7 +98,7 @@ function QrCodeModal({ isOpen, setIsOpen, duration }: QrCodeModalProps) {
         <div className="fixed h-full w-full top-0 left-0 flex items-center justify-center bg-[rgba(0,0,0,0.2)] z-[1000]">
           <div className="w-3/4 py-3 bg-smokewhite-custom rounded-xl">
             <div className="w-full border-b-2 border-dark-custom flex justify-between px-3 pb-3 text-lg sm:text-xl md:text-2xl">
-              <p>{duration}'s QR Code</p>
+              <p>{duration}&apos;s QR Code</p>
               <button
                 className="text-blue-500 duration-300 hover:text-blue-800 active:text-blue-950"
                 onClick={() => setIsOpen(false)}

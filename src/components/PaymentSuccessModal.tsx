@@ -34,15 +34,15 @@ function PaymentSuccessModal({
           </p>
           <div className="w-full grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
             <div className="w-full">
-              <p className="font-bold">User's Name:</p>
+              <p className="font-bold">User&apos;s Name:</p>
               <p>{transaction.user?.name}</p>
             </div>
             <div className="w-full">
-              <p className="font-bold">User's Email:</p>
+              <p className="font-bold">User&apos;s Email:</p>
               <p>{transaction.user?.email}</p>
             </div>
             <div className="w-full">
-              <p className="font-bold">User's Phone:</p>
+              <p className="font-bold">User&apos;s Phone:</p>
               <p>{transaction.user?.phoneNumber}</p>
             </div>
             <div className="w-full">

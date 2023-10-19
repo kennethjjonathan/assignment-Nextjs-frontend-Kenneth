@@ -47,12 +47,6 @@
           "readTime": "2023-10-19T07:48:54.885Z"
         },
         {
-          "title": "What can we learn from introverted Lawyers",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "What-can-we-learn-from-introverted-Lawyers",
-          "readTime": "2023-10-19T08:02:43.103Z"
-        },
-        {
           "title": "What is my favorite color",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
           "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
@@ -63,6 +57,12 @@
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Merge-and-Acquisition-is-revolutionized",
           "readTime": "2023-10-19T15:11:53.489Z"
+        },
+        {
+          "title": "What can we learn from introverted Lawyers",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "What-can-we-learn-from-introverted-Lawyers",
+          "readTime": "2023-10-19T23:13:58.880Z"
         }
       ],
       "favorite": {
@@ -223,14 +223,12 @@
       "liked": [
         6,
         8,
-        8,
         4,
-        4,
-        4,
-        7,
-        8,
         5,
-        7
+        7,
+        4,
+        10,
+        4
       ],
       "createdAt": "2023-10-16T04:48:48.209Z",
       "updatedAt": "2023-10-16T04:48:48.209Z",
@@ -241,12 +239,6 @@
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Joaquin-leads-the-way-in-court-debate",
           "readTime": "2023-10-18T16:10:18.204Z"
-        },
-        {
-          "title": "The new regulation for private law",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "The-new-regulation-for-private-law",
-          "readTime": "2023-10-18T16:11:52.481Z"
         },
         {
           "title": "Why emphaty is an underated skill for lawyers",
@@ -261,22 +253,28 @@
           "readTime": "2023-10-19T17:56:36.170Z"
         },
         {
+          "title": "The new regulation for private law",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "The-new-regulation-for-private-law",
+          "readTime": "2023-10-19T20:39:20.159Z"
+        },
+        {
           "title": "What is my favorite color",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
           "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
-          "readTime": "2023-10-19T18:09:30.362Z"
-        },
-        {
-          "title": "What can we learn from introverted Lawyers",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "What-can-we-learn-from-introverted-Lawyers",
-          "readTime": "2023-10-19T18:09:38.641Z"
+          "readTime": "2023-10-19T20:42:55.803Z"
         },
         {
           "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Kenneth-J.-Jonathan-is-the-slickest-Corporate-Lawyer-in-downtown",
-          "readTime": "2023-10-19T18:09:49.730Z"
+          "readTime": "2023-10-19T21:41:43.883Z"
+        },
+        {
+          "title": "What can we learn from introverted Lawyers",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "What-can-we-learn-from-introverted-Lawyers",
+          "readTime": "2023-10-19T22:28:34.471Z"
         }
       ],
       "shared": [
@@ -287,7 +285,7 @@
       "favorite": {
         "Unwind": 2,
         "Lawyers Spotlight": 1,
-        "Curated News": 2
+        "Curated News": 3
       }
     },
     {
@@ -444,7 +442,7 @@
       "id": 9
     },
     {
-      "liked": 1,
+      "liked": 2,
       "shared": 0,
       "pricing": "Premium",
       "category": "Curated News",

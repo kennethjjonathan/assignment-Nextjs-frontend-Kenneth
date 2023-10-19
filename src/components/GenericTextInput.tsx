@@ -22,7 +22,7 @@ function GenericTextInput({
   return (
     <>
       <label
-        className={`text-xl font-[700] ${
+        className={`group duration-300 hover:text-blue-custom text-lg md:text-xl font-[700] ${
           isValid !== false ? "" : "text-red-custom"
         }`}
       >
@@ -30,7 +30,7 @@ function GenericTextInput({
         <input
           type={type}
           placeholder={placeHolder}
-          className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-lg focus:outline-none ${
+          className={`md:text-lg lg:text-xl px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-base focus:outline-none duration-300 group-hover:border-blue-custom group-hover:text-text-primary ${
             isValid !== false ? "border-transparent" : "border-red-custom"
           }`}
           value={inputValue}

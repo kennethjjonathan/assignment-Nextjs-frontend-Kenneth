@@ -83,6 +83,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
       setLikeAmount((prev) => prev + 1);
       const newLikeArr: number[] = [...user.liked, post.id];
       const newUser: IUser = { ...user, liked: newLikeArr };
+      newUser.favorite[post.category] = user.favorite[post.category] + 1;
       setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
         path: "/",
         maxAge: 3600,
@@ -119,7 +120,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
     } else {
       const filtered: number[] = user.liked.filter((item) => item !== post.id);
       const newUser: IUser = { ...user, liked: filtered };
-      console.log("ini unlike", newUser);
+      newUser.favorite[post.category] = newUser.favorite[post.category] - 1;
       setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
         path: "/",
         maxAge: 3600,
@@ -161,7 +162,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
   if (liked) {
     return (
       <>
-        <style children={keyframe} />
+        <style>{keyframe}</style>
         {flyClone}
         <button
           className="text-red-custom flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl duration-300 hover:text-blue-custom"

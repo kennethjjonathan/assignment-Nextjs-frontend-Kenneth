@@ -4,6 +4,7 @@ import IArticle from "@/interface/IArticle";
 import SpotlightCard from "@/components/SpotlightCard";
 import Discover from "@/components/Discover";
 import Head from "next/head";
+import ModalBase from "@/components/ModalBase";
 
 type HomeProps = {
   topFivePosts: IArticle[];

@@ -30,7 +30,7 @@ function Index() {
             />
           </div>
           <p className="w-full text-center text-xl">
-            Invest, and it'll <span className="underline">grow</span>
+            Invest, and it&apos;ll <span className="underline">grow</span>
           </p>
           <h1 className="text-2xl w-full">
             Choose your{" "}
