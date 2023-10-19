@@ -10,14 +10,66 @@
       "phoneNumber": "0812-3456-7899",
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
+      "liked": [
+        10,
+        7
+      ],
+      "shared": [],
       "history": [
+        {
+          "title": "Legal actions for court injustice",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697210214/dwgne7mxmkw3uup5xjci.jpg",
+          "identifier": "Legal-actions-for-court-injustice",
+          "readTime": "2023-10-19T07:07:25.120Z"
+        },
+        {
+          "title": "Joaquin leads the way in court debate",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Joaquin-leads-the-way-in-court-debate",
+          "readTime": "2023-10-19T07:14:13.404Z"
+        },
+        {
+          "title": "The new regulation for private law",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "The-new-regulation-for-private-law",
+          "readTime": "2023-10-19T07:14:23.566Z"
+        },
+        {
+          "title": "Why emphaty is an underated skill for lawyers",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Why-emphaty-is-an-underated-skill-for-lawyers",
+          "readTime": "2023-10-19T07:15:49.818Z"
+        },
+        {
+          "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Kenneth-J.-Jonathan-is-the-slickest-Corporate-Lawyer-in-downtown",
+          "readTime": "2023-10-19T07:48:54.885Z"
+        },
         {
           "title": "What can we learn from introverted Lawyers",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "What-can-we-learn-from-introverted-Lawyers",
-          "readTime": "2023-10-18T08:37:50.053Z"
+          "readTime": "2023-10-19T08:02:43.103Z"
+        },
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-19T08:04:08.511Z"
+        },
+        {
+          "title": "Merge and Acquisition is revolutionized",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Merge-and-Acquisition-is-revolutionized",
+          "readTime": "2023-10-19T15:11:53.489Z"
         }
-      ]
+      ],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 2
+      }
     },
     {
       "id": 2,
@@ -34,7 +86,13 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      }
     },
     {
       "id": 3,
@@ -51,7 +109,13 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      }
     },
     {
       "id": 4,
@@ -68,7 +132,13 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      }
     },
     {
       "id": 5,
@@ -85,7 +155,13 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      }
     },
     {
       "id": 6,
@@ -102,7 +178,13 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      }
     },
     {
       "name": "Kenneth",
@@ -119,7 +201,13 @@
       "updatedAt": "2023-10-17T06:41:42.611Z",
       "id": 7,
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      }
     },
     {
       "name": "Jonathan",
@@ -133,7 +221,6 @@
         "expiration": ""
       },
       "liked": [
-        9,
         6,
         8,
         8,
@@ -141,31 +228,67 @@
         4,
         4,
         7,
-        8
+        8,
+        5,
+        7
       ],
       "createdAt": "2023-10-16T04:48:48.209Z",
       "updatedAt": "2023-10-16T04:48:48.209Z",
       "id": 8,
       "history": [
         {
+          "title": "Joaquin leads the way in court debate",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Joaquin-leads-the-way-in-court-debate",
+          "readTime": "2023-10-18T16:10:18.204Z"
+        },
+        {
+          "title": "The new regulation for private law",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "The-new-regulation-for-private-law",
+          "readTime": "2023-10-18T16:11:52.481Z"
+        },
+        {
           "title": "Why emphaty is an underated skill for lawyers",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Why-emphaty-is-an-underated-skill-for-lawyers",
-          "readTime": "2023-10-18T09:35:10.965Z"
+          "readTime": "2023-10-19T02:56:38.108Z"
+        },
+        {
+          "title": "Merge and Acquisition is revolutionized",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Merge-and-Acquisition-is-revolutionized",
+          "readTime": "2023-10-19T17:56:36.170Z"
+        },
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-19T18:09:30.362Z"
         },
         {
           "title": "What can we learn from introverted Lawyers",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "What-can-we-learn-from-introverted-Lawyers",
-          "readTime": "2023-10-18T09:48:18.351Z"
+          "readTime": "2023-10-19T18:09:38.641Z"
         },
         {
           "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Kenneth-J.-Jonathan-is-the-slickest-Corporate-Lawyer-in-downtown",
-          "readTime": "2023-10-18T12:23:14.369Z"
+          "readTime": "2023-10-19T18:09:49.730Z"
         }
-      ]
+      ],
+      "shared": [
+        5,
+        4,
+        9
+      ],
+      "favorite": {
+        "Unwind": 2,
+        "Lawyers Spotlight": 1,
+        "Curated News": 2
+      }
     },
     {
       "name": "Jonathan2",
@@ -182,7 +305,8 @@
       "updatedAt": "2023-10-16T04:51:31.497Z",
       "id": 9,
       "liked": [],
-      "history": []
+      "history": [],
+      "shared": []
     }
   ],
   "posts": [
@@ -207,7 +331,7 @@
     },
     {
       "liked": 8,
-      "shared": 0,
+      "shared": 1,
       "pricing": "Premium",
       "category": "Unwind",
       "title": "What can we learn from introverted Lawyers",
@@ -225,8 +349,8 @@
       "id": 4
     },
     {
-      "liked": 11,
-      "shared": 0,
+      "liked": 12,
+      "shared": 1,
       "pricing": "Premium",
       "category": "Unwind",
       "title": "Why emphaty is an underated skill for lawyers",
@@ -263,7 +387,7 @@
       "id": 6
     },
     {
-      "liked": 105,
+      "liked": 106,
       "shared": 0,
       "pricing": "Free",
       "category": "Curated News",
@@ -301,8 +425,8 @@
       "id": 8
     },
     {
-      "liked": 301,
-      "shared": 0,
+      "liked": 299,
+      "shared": 1,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
       "title": "Joaquin leads the way in court debate",
@@ -318,6 +442,23 @@
       "createdAt": "2023-10-13T03:35:42.724Z",
       "updatedAt": "2023-10-13T03:35:42.724Z",
       "id": 9
+    },
+    {
+      "liked": 1,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Curated News",
+      "title": "What is my favorite color",
+      "opening": "It's a very important question",
+      "author": "Jack Doe",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ante quis nisl porta feugiat eu id odio. Duis maximus enim et augue sollicitudin, at vestibulum diam congue. Curabitur euismod arcu non dapibus elementum. Vivamus tristique velit sed pretium aliquet. Pellentesque placerat nunc nec ex luctus lacinia. Nunc cursus finibus nibh. Nam maximus justo a dolor porttitor accumsan. Aenean lobortis sagittis sem, quis imperdiet tellus volutpat vel. Duis pellentesque nibh quis ex placerat finibus. Maecenas ac fermentum libero, ultrices lacinia felis.\n\nPhasellus rutrum a nibh vitae viverra. Vestibulum ligula nibh, aliquam non arcu id, vestibulum lobortis massa. Nulla facilisi. In feugiat dignissim dui vitae tincidunt. Donec eleifend varius tempus. Nam quis urna sollicitudin leo consequat accumsan at at risus. Etiam tempor vehicula risus eu lobortis. Vivamus eget nulla vitae elit finibus tempus.\n\nAliquam finibus nulla eget pretium tincidunt. Nam eu neque ut arcu tempus tristique. Curabitur tempor lacus mi, vel tristique tortor molestie et. Sed viverra sapien id tincidunt feugiat. Donec eleifend suscipit neque, eu condimentum metus venenatis sit amet. Phasellus blandit turpis nec rhoncus sollicitudin. Sed est sem, porta a erat eu, tempor facilisis eros."
+      ],
+      "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+      "createdAt": "2023-10-19T06:11:46.533Z",
+      "updatedAt": "2023-10-19T06:11:46.533Z",
+      "id": 10
     }
   ],
   "transactions": [
@@ -427,6 +568,16 @@
       "createdAt": "2023-10-18T03:10:14.415Z",
       "updatedAt": "2023-10-18T03:12:31.777Z",
       "id": 10
+    },
+    {
+      "userId": 1,
+      "status": "canceled",
+      "paymentCompletion": false,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-19T03:02:29.556Z",
+      "updatedAt": "2023-10-19T03:32:59.786Z",
+      "id": 11
     }
   ]
 }

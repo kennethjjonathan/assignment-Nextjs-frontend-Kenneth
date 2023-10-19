@@ -170,9 +170,6 @@ function TransactionsRow({
         <td className="border-[1px] border-text-primary py-2 px-2">
           {dateFormatter(transaction.createdAt.toString())}
         </td>
-        <td className="border-[1px] border-text-primary py-2 px-2">
-          {dateFormatter(transaction.updatedAt.toString())}
-        </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-sm sm:text-base lg:text-lg">
           <PrimaryButton
             additionalStyling={`py-1 px-2`}

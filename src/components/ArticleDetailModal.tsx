@@ -1,5 +1,6 @@
 import IArticle from "@/interface/IArticle";
 import dateFormatter from "@/library/helper/dateFormmatter";
+import Link from "next/link";
 import React, { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 
@@ -32,7 +33,7 @@ function ArticleDetailModal({
                 X
               </button>
             </div>
-            <div className="w-full px-3 py-3 overflow-y-auto h-96">
+            <div className="w-full px-3 py-3 overflow-y-auto h-[33rem] sm:h-[48rem]">
               <div className="flex justify-end items-center gap-2 text-text-secondary text-sm sm:text-base md:text-lg">
                 <p>Id: {post.id}</p>
                 <p>Like(s): {post.liked}</p>
@@ -63,9 +64,16 @@ function ArticleDetailModal({
               </div>
               <div className="mt-3 flex flex-col text-lg sm:text-xl md:text-2xl">
                 <p>Thumbnail Link:</p>
-                <p className="font-[700] whitespace-normal break-all">
-                  {post.thumbnail}
-                </p>
+                <a
+                  href={post.thumbnail}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p className="font-[700] whitespace-normal break-all">
+                    {post.thumbnail}
+                  </p>
+                </a>
               </div>
               <div className="mt-3 flex flex-col text-lg sm:text-xl md:text-2xl">
                 <p>Created At:</p>

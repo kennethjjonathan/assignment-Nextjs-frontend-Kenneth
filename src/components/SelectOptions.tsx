@@ -20,10 +20,12 @@ const SelectOptions = ({
 }: SelectOptionsProps) => {
   return (
     <>
-      <label className={`text-xl font-[700] ${labelAdditionalStyling}`}>
+      <label
+        className={`text-xl font-[700] ${labelAdditionalStyling} group hover:text-blue-custom duration-300 cursor-pointer`}
+      >
         {label}
         <select
-          className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-lg focus:outline-none border-transparent bg-white ${additionalStyling}`}
+          className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-lg focus:outline-none border-transparent bg-white ${additionalStyling} group-hover:border-blue-custom cursor-pointer`}
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);

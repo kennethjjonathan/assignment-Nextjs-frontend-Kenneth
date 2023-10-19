@@ -13,10 +13,10 @@ function Discover() {
     "Lawyers Spotlight",
     "Curated News",
   ];
-  const orderArr = ["asc", "desc"];
+  const orderArr = ["Oldest", "Latest"];
   const [category, setCategory] = useState<string>("All");
   const [pricing, setPricing] = useState<string>("All");
-  const [order, setOrder] = useState<string>("desc");
+  const [order, setOrder] = useState<string>("Latest");
   const [searchValue, setSearchValue] = useState<string>("");
 
   const [posts, setPosts] = useState<IArticle[]>([]);
@@ -24,11 +24,11 @@ function Discover() {
   async function getPosts() {
     try {
       const response = await fetch(
-        `${CONSTANTS.BASELOCALHOST}/posts?q=${searchValue}&${
-          category === "All" ? "" : `category=${category}`
-        }&${
-          pricing === "All" ? "" : `pricing=${pricing}`
-        }&_sort=createdAt&_order=${order}`
+        `${CONSTANTS.BASELOCALHOST}/posts?${`q=${searchValue}`}${
+          category === "All" ? "" : `&category=${category}`
+        }${
+          pricing === "All" ? "" : `&pricing=${pricing}`
+        }&_sort=createdAt&_order=${order === "Latest" ? "desc" : "asc"}`
       );
       if (!response.ok) throw new Error(response.statusText);
       const data = await response.json();
@@ -41,42 +41,46 @@ function Discover() {
   useEffect(() => {
     const wait = setTimeout(() => {
       getPosts();
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(wait);
   }, [searchValue]);
 
   useEffect(() => {
     getPosts();
-  }, [category, pricing]);
+  }, [category, pricing, order]);
 
   return (
-    <div>
-      <SelectOptions
-        label="Pricing"
-        optionArr={pricingOptionArr}
-        inputValue={pricing}
-        setInputValue={setPricing}
-      />
-      <SelectOptions
-        label="Category"
-        optionArr={categoryOptionArr}
-        inputValue={category}
-        setInputValue={setCategory}
-      />
-      <SelectOptions
-        label="Order"
-        optionArr={orderArr}
-        inputValue={order}
-        setInputValue={setOrder}
-      />
-      <GenericTextInput
-        label="Search by title"
-        type="text"
-        inputValue={searchValue}
-        setInputValue={setSearchValue}
-        placeHolder="Search by title"
-      />
+    <div className="w-full">
+      <div className="flex items-center justify-between w-full">
+        <div className="flex items-center gap-3">
+          <SelectOptions
+            label="Pricing"
+            optionArr={pricingOptionArr}
+            inputValue={pricing}
+            setInputValue={setPricing}
+          />
+          <SelectOptions
+            label="Category"
+            optionArr={categoryOptionArr}
+            inputValue={category}
+            setInputValue={setCategory}
+          />
+          <SelectOptions
+            label="Order"
+            optionArr={orderArr}
+            inputValue={order}
+            setInputValue={setOrder}
+          />
+        </div>
+        <GenericTextInput
+          label="Search"
+          type="text"
+          inputValue={searchValue}
+          setInputValue={setSearchValue}
+          placeHolder="Search..."
+        />
+      </div>
       <div className="mt-1 w-full grid grid-cols-1 divide-y-2 divide-solid sm:grid-cols-2 sm:divide-y-0 sm:gap-2 lg:grid-cols-3">
         {posts.length > 0 &&
           posts.map((post) => (

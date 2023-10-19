@@ -11,6 +11,7 @@ const config: Config = {
       padding: {
         "generic-top-mobile": "6rem",
         "generic-horizontal-mobile": "0.75rem",
+        "generic-bottom-mobile": "3rem",
       },
       colors: {
         primary: "#f8f4ec",

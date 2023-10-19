@@ -1,11 +1,9 @@
-import Link from "next/link";
 import { GetServerSideProps } from "next";
 import CONSTANTS from "@/constants/constants";
 import IArticle from "@/interface/IArticle";
 import SpotlightCard from "@/components/SpotlightCard";
 import Discover from "@/components/Discover";
 import Head from "next/head";
-import Image from "next/image";
 
 type HomeProps = {
   topFivePosts: IArticle[];
@@ -18,8 +16,8 @@ export default function Home({ topFivePosts }: HomeProps) {
         <title>Terrace</title>
       </Head>
       <main>
-        <section className="h-screen w-full bg-red-500 container mx-auto px-3 py-5">
-          <Link href="/login">Login User</Link>
+        <section className="h-screen w-full bg-red-500 container mx-auto px-3 py-5 grid place-items-center">
+          <h1>Stay</h1>
         </section>
         <section className="container mx-auto px-3 pt-5 pb-10 flex flex-col items-center">
           <h2 className="main-text font-[1000] text-3xl text-left w-full sm:text-4xl">

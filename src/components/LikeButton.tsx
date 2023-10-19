@@ -81,7 +81,6 @@ function LikeButton({ post, user }: LikeButtonProps) {
 
     if (!liked) {
       setLikeAmount((prev) => prev + 1);
-      console.log(user.liked);
       const newLikeArr: number[] = [...user.liked, post.id];
       const newUser: IUser = { ...user, liked: newLikeArr };
       setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
@@ -165,7 +164,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
         <style children={keyframe} />
         {flyClone}
         <button
-          className="text-red-custom flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl"
+          className="text-red-custom flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl duration-300 hover:text-blue-custom"
           onClick={handleLike}
         >
           <div ref={heartRef}>
@@ -179,7 +178,7 @@ function LikeButton({ post, user }: LikeButtonProps) {
 
   return (
     <button
-      className="flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl"
+      className="flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl duration-300 hover:text-blue-custom"
       onClick={handleLike}
     >
       <div ref={heartRef}>

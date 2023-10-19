@@ -2,7 +2,7 @@ interface IHistory {
   title: string;
   imagerSrc: string;
   identifier: string;
-  readTime: Date;
+  readTime: string;
 }
 
 export default IHistory;

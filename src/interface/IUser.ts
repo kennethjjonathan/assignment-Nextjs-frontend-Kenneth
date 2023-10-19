@@ -1,5 +1,11 @@
 import IHistory from "./IHistory";
 
+export type Favorite = {
+  Unwind: number;
+  "Lawyers Spotlight": number;
+  "Curated News": number;
+};
+
 export default interface IUser {
   id: number;
   name: string;
@@ -13,6 +19,12 @@ export default interface IUser {
   };
   liked: number[];
   history: IHistory[];
+  favorite: {
+    Unwind: number;
+    "Lawyers Spotlight": number;
+    "Curated News": number;
+  };
+  shared: number[];
   createdAt: Date;
   updatedAt: Date;
 }

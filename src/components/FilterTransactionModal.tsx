@@ -7,8 +7,10 @@ type FilterTransactionModalProps = {
   statusOptionArr: string[];
   status: string;
   setStatus: Dispatch<SetStateAction<string>>;
-  date: string;
-  setDate: Dispatch<SetStateAction<string>>;
+  fromDate: string;
+  setFromDate: Dispatch<SetStateAction<string>>;
+  toDate: string;
+  setToDate: Dispatch<SetStateAction<string>>;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
@@ -17,8 +19,10 @@ function FilterTransactionModal({
   statusOptionArr,
   status,
   setStatus,
-  date,
-  setDate,
+  fromDate,
+  setFromDate,
+  toDate,
+  setToDate,
   isOpen,
   setIsOpen,
 }: FilterTransactionModalProps) {
@@ -42,10 +46,16 @@ function FilterTransactionModal({
             setInputValue={setStatus}
           />
           <DateInput
-            label="By Date"
-            id="transaction-date"
-            inputValue={date}
-            setInputValue={setDate}
+            label="From Date"
+            id="transaction-from-date-modal"
+            inputValue={fromDate}
+            setInputValue={setFromDate}
+          />
+          <DateInput
+            label="To Date"
+            id="transaction-to-date-modal"
+            inputValue={toDate}
+            setInputValue={setToDate}
           />
         </div>
       </div>
