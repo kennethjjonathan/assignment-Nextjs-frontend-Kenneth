@@ -12,7 +12,8 @@
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [
         10,
-        7
+        7,
+        9
       ],
       "shared": [],
       "history": [
@@ -21,12 +22,6 @@
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697210214/dwgne7mxmkw3uup5xjci.jpg",
           "identifier": "Legal-actions-for-court-injustice",
           "readTime": "2023-10-19T07:07:25.120Z"
-        },
-        {
-          "title": "Joaquin leads the way in court debate",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Joaquin-leads-the-way-in-court-debate",
-          "readTime": "2023-10-19T07:14:13.404Z"
         },
         {
           "title": "The new regulation for private law",
@@ -47,12 +42,6 @@
           "readTime": "2023-10-19T07:48:54.885Z"
         },
         {
-          "title": "What is my favorite color",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
-          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
-          "readTime": "2023-10-19T08:04:08.511Z"
-        },
-        {
           "title": "Merge and Acquisition is revolutionized",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Merge-and-Acquisition-is-revolutionized",
@@ -63,11 +52,41 @@
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "What-can-we-learn-from-introverted-Lawyers",
           "readTime": "2023-10-19T23:13:58.880Z"
+        },
+        {
+          "title": "How great Lawyers maintain work-life balance",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
+          "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
+          "readTime": "2023-10-20T11:14:09.013Z"
+        },
+        {
+          "title": "Legally Great",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697775190/hc85fdfdqyw05anmumfw.jpg",
+          "identifier": "Legally-Great-k5ghahx7khuc",
+          "readTime": "2023-10-20T11:15:00.615Z"
+        },
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-20T11:15:19.400Z"
+        },
+        {
+          "title": "Joaquin leads the way in court debate",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "Joaquin-leads-the-way-in-court-debate",
+          "readTime": "2023-10-20T11:16:34.189Z"
+        },
+        {
+          "title": "Legal Draft Tips for Overseas Contracts",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774062/havqpukhjgevauynwroo.jpg",
+          "identifier": "Legal-Draft-Tips-for-Overseas-Contracts-j6te5r16duv9",
+          "readTime": "2023-10-20T11:18:19.053Z"
         }
       ],
       "favorite": {
         "Unwind": 0,
-        "Lawyers Spotlight": 0,
+        "Lawyers Spotlight": 1,
         "Curated News": 2
       }
     },
@@ -311,20 +330,20 @@
     {
       "liked": 0,
       "shared": 0,
-      "pricing": "Free",
+      "pricing": "Premium",
       "category": "Curated News",
-      "title": "Legal actions for court injustice",
+      "title": "Legally Great",
       "opening": "Who knew that the best lawyers in town is actually introverts",
       "author": "Kenneth J. Jonathan",
-      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697210214/dwgne7mxmkw3uup5xjci.jpg",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697775190/hc85fdfdqyw05anmumfw.jpg",
       "content": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ex a tortor molestie sodales. Quisque viverra dolor ut cursus vestibulum. Donec lacinia sagittis libero, scelerisque pharetra sem consequat vel. Nulla eu sem commodo nibh sagittis iaculis. Aliquam placerat risus ullamcorper efficitur dapibus. Donec quis nisl rutrum, pretium elit eu, imperdiet mauris. Proin imperdiet justo sed eros pulvinar feugiat. In ornare tortor vel eros imperdiet, volutpat tempus nisl viverra. Morbi ultricies neque ac sapien fermentum, ut pharetra tellus scelerisque.",
         "Aenean porttitor magna quis sagittis tempor. Vivamus tempor gravida tempus. Pellentesque lobortis quis tortor quis convallis. Aliquam tempor lacus sed lorem malesuada iaculis. Nulla vel rhoncus augue. Aenean hendrerit bibendum nunc et rutrum. Morbi vel est ex. Fusce sodales dignissim urna id lacinia. Aliquam pretium augue vel ipsum tristique fringilla. Aliquam imperdiet lacus et diam gravida tempus. Mauris eu pellentesque libero, ac pulvinar purus. Sed sed purus lobortis, tincidunt mauris vitae, auctor risus. Integer efficitur purus eu lacus ornare, non eleifend odio iaculis. Nam dapibus libero in augue elementum, non pulvinar eros commodo.",
-        "Ut eu nunc tempor, vulputate nulla ac, tempor risus. Nunc odio turpis, pharetra sed condimentum eu, lobortis ut arcu. Aenean volutpat ligula eu dui euismod, eget efficitur erat tincidunt. Quisque sodales mi quis tortor commodo volutpat. Etiam sed est vel magna bibendum fringilla. Nam viverra lacinia libero, nec varius sem posuere a. Duis interdum quis dolor non vestibulum. Aenean porta augue nec dolor aliquet, eu aliquet est aliquet. Proin at elementum massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. \n\n\n\nNulla vel ante ipsum. Nullam suscipit velit et risus maximus, vitae dictum justo facilisis."
+        "Ut eu nunc tempor, vulputate nulla ac, tempor risus. Nunc odio turpis, pharetra sed condimentum eu, lobortis ut arcu. Aenean volutpat ligula eu dui euismod, eget efficitur erat tincidunt. Quisque sodales mi quis tortor commodo volutpat. Etiam sed est vel magna bibendum fringilla. Nam viverra lacinia libero, nec varius sem posuere a. Duis interdum quis dolor non vestibulum. Aenean porta augue nec dolor aliquet, eu aliquet est aliquet. Proin at elemenzxZxZxZxZxZxZxZxZxZXZassasdjjsjjjsjjkenapa radasssssssssssssssssssssssssssssssss gituasdasdasdasdasdastum massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla vel ante ipsum. Nullam suscipit velit et risus maximus, vitae dictum justo facilisis."
       ],
-      "identifier": "Legal-actions-for-court-injustice",
+      "identifier": "Legally-Great-k5ghahx7khuc",
       "createdAt": "2023-10-12T17:55:04.346Z",
-      "updatedAt": "2023-10-13T15:16:55.335Z",
+      "updatedAt": "2023-10-20T04:13:11.823Z",
       "id": 1
     },
     {
@@ -423,7 +442,7 @@
       "id": 8
     },
     {
-      "liked": 299,
+      "liked": 300,
       "shared": 1,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
@@ -457,6 +476,82 @@
       "createdAt": "2023-10-19T06:11:46.533Z",
       "updatedAt": "2023-10-19T06:11:46.533Z",
       "id": 10
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Free",
+      "category": "Unwind",
+      "title": "Mandatory Tender Offer vs VTO",
+      "opening": "A very good thing to know in business law",
+      "author": "Kenneth J. Jonathan",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697772151/wqlvrhfsessgw4ecgycc.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.",
+        "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.",
+        "Aenean et ante eget velit vulputate bibendum vel eget nisl. Maecenas rhoncus iaculis magna. Nunc a lacus porttitor, gravida erat a, mollis lacus. Duis lobortis pharetra diam id eleifend. Maecenas condimentum urna et viverra venenatis. Quisque lacinia aliquet ex at porttitor. Morbi vel nisi venenatis, aliquam velit et, venenatis enim. Donec et justo eu ligula ullamcorper mattis eget vel nibh. Nam id orci sit amet urna rutrum molestie sit amet non felis. Vestibulum vehicula vehicula orci sed lobortis. Integer sed ullamcorper mi. Vestibulum tristique lectus ac neque convallis, sit amet viverra est pellentesque."
+      ],
+      "identifier": "Mandatory-Tender-Offer-vs-VTO-2l7jqfzhn5j1",
+      "createdAt": "2023-10-20T03:22:32.700Z",
+      "updatedAt": "2023-10-20T03:22:32.700Z",
+      "id": 11
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Free",
+      "category": "Lawyers Spotlight",
+      "title": "I love christmas",
+      "opening": "Christmas is so fun, can't wait for December",
+      "author": "Kenneth J. Jonathan",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697773454/nvjhuagotljbly6ehpjm.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.",
+        "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.",
+        "Aenean et ante eget velit vulputate bibendum vel eget nisl. Maecenas rhoncus iaculis magna. Nunc a lacus porttitor, gravida erat a, mollis lacus. Duis lobortis pharetra diam id eleifend. Maecenas condimentum urna et viverra venenatis. Quisque lacinia aliquet ex at porttitor. Morbi vel nisi venenatis, aliquam velit et, venenatis enim. Donec et justo eu ligula ullamcorper mattis eget vel nibh. Nam id orci sit amet urna rutrum molestie sit amet non felis. Vestibulum vehicula vehicula orci sed lobortis. Integer sed ullamcorper mi. Vestibulum tristique lectus ac neque convallis, sit amet viverra est pellentesque."
+      ],
+      "identifier": "I-love-christmas-0fa842xmqkxl",
+      "createdAt": "2023-10-20T03:44:15.281Z",
+      "updatedAt": "2023-10-20T03:44:15.281Z",
+      "id": 12
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Lawyers Spotlight",
+      "title": "Legal Draft Tips for Overseas Contracts",
+      "opening": "Bilateral signings",
+      "author": "Kenneth J. Jonathan",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774062/havqpukhjgevauynwroo.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.\nAenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.\n"
+      ],
+      "identifier": "Legal-Draft-Tips-for-Overseas-Contracts-j6te5r16duv9",
+      "createdAt": "2023-10-20T03:54:23.566Z",
+      "updatedAt": "2023-10-20T03:54:23.566Z",
+      "id": 13
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Unwind",
+      "title": "How great Lawyers maintain work-life balance",
+      "opening": "Learn these tips",
+      "author": "Kenneth J. Jonathan ",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.",
+        "",
+        "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.",
+        "",
+        "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus."
+      ],
+      "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
+      "createdAt": "2023-10-20T04:08:34.932Z",
+      "updatedAt": "2023-10-20T04:08:34.932Z",
+      "id": 14
     }
   ],
   "transactions": [

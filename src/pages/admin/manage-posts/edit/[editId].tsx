@@ -19,7 +19,6 @@ type EditPost = {
 
 const EditPost = ({ data }: EditPost) => {
   const router = useRouter();
-
   const optionArr: string[] = ["Unwind", "Lawyers Spotlight", "Curated News"];
   const [titleValue, setTitleValue] = useState<string>(data.title);
   const [openingValue, setOpeningValue] = useState<string>(data.opening!);
@@ -29,7 +28,7 @@ const EditPost = ({ data }: EditPost) => {
   const [pricingOption, setPricingOption] = useState<"Free" | "Premium">(
     data.pricing ? "Premium" : "Free"
   );
-  const [content, setContent] = useState<string>(data.content.join("/n"));
+  const [content, setContent] = useState<string>(data.content.join("\n"));
 
   const setInitialThumbnail = async () => {
     try {
@@ -55,7 +54,6 @@ const EditPost = ({ data }: EditPost) => {
   };
 
   const handleCreatePost = async () => {
-    console.log("mulai");
     try {
       const thumbnailURL: string = await uploadImage(thumbnailFile);
       console.log("Ini image url", thumbnailURL);
@@ -75,7 +73,7 @@ const EditPost = ({ data }: EditPost) => {
             opening: openingValue,
             author: author,
             thumbnail: thumbnailURL,
-            content: content.split("/n"),
+            content: content.split("\n"),
             identifier:
               titleValue.split(" ").join("-") + "-" + generateRandomString(),
             createdAt: data.createdAt,
@@ -95,9 +93,9 @@ const EditPost = ({ data }: EditPost) => {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
-        <title>Edit</title>
+        <title>Edit A Post</title>
       </Head>
       <div className="container mx-auto px-3 pt-5 pb-16">
         <h1 className="text-5xl font-[800]">Edit Post (id: {data.id})</h1>
@@ -162,11 +160,11 @@ const EditPost = ({ data }: EditPost) => {
             ) : (
               <>
                 <p className="text-lg font-[700]">Thumbnail:</p>
-                <div className="w-72 h-48 rounded-md shadow-2xl mt-3 sm:w-auto sm:h-60 md:h-96 overflow-hidden relative">
-                  <img
+                <div className="w-72 h-64 rounded-md shadow-2xl mt-3 sm:w-96 sm:h-80 md:h-96 overflow-hidden relative">
+                  <Image
                     src={URL.createObjectURL(thumbnailFile)}
                     alt="chosen thumbnail"
-                    className="h-full w-full"
+                    fill={true}
                   />
                 </div>
 
@@ -190,9 +188,6 @@ const EditPost = ({ data }: EditPost) => {
               inputValue={content}
               setInputValue={setContent}
             />
-            <p className="text-base font-[500] mt-3">
-              Please type in &quot;/n&quot; to seperate paragraphs.
-            </p>
           </div>
           <div className="mt-3">
             <p className="text-xl font-[800]">
@@ -242,7 +237,7 @@ const EditPost = ({ data }: EditPost) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

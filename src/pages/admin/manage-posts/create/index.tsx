@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Head from "next/head";
 import GenericTextInput from "@/components/GenericTextInput";
 import SelectOptions from "@/components/SelectOptions";
@@ -16,11 +16,11 @@ function Index() {
   const [openingValue, setOpeningValue] = useState<string>("");
   const [category, setCategory] = useState<string>(optionArr[0]);
   const [author, setAurhor] = useState<string>("");
-  const [thumbnailFile, setThumbnailFile] = useState<File>();
   const [pricingOption, setPricingOption] = useState<"Free" | "Premium">(
     "Premium"
   );
   const [content, setContent] = useState<string>("");
+  const [thumbnailFile, setThumbnailFile] = useState<File>();
 
   const router = useRouter();
 
@@ -38,7 +38,6 @@ function Index() {
   async function handleCreatePost() {
     try {
       const thumbnailURL: string = await uploadImage(thumbnailFile);
-      console.log("Ini image url", thumbnailURL);
       const response = await fetch(`${CONSTANTS.BASELOCALHOST}/posts`, {
         method: "POST",
         headers: {
@@ -53,7 +52,7 @@ function Index() {
           opening: openingValue,
           author: author,
           thumbnail: thumbnailURL,
-          content: content.split("/n"),
+          content: content.split("\n"),
           identifier:
             titleValue.split(" ").join("-") + "-" + generateRandomString(),
           createdAt: new Date(),
@@ -134,14 +133,15 @@ function Index() {
             ) : (
               <>
                 <p className="text-lg font-[700]">Thumbnail:</p>
-                <div className="w-72 h-48 rounded-md shadow-2xl mt-3 sm:w-auto sm:h-60 md:h-96 relative"></div>
-                <Image
-                  src={URL.createObjectURL(thumbnailFile)}
-                  alt="chosen thumbnail"
-                  fill={true}
-                />
+                <div className="w-72 h-64 rounded-md shadow-2xl mt-3 sm:w-96 sm:h-80 md:h-96 overflow-hidden relative">
+                  <Image
+                    src={URL.createObjectURL(thumbnailFile)}
+                    alt="chosen thumbnail"
+                    fill={true}
+                  />
+                </div>
                 <p className="text-base font-[500] mt-3">
-                  {thumbnailFile.name !== undefined
+                  {thumbnailFile !== undefined
                     ? thumbnailFile.name
                     : "Can't load file name"}
                 </p>

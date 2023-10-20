@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import useSWR from "swr";
@@ -7,13 +7,29 @@ import IArticle from "@/interface/IArticle";
 import PostsRow from "@/components/PostsRow";
 import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "next/router";
+import axios from "axios";
+import PaginationNav from "@/components/PaginationNav";
 
 function Index() {
-  const fetcher = (url: string) => fetch(url).then((r) => r.json());
-  const { data, isLoading, error } = useSWR(
-    `${CONSTANTS.BASELOCALHOST}/posts`,
-    fetcher
-  );
+  const [data, setData] = useState<IArticle[]>([]);
+  const [dataAmount, setDataAmount] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(0);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        const response = await axios.get(
+          `${CONSTANTS.BASELOCALHOST}/posts?_page=${currentPage}&_limit=5`
+        );
+        setDataAmount(response.headers["x-total-count"]);
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getPosts();
+  }, [currentPage]);
+
   const router = useRouter();
 
   return (
@@ -66,6 +82,11 @@ function Index() {
             </tbody>
           </table>
         </div>
+        <PaginationNav
+          dataAmount={dataAmount}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </>
   );

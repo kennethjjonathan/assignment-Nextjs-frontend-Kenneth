@@ -23,7 +23,7 @@ function TextAreaInput({
     >
       {label}
       <textarea
-        className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-lg focus:outline-none ${
+        className={`px-5 py-2 mt-2 w-full border-2 rounded-md font-[400] text-lg focus:outline-none h-96 ${
           inputValid !== false ? "border-transparent" : "border-red-custom"
         }`}
         placeholder={placeHolder}

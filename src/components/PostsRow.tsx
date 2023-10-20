@@ -34,14 +34,6 @@ function PostsRow({ post, index }: PostsRowProps) {
     }
   }
 
-  // function handleEdit() {
-  //   router.push({
-  //     pathname: `/admin/manage-posts/edit/${post.id}`,
-  //     query: {
-  //       data: JSON.stringify(post),
-  //     },
-  //   });
-  // }
   return (
     <>
       <ArticleDetailModal
@@ -84,7 +76,7 @@ function PostsRow({ post, index }: PostsRowProps) {
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-blue-500 duration-300 hover:text-blue-800 text-sm sm:text-base lg:text-lg">
           <Link href={`/admin/manage-posts/edit/${post.id}`}>
-            <TbEdit />
+            <TbEdit className="text-center w-full" />
           </Link>
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-red-custom duration-300 hover:text-red-900 text-sm sm:text-base lg:text-lg">
