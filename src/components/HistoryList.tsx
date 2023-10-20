@@ -21,7 +21,7 @@ function HistoryList({ history }: HistoryListProps) {
         <table className="w-full">
           <thead>
             <tr className="text-left px-2 py-1 text-text-secondary main-text text-lg lg:text-xl">
-              <th>Time</th>
+              <th className="text-center">Time</th>
               <th>Title</th>
               <th></th>
             </tr>

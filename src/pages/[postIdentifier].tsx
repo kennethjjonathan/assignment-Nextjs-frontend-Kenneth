@@ -1,17 +1,15 @@
 import CONSTANTS from "@/constants/constants";
 import IArticle from "@/interface/IArticle";
-import IUser, { Favorite } from "@/interface/IUser";
+import IUser from "@/interface/IUser";
 import { GetServerSideProps } from "next";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import dateOnlyFormatter from "@/library/helper/dateOnlyFormatter";
 import * as cookie from "cookie";
 import NotSubscribed from "@/components/NotSubscribed";
 import LikeButton from "@/components/LikeButton";
-import { useCookies } from "react-cookie";
 import historyUpdater from "@/library/helper/historyUpdater";
 import ShareButton from "@/components/ShareButton";
-import { useRouter } from "next/router";
 import PostCard from "@/components/PostCard";
 
 type PostDetailProps = {
@@ -24,26 +22,10 @@ const openingParagraphClass: string =
   "first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:font-bold first-letter:text-red-custom first-letter:mr-2 first-letter:float-left sm:first-letter:text-7xl";
 
 function Index({ post, user, recommendedData }: PostDetailProps) {
-  const [_, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
-  async function setUser() {
-    if (!post.id || user === null) {
-      return;
-    }
-    const newUser = historyUpdater(user, post);
-    setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
-      path: "/",
-      maxAge: 3600,
-      sameSite: true,
-    });
-  }
-
-  useEffect(() => {
-    setUser();
-  }, []);
   return (
     <>
-      <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-generic-top-mobile">
-        <div className="container mx-auto px-generic-horizontal-mobile flex flex-col gap-8 items-center justify-center lg:flex-row">
+      <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-generic-top-mobile pb-5">
+        <div className="container mx-auto px-generic-horizontal-mobile flex flex-col gap-8 items-center justify-between w-full lg:flex-row">
           <div className="flex flex-col justify-center items-center lg:gap-5">
             <p className="text-xl text-center text-red-custom sm:text-2xl lg:text-3xl">
               {post.category}
@@ -58,13 +40,13 @@ function Index({ post, user, recommendedData }: PostDetailProps) {
               post.author
             }, ${dateOnlyFormatter(post.createdAt.toString())}`}</p>
           </div>
-          <div className="w-auto h-auto grid place-items-center">
+          <div className="w-full h-[310px] grid place-items-center relative sm:w-full sm:h-[350px] md:w-full lg:max-w-[50%]">
             <Image
               src={post.thumbnail}
               alt="Thumbnail of the post"
-              width={1000}
-              height={1000}
+              fill={true}
               className="rounded-sm"
+              objectFit="cover"
             />
           </div>
         </div>
@@ -119,17 +101,20 @@ export const getServerSideProps: GetServerSideProps = async ({
   let user: IUser | null;
   let recommendedData: IArticle[] | null = null;
   const cookieData = cookie.parse(req.headers.cookie!);
+
   if (cookieData.USER === undefined) {
     user = null;
   } else {
     user = JSON.parse(cookieData.USER);
   }
+
   const response = await fetch(
     `${CONSTANTS.BASELOCALHOST}/posts?identifier=${params?.postIdentifier}`
   );
   if (!response.ok) throw new Error(response.statusText);
   const data = await response.json();
   const post = data[0];
+
   if (
     (user === undefined || !user?.subscription?.isSubscribed) &&
     post.pricing === "Premium"
@@ -138,9 +123,16 @@ export const getServerSideProps: GetServerSideProps = async ({
       post.content[0].slice(0, post.content[0].length / 2) + "...",
     ];
   }
+
   if (user !== null && post.id) {
-    const newUser = historyUpdater(user, post);
+    const getUserResponse = await fetch(
+      `${CONSTANTS.BASELOCALHOST}/users/${user.id}`
+    );
+    if (!getUserResponse.ok) throw new Error(getUserResponse.statusText);
+    const userData = await getUserResponse.json();
+    const newUser = historyUpdater(userData, post);
     user = newUser;
+    
     const userResponse = await fetch(
       `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
       {
@@ -151,8 +143,10 @@ export const getServerSideProps: GetServerSideProps = async ({
         body: JSON.stringify(newUser),
       }
     );
+
     if (!userResponse.ok) throw new Error(userResponse.statusText);
     let favoriteNumber: number = 0;
+
     for (let k in user.favorite) {
       if (user.favorite[k as keyof typeof user.favorite] > favoriteNumber) {
         favoriteCategory = k;

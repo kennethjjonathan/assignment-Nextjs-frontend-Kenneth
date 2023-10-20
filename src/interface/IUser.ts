@@ -1,11 +1,5 @@
 import IHistory from "./IHistory";
 
-export type Favorite = {
-  Unwind: number;
-  "Lawyers Spotlight": number;
-  "Curated News": number;
-};
-
 export default interface IUser {
   id: number;
   name: string;

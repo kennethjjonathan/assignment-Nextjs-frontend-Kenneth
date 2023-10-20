@@ -10,7 +10,6 @@ function Index() {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   ];
-
   const yearlyPoints: string[] = [
     "Save more",
     "Read all premium contents.",

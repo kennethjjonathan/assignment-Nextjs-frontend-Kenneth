@@ -11,7 +11,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 function Index() {
   const [moneyValue, setMoneyValue] = useState<number>(0);
   const [isMoneyEnough, setIsMoneyEnough] = useState<boolean>(true);
-  const [cookie, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
+  const [cookie, _] = useCookies([CONSTANTS.COOKIENAME]);
   const [transaction, setTransaction] = useState<ITransaction | undefined>(
     undefined
   );
@@ -25,7 +25,6 @@ function Index() {
       );
       if (!response.ok) throw new Error(response.statusText);
       const data = await response.json();
-      console.log(data[0]);
       setTransaction(data[0]);
     } catch (error) {
       console.error(error);

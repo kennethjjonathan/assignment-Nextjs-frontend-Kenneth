@@ -4,7 +4,6 @@ import React, { useEffect, useState, useRef, CSSProperties } from "react";
 import IUser from "@/interface/IUser";
 import CONSTANTS from "@/constants/constants";
 import { useRouter } from "next/router";
-import { useCookies } from "react-cookie";
 
 type LikeButtonProps = {
   post: IArticle;
@@ -12,7 +11,6 @@ type LikeButtonProps = {
 };
 
 function LikeButton({ post, user }: LikeButtonProps) {
-  const [_, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
   const router = useRouter();
   const [liked, setLiked] = useState<boolean>(false);
   const [likeAmount, setLikeAmount] = useState<number>(post.liked);
@@ -76,19 +74,12 @@ function LikeButton({ post, user }: LikeButtonProps) {
       router.push("/login");
       return;
     }
-
     handleFlyHeart();
-
     if (!liked) {
       setLikeAmount((prev) => prev + 1);
       const newLikeArr: number[] = [...user.liked, post.id];
       const newUser: IUser = { ...user, liked: newLikeArr };
       newUser.favorite[post.category] = user.favorite[post.category] + 1;
-      setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
-        path: "/",
-        maxAge: 3600,
-        sameSite: true,
-      });
       try {
         const response = await fetch(
           `${CONSTANTS.BASELOCALHOST}/posts/${post.id}`,
@@ -121,11 +112,6 @@ function LikeButton({ post, user }: LikeButtonProps) {
       const filtered: number[] = user.liked.filter((item) => item !== post.id);
       const newUser: IUser = { ...user, liked: filtered };
       newUser.favorite[post.category] = newUser.favorite[post.category] - 1;
-      setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
-        path: "/",
-        maxAge: 3600,
-        sameSite: true,
-      });
       try {
         setLikeAmount((prev) => prev - 1);
         const response = await fetch(

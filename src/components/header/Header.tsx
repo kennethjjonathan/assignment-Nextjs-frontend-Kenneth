@@ -63,7 +63,7 @@ function Header() {
                 <Link href="/register">Register</Link>
               </li>
             </>
-          ) : (
+          ) : /\/admin\/*/gi.test(pathname) ? (
             <>
               <li
                 className={`main-text font-[800] decoration-2 text-base duration-300 hover:underline hover:decoration-blue-500 ${
@@ -98,6 +98,33 @@ function Header() {
                 }`}
               >
                 <Link href="/admin/transactions">Transactions</Link>
+              </li>
+              <li
+                className={`main-text font-[800] decoration-2 text-base duration-300 hover:underline hover:decoration-blue-500 cursor-pointer`}
+                onClick={handleLogout}
+              >
+                Log Out
+              </li>
+            </>
+          ) : (
+            <>
+              <li
+                className={`main-text font-[800] decoration-2 text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  pathname === "/profile"
+                    ? "underline decoration-red-custom"
+                    : ""
+                }`}
+              >
+                <Link href="/profile">Hello, {cookie.USER.name}</Link>
+              </li>
+              <li
+                className={`main-text font-[800] decoration-2 text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  pathname === "/subscribe"
+                    ? "underline decoration-red-custom"
+                    : ""
+                }`}
+              >
+                <Link href="/subscribe">Subscribe</Link>
               </li>
               <li
                 className={`main-text font-[800] decoration-2 text-base duration-300 hover:underline hover:decoration-blue-500 cursor-pointer`}

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Head from "next/head";
-import useSWR from "swr";
 import CONSTANTS from "@/constants/constants";
 import IArticle from "@/interface/IArticle";
 import PostsRow from "@/components/PostsRow";
@@ -12,14 +10,15 @@ import PaginationNav from "@/components/PaginationNav";
 
 function Index() {
   const [data, setData] = useState<IArticle[]>([]);
+  const dataPerPage: number = 5;
   const [dataAmount, setDataAmount] = useState<number>(0);
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
     const getPosts = async () => {
       try {
         const response = await axios.get(
-          `${CONSTANTS.BASELOCALHOST}/posts?_page=${currentPage}&_limit=5`
+          `${CONSTANTS.BASELOCALHOST}/posts?_page=${currentPage}&_limit=${dataPerPage}`
         );
         setDataAmount(response.headers["x-total-count"]);
         setData(response.data);
@@ -37,7 +36,7 @@ function Index() {
       <Head>
         <title>Manage Posts</title>
       </Head>
-      <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
+      <div className="container mx-auto px-3 pt-32 sm:pt-40 flex flex-col justify-between items-stretch pb-16">
         <div className="flex flex-col justify-between items-baseline gap-2">
           <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
             Manage Posts
@@ -50,12 +49,12 @@ function Index() {
             Create a Post
           </PrimaryButton>
         </div>
-        <div className="mt-8 w-full overflow-x-auto">
+        <div className="mt-8 w-full overflow-x-auto h-96">
           <table className="w-full border-collapse border-[1px] border-text-primary">
             <thead className="text-sm font-bold md:text-lg lg:text-xl bg-slate-500">
               <tr>
                 <th className="py-2 px-2 border-[1px] border-text-primary">
-                  Post ID
+                  No
                 </th>
                 <th className="py-2 px-2 border-[1px] border-text-primary">
                   Title
@@ -77,16 +76,25 @@ function Index() {
             </thead>
             <tbody>
               {data?.map((post: IArticle, index: number) => (
-                <PostsRow key={post.id} post={post} index={index} />
+                <PostsRow
+                  key={post.id}
+                  post={post}
+                  index={index}
+                  currentPage={currentPage}
+                  dataPerPage={dataPerPage}
+                />
               ))}
             </tbody>
           </table>
         </div>
-        <PaginationNav
-          dataAmount={dataAmount}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        <div className="mx-auto">
+          <PaginationNav
+            dataAmount={dataAmount}
+            currentPage={currentPage}
+            dataPerPage={dataPerPage}
+            setCurrentPage={setCurrentPage}
+          />
+        </div>
       </div>
     </>
   );

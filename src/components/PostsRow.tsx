@@ -10,11 +10,13 @@ import DeleteConfirmationModal from "./DeleteConfirmationModal";
 import Link from "next/link";
 
 type PostsRowProps = {
+  currentPage: number;
+  dataPerPage: number;
   post: IArticle;
   index: number;
 };
 
-function PostsRow({ post, index }: PostsRowProps) {
+function PostsRow({ currentPage, dataPerPage, post, index }: PostsRowProps) {
   const router = useRouter();
   const [isDetailOpen, setIsDetailOpen] = useState<boolean>(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState<boolean>(false);
@@ -53,7 +55,7 @@ function PostsRow({ post, index }: PostsRowProps) {
         }`}
       >
         <td className="border-[1px] border-text-primary py-2 px-2">
-          {post.id}
+          {(currentPage - 1) * dataPerPage + index + 1}
         </td>
         <td className="py-2 px-2 text-ellipsis line-clamp-1">{post.title}</td>
         <td

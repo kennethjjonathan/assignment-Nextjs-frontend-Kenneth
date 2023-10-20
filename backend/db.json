@@ -1,96 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Kenneth",
-      "email": "kenneth@gmail.com",
-      "password": "12345678",
-      "isAdmin": true,
-      "address": "Jl. Danau Towuti No. 74",
-      "phoneNumber": "0812-3456-7899",
-      "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
-      "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
-      "liked": [
-        10,
-        7,
-        9
-      ],
-      "shared": [],
-      "history": [
-        {
-          "title": "Legal actions for court injustice",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697210214/dwgne7mxmkw3uup5xjci.jpg",
-          "identifier": "Legal-actions-for-court-injustice",
-          "readTime": "2023-10-19T07:07:25.120Z"
-        },
-        {
-          "title": "The new regulation for private law",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "The-new-regulation-for-private-law",
-          "readTime": "2023-10-19T07:14:23.566Z"
-        },
-        {
-          "title": "Why emphaty is an underated skill for lawyers",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Why-emphaty-is-an-underated-skill-for-lawyers",
-          "readTime": "2023-10-19T07:15:49.818Z"
-        },
-        {
-          "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Kenneth-J.-Jonathan-is-the-slickest-Corporate-Lawyer-in-downtown",
-          "readTime": "2023-10-19T07:48:54.885Z"
-        },
-        {
-          "title": "Merge and Acquisition is revolutionized",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Merge-and-Acquisition-is-revolutionized",
-          "readTime": "2023-10-19T15:11:53.489Z"
-        },
-        {
-          "title": "What can we learn from introverted Lawyers",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "What-can-we-learn-from-introverted-Lawyers",
-          "readTime": "2023-10-19T23:13:58.880Z"
-        },
-        {
-          "title": "How great Lawyers maintain work-life balance",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
-          "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
-          "readTime": "2023-10-20T11:14:09.013Z"
-        },
-        {
-          "title": "Legally Great",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697775190/hc85fdfdqyw05anmumfw.jpg",
-          "identifier": "Legally-Great-k5ghahx7khuc",
-          "readTime": "2023-10-20T11:15:00.615Z"
-        },
-        {
-          "title": "What is my favorite color",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
-          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
-          "readTime": "2023-10-20T11:15:19.400Z"
-        },
-        {
-          "title": "Joaquin leads the way in court debate",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Joaquin-leads-the-way-in-court-debate",
-          "readTime": "2023-10-20T11:16:34.189Z"
-        },
-        {
-          "title": "Legal Draft Tips for Overseas Contracts",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774062/havqpukhjgevauynwroo.jpg",
-          "identifier": "Legal-Draft-Tips-for-Overseas-Contracts-j6te5r16duv9",
-          "readTime": "2023-10-20T11:18:19.053Z"
-        }
-      ],
-      "favorite": {
-        "Unwind": 0,
-        "Lawyers Spotlight": 1,
-        "Curated News": 2
-      }
-    },
-    {
       "id": 2,
       "name": "Agus",
       "email": "agus@gmail.com",
@@ -141,7 +51,7 @@
       "name": "Jenner",
       "email": "jenner@gmail.com",
       "password": "12345678",
-      "isAdmin": false,
+      "isAdmin": true,
       "address": "Jl. Danau Towuti No. 74",
       "phoneNumber": "0812-3456-7899",
       "subscription": {
@@ -151,7 +61,14 @@
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": [],
+      "history": [
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-20T19:35:24.034Z"
+        }
+      ],
       "shared": [],
       "favorite": {
         "Unwind": 0,
@@ -214,17 +131,26 @@
       "phoneNumber": "0812-9856-2868",
       "subscription": {
         "isSubscribed": true,
-        "expiration": "2023-11-17T06:41:42.611Z"
+        "expiration": "2023-11-20T12:33:22.422Z"
       },
       "createdAt": "2023-10-16T04:47:34.320Z",
-      "updatedAt": "2023-10-17T06:41:42.611Z",
+      "updatedAt": "2023-10-20T12:33:22.422Z",
       "id": 7,
-      "liked": [],
-      "history": [],
+      "liked": [
+        12
+      ],
+      "history": [
+        {
+          "title": "I love christmas",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697773454/nvjhuagotljbly6ehpjm.jpg",
+          "identifier": "I-love-christmas-0fa842xmqkxl",
+          "readTime": "2023-10-20T19:12:03.865Z"
+        }
+      ],
       "shared": [],
       "favorite": {
         "Unwind": 0,
-        "Lawyers Spotlight": 0,
+        "Lawyers Spotlight": 1,
         "Curated News": 0
       }
     },
@@ -423,7 +349,7 @@
       "id": 7
     },
     {
-      "liked": 505,
+      "liked": 506,
       "shared": 0,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
@@ -497,8 +423,8 @@
       "id": 11
     },
     {
-      "liked": 0,
-      "shared": 0,
+      "liked": 2,
+      "shared": 1,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
       "title": "I love christmas",
@@ -516,7 +442,7 @@
       "id": 12
     },
     {
-      "liked": 0,
+      "liked": 1,
       "shared": 0,
       "pricing": "Premium",
       "category": "Lawyers Spotlight",
@@ -671,6 +597,33 @@
       "createdAt": "2023-10-19T03:02:29.556Z",
       "updatedAt": "2023-10-19T03:32:59.786Z",
       "id": 11
+    },
+    {
+      "userId": 1,
+      "status": "process",
+      "paymentCompletion": true,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-20T10:05:41.365Z",
+      "updatedAt": "2023-10-20T10:06:14.684Z",
+      "id": 12
+    },
+    {
+      "userId": 7,
+      "status": "completed",
+      "paymentCompletion": true,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-20T12:21:11.559Z",
+      "updatedAt": "2023-10-20T12:33:22.392Z",
+      "id": 13,
+      "user": {
+        "subscription": {
+          "isSubscribe": true,
+          "expiration": "2023-11-20T12:33:22.392Z"
+        },
+        "updatedAt": "2023-10-20T12:33:22.392Z"
+      }
     }
   ]
 }

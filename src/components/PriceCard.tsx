@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 import { AiFillCheckCircle } from "react-icons/ai";
 import QrCodeModal from "./QrCodeModal";
-import CONSTANTS from "@/constants/constants";
 
 type PriceCardProps = {
   bestValue?: boolean;

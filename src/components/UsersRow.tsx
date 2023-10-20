@@ -5,12 +5,20 @@ import PrimaryButton from "./PrimaryButton";
 import CONSTANTS from "@/constants/constants";
 
 type UsersRowProps = {
+  dataPerPage: number;
+  currentPage: number;
   user: IUser;
   index: number;
   updateToggle: React.Dispatch<SetStateAction<boolean>>;
 };
 
-function UsersRow({ user, index, updateToggle }: UsersRowProps) {
+function UsersRow({
+  currentPage,
+  dataPerPage,
+  user,
+  index,
+  updateToggle,
+}: UsersRowProps) {
   async function handleDeactivateUser() {
     if (!user.subscription?.isSubscribed) {
       return;
@@ -45,7 +53,7 @@ function UsersRow({ user, index, updateToggle }: UsersRowProps) {
       }`}
     >
       <td className="border-[1px] border-text-primary py-2 px-2">
-        {index + 1}
+        {(currentPage - 1) * dataPerPage + index + 1}
       </td>
       <td className="border-[1px] border-text-primary py-2 px-2">
         {user.name}

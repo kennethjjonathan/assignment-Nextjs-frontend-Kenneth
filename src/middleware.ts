@@ -20,6 +20,7 @@ export async function middleware(req: NextRequest) {
 
   const { pathname } = req.nextUrl;
   if (isAdminRoute(pathname) && !user.isAdmin) {
+    console.log("bukan admin");
     return NextResponse.redirect(new URL("/login", req.url));
   }
 

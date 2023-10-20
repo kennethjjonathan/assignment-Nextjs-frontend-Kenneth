@@ -3,25 +3,30 @@ import IUser from "@/interface/IUser";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import UsersRow from "@/components/UsersRow";
+import PaginationNav from "@/components/PaginationNav";
+import axios from "axios";
 
 function Index() {
   const [usersArray, setUsersArray] = useState<IUser[]>([]);
   const [updateToggle, setUpdateToggle] = useState<boolean>(false);
+  const dataPerPage: number = 5;
+  const [dataAmount, setDataAmount] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
   const getUsers = async () => {
     try {
-      const response = await fetch(
-        `${CONSTANTS.BASELOCALHOST}/users?isAdmin=false`
+      const response = await axios.get(
+        `${CONSTANTS.BASELOCALHOST}/users?isAdmin=false&_page=${currentPage}&_limit=${dataPerPage}`
       );
-      if (!response.ok) throw new Error(response.statusText);
-      const data = await response.json();
-      setUsersArray(data);
+      setDataAmount(response.headers["x-total-count"]);
+      setUsersArray(response.data);
     } catch (error) {
       console.error(error);
     }
   };
   useEffect(() => {
     getUsers();
-  }, [updateToggle]);
+  }, [updateToggle, currentPage]);
   return (
     <>
       <Head>
@@ -31,7 +36,7 @@ function Index() {
         <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
           Customers
         </h1>
-        <div className="mt-8 w-full overflow-x-auto">
+        <div className="mt-8 w-full overflow-x-auto h-96">
           <table className="w-full border-collapse border-[1px] border-text-primary">
             <thead className="text-sm font-bold md:text-lg lg:text-xl bg-slate-500">
               <tr>
@@ -53,6 +58,8 @@ function Index() {
             <tbody>
               {usersArray.map((user, index) => (
                 <UsersRow
+                  dataPerPage={dataPerPage}
+                  currentPage={currentPage}
                   user={user}
                   index={index}
                   key={user.id}
@@ -61,6 +68,14 @@ function Index() {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="flex justify-center items-center">
+          <PaginationNav
+            dataAmount={dataAmount}
+            currentPage={currentPage}
+            dataPerPage={dataPerPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
       </div>
     </>

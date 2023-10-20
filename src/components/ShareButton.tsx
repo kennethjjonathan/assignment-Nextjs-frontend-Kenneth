@@ -7,7 +7,6 @@ import ModalBase from "./ModalBase";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import CONSTANTS from "@/constants/constants";
-import { useCookies } from "react-cookie";
 
 type ShareButtonProps = {
   post: IArticle;
@@ -17,7 +16,6 @@ type ShareButtonProps = {
 function ShareButton({ post, user }: ShareButtonProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [_, setCookie] = useCookies([CONSTANTS.COOKIENAME]);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [shareAmount, setShareAmount] = useState<number>(post.shared);
   const [shared, setShared] = useState<boolean>(false);
@@ -49,12 +47,6 @@ function ShareButton({ post, user }: ShareButtonProps) {
     const newShareArr: number[] = user!.shared.slice();
     newShareArr.push(post.id);
     const newUser: IUser = { ...user!, shared: newShareArr };
-    setCookie(CONSTANTS.COOKIENAME, JSON.stringify(newUser), {
-      path: "/",
-      maxAge: 3600,
-      sameSite: true,
-    });
-
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/posts/${post.id}`,

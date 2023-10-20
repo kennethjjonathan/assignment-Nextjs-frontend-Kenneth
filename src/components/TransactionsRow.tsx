@@ -9,12 +9,16 @@ import CancelTransactionModal from "./CancelTransactionModal";
 import generateOneMonth from "@/library/helper/generateOneMonth";
 
 type TransactionsRowProps = {
+  dataPerPage: number;
+  currentPage: number;
   transaction: ITransaction;
   index: number;
   setUpdateToggle: React.Dispatch<SetStateAction<boolean>>;
 };
 
 function TransactionsRow({
+  dataPerPage,
+  currentPage,
   transaction,
   index,
   setUpdateToggle,
@@ -141,7 +145,7 @@ function TransactionsRow({
         }`}
       >
         <td className="border-[1px] border-text-primary py-2 px-2">
-          {transaction.id}
+          {(currentPage - 1) * dataPerPage + index + 1}
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2">
           {transaction.user?.email}

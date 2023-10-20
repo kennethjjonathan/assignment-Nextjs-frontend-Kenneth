@@ -8,6 +8,8 @@ import DateInput from "@/components/DateInput";
 import FilterTransactionModal from "@/components/FilterTransactionModal";
 import { BsFilterLeft } from "react-icons/bs";
 import PrimaryButton from "@/components/PrimaryButton";
+import axios from "axios";
+import PaginationNav from "@/components/PaginationNav";
 
 function Index() {
   const statusOptionArr: string[] = ["All", "process", "canceled", "completed"];
@@ -17,6 +19,9 @@ function Index() {
   const [toDate, setToDate] = useState<string>("");
   const [updateToggle, setUpdateToggle] = useState<boolean>(true);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
+  const dataPerPage: number = 5;
+  const [dataAmount, setDataAmount] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   function addADay(input: string) {
     const date: Date = new Date(input);
@@ -26,16 +31,17 @@ function Index() {
 
   async function getTransactions() {
     try {
-      const response = await fetch(
-        `${CONSTANTS.BASELOCALHOST}/transactions?_expand=user${
+      const response = await axios.get(
+        `${
+          CONSTANTS.BASELOCALHOST
+        }/transactions?_expand=user&_page=${currentPage}&_limit=${dataPerPage}${
           status === "All" ? "" : `&status=${status}`
         }${fromDate === "" ? "" : `&createdAt_gte=${fromDate}`}${
           toDate === "" ? "" : `&createdAt_lte=${addADay(toDate)}`
         }`
       );
-      if (!response.ok) throw new Error(response.statusText);
-      const data = await response.json();
-      setTransactionsList(data);
+      setDataAmount(response.headers["x-total-count"]);
+      setTransactionsList(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +49,7 @@ function Index() {
 
   useEffect(() => {
     getTransactions();
-  }, [updateToggle, status, fromDate, toDate]);
+  }, [updateToggle, status, fromDate, toDate, currentPage]);
 
   return (
     <>
@@ -61,7 +67,7 @@ function Index() {
         toDate={toDate}
         setToDate={setToDate}
       />
-      <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40">
+      <div className="container mx-auto px-3 pb-16 pt-32 sm:pt-40 w-full">
         <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
           Manage Transactions
         </h1>
@@ -98,12 +104,12 @@ function Index() {
             Filter <BsFilterLeft />
           </PrimaryButton>
         </div>
-        <div className="mt-4 w-full overflow-x-auto">
+        <div className="mt-4 w-full overflow-x-auto h-96">
           <table className="w-full border-collapse border-[1px] border-text-primary">
             <thead className="text-sm font-bold md:text-lg lg:text-xl bg-slate-500">
               <tr>
                 <th className="py-2 px-2 border-[1px] border-text-primary">
-                  ID
+                  No
                 </th>
                 <th className="py-2 px-2 border-[1px] border-text-primary">
                   User
@@ -129,6 +135,8 @@ function Index() {
             <tbody>
               {transacationsList.map((transaction, index) => (
                 <TransactionsRow
+                  currentPage={currentPage}
+                  dataPerPage={dataPerPage}
                   key={transaction.id}
                   transaction={transaction}
                   index={index}
@@ -137,6 +145,14 @@ function Index() {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="mx-auto w-full flex justify-center items-center">
+          <PaginationNav
+            dataAmount={dataAmount}
+            currentPage={currentPage}
+            dataPerPage={dataPerPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
       </div>
     </>

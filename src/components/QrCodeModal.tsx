@@ -5,8 +5,8 @@ import RedButton from "./RedButton";
 import PrimaryButton from "./PrimaryButton";
 import Image from "next/image";
 import CONSTANTS from "@/constants/constants";
-import { useCookies } from "react-cookie";
 import Link from "next/link";
+import { useCookies } from "react-cookie";
 
 type QrCodeModalProps = {
   isOpen: boolean;
@@ -15,8 +15,8 @@ type QrCodeModalProps = {
 };
 
 function QrCodeModal({ isOpen, setIsOpen, duration }: QrCodeModalProps) {
-  const [cookie, setCookie] = useCookies([`${CONSTANTS.COOKIENAME}`]);
   const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
+  const [cookie, _] = useCookies([CONSTANTS.COOKIENAME]);
   const ref = useRef<Element | null>(null);
   useEffect(() => {
     ref.current = document.querySelector<HTMLElement>("#portal");
