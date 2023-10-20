@@ -14,7 +14,7 @@ type HistoryListProps = {
 function HistoryList({ history }: HistoryListProps) {
   return (
     <div className="flex flex-col items-center w-full">
-      <h2 className="font-[800] text-2xl w-full text-center lg:text-3xl">
+      <h2 className="font-[800] text-2xl w-full text-center lg:text-3xl main-text">
         History
       </h2>
       <div className="mt-2 w-full hidden sm:block">

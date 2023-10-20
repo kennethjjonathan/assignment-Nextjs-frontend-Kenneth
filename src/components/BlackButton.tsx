@@ -4,6 +4,7 @@ type BlackButtonProps = {
   children: React.ReactNode;
   type?: "submit";
   additionalStyling?: string;
+  innerAdditionalStyling?: string;
   callback?: any;
   isDisabled?: boolean;
 };
@@ -13,6 +14,7 @@ function BlackButton({
   type,
   additionalStyling,
   callback,
+  innerAdditionalStyling,
   isDisabled,
 }: BlackButtonProps) {
   return (
@@ -23,7 +25,9 @@ function BlackButton({
         if (callback !== undefined) callback();
       }}
     >
-      <div className="border-2 border-smokewhite-custom px-2 py-1 group-hover:border-blue-custom duration-300 group-active:border-blue-950 flex items-center gap-2">
+      <div
+        className={`border-2 border-smokewhite-custom group-hover:border-blue-custom duration-300 group-active:border-blue-950 flex items-center gap-2 ${innerAdditionalStyling}`}
+      >
         {children}
       </div>
     </button>

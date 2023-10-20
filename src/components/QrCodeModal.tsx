@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { createPortal } from "react-dom";
 import { QRCodeSVG } from "qrcode.react";
 import RedButton from "./RedButton";
@@ -12,10 +18,17 @@ type QrCodeModalProps = {
   isOpen: boolean;
   setIsOpen: (input: boolean) => void;
   duration: "Monthly" | "Yearly";
+  isConfirmed: boolean;
+  setIsConfirmed: Dispatch<SetStateAction<boolean>>;
 };
 
-function QrCodeModal({ isOpen, setIsOpen, duration }: QrCodeModalProps) {
-  const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
+function QrCodeModal({
+  isOpen,
+  setIsOpen,
+  duration,
+  isConfirmed,
+  setIsConfirmed,
+}: QrCodeModalProps) {
   const [cookie, _] = useCookies([CONSTANTS.COOKIENAME]);
   const ref = useRef<Element | null>(null);
   useEffect(() => {

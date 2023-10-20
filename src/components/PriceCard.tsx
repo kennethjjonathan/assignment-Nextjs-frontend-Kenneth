@@ -20,6 +20,7 @@ function PriceCard({
   points,
 }: PriceCardProps) {
   const [isOpenQr, setIsOpenQr] = useState<boolean>(false);
+  const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
 
   return (
     <>
@@ -27,6 +28,8 @@ function PriceCard({
         isOpen={isOpenQr}
         setIsOpen={setIsOpenQr}
         duration={duration}
+        isConfirmed={isConfirmed}
+        setIsConfirmed={setIsConfirmed}
       />
       <div className="border-2 w-full h-full flex flex-col justify-center items-center p-2 relative xl:p-5">
         <p className="text-3xl font-semibold xl:text-4xl">{title}</p>

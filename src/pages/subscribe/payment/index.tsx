@@ -21,7 +21,7 @@ function Index() {
   async function getTransaction() {
     try {
       const response = await fetch(
-        `${CONSTANTS.BASELOCALHOST}/transactions?users=${cookie.USER.id}&_sort=id&_order=desc&_expand=user`
+        `${CONSTANTS.BASELOCALHOST}/transactions?userId=${cookie.USER.id}&_sort=id&_order=desc&_expand=user`
       );
       if (!response.ok) throw new Error(response.statusText);
       const data = await response.json();

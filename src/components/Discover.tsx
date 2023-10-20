@@ -121,6 +121,7 @@ function Discover() {
           </div>
           <BlackButton
             additionalStyling="text-lg lg:hidden"
+            innerAdditionalStyling="px-2 py-1"
             callback={() => setIsFilterModalOpen(true)}
           >
             <BsFilterLeft />
