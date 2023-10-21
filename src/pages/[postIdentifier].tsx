@@ -24,7 +24,7 @@ const openingParagraphClass: string =
 function Index({ post, user, recommendedData }: PostDetailProps) {
   return (
     <>
-      <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-generic-top-mobile pb-5">
+      <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-generic-top-mobile lg:pb-5">
         <div className="container mx-auto px-generic-horizontal-mobile flex flex-col gap-8 items-center justify-between w-full lg:flex-row">
           <div className="flex flex-col justify-center items-center lg:gap-5">
             <p className="text-xl text-center text-red-custom sm:text-2xl lg:text-3xl">
@@ -46,7 +46,7 @@ function Index({ post, user, recommendedData }: PostDetailProps) {
               alt="Thumbnail of the post"
               fill={true}
               className="rounded-sm"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>
@@ -132,7 +132,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     const userData = await getUserResponse.json();
     const newUser = historyUpdater(userData, post);
     user = newUser;
-    
+
     const userResponse = await fetch(
       `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
       {

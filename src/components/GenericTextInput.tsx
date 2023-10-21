@@ -22,7 +22,7 @@ function GenericTextInput({
   return (
     <>
       <label
-        className={`group duration-300 hover:text-blue-custom text-lg md:text-xl font-[700] ${
+        className={`group duration-300 hover:text-blue-custom text-lg md:text-xl font-[700] w-full ${
           isValid !== false ? "" : "text-red-custom"
         }`}
       >

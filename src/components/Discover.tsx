@@ -7,6 +7,8 @@ import PostCard from "./PostCard";
 import ModalBase from "./ModalBase";
 import BlackButton from "./BlackButton";
 import { BsFilterLeft } from "react-icons/bs";
+import PostCardSkeleton from "./skeletons/PostCardSkeleton";
+import NotAbleToGetContent from "./NotAbleToGetContent";
 
 function Discover() {
   const pricingOptionArr = ["All", "Premium", "Free"];
@@ -23,8 +25,10 @@ function Discover() {
   const [searchValue, setSearchValue] = useState<string>("");
   const [posts, setPosts] = useState<IArticle[]>([]);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function getPosts() {
+    setIsLoading(true);
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/posts?${`q=${searchValue}`}${
@@ -39,6 +43,7 @@ function Discover() {
     } catch (error) {
       console.error(error);
     }
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -89,7 +94,7 @@ function Discover() {
         </div>
       </ModalBase>
       <div className="w-full">
-        <div className="flex items-start justify-between w-full flex-col gap-5 lg:flex-row">
+        <div className="flex items-end justify-between w-full flex-col gap-5 lg:flex-row">
           <div className="lg:flex items-center gap-3 hidden">
             <SelectOptions
               label="Pricing"
@@ -112,7 +117,6 @@ function Discover() {
           </div>
           <div className="w-full lg:w-fit flex items-center">
             <GenericTextInput
-              label="Search"
               type="text"
               inputValue={searchValue}
               setInputValue={setSearchValue}
@@ -129,13 +133,28 @@ function Discover() {
           </BlackButton>
         </div>
         <div className="mt-1 w-full grid grid-cols-1 divide-y-2 divide-solid sm:grid-cols-2 sm:divide-y-0 sm:gap-2 lg:grid-cols-3">
-          {posts.length > 0 &&
+          {isLoading ? (
+            <>
+              <div className="mt-3 h-full">
+                <PostCardSkeleton />
+              </div>
+              <div className="mt-3 h-full">
+                <PostCardSkeleton />
+              </div>
+              <div className="mt-3 h-full">
+                <PostCardSkeleton />
+              </div>
+            </>
+          ) : (
+            posts.length > 0 &&
             posts.map((post) => (
               <div key={post.id} className="mt-3 h-full">
                 <PostCard post={post} />
               </div>
-            ))}
+            ))
+          )}
         </div>
+        {posts.length === 0 && <NotAbleToGetContent text="No Result" />}
       </div>
     </>
   );

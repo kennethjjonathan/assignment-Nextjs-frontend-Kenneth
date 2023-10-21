@@ -1,7 +1,6 @@
 import IArticle from "@/interface/IArticle";
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import CONSTANTS from "@/constants/constants";
 import Link from "next/link";
 
