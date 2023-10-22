@@ -19,7 +19,9 @@ export default async function handler(
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/auth/login?email=${emailValue}&password=${passwordValue}`
       );
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
       const data = await response.json();
       if (data.length !== 0) {
         res.status(200).json(data);

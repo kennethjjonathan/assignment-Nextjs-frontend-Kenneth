@@ -5,6 +5,7 @@ import Head from "next/head";
 import UsersRow from "@/components/UsersRow";
 import PaginationNav from "@/components/PaginationNav";
 import axios from "axios";
+import NotAbleToGetContent from "@/components/NotAbleToGetContent";
 
 function Index() {
   const [usersArray, setUsersArray] = useState<IUser[]>([]);
@@ -24,9 +25,11 @@ function Index() {
       console.error(error);
     }
   };
+
   useEffect(() => {
     getUsers();
   }, [updateToggle, currentPage]);
+
   return (
     <>
       <Head>
@@ -68,14 +71,21 @@ function Index() {
               ))}
             </tbody>
           </table>
+          {usersArray.length === 0 && (
+            <div className="w-full text-lg h-10 flex items-center justify-center main-text text-red-custom">
+              No Users
+            </div>
+          )}
         </div>
         <div className="flex justify-center items-center">
-          <PaginationNav
-            dataAmount={dataAmount}
-            currentPage={currentPage}
-            dataPerPage={dataPerPage}
-            setCurrentPage={setCurrentPage}
-          />
+          {dataAmount > dataPerPage && (
+            <PaginationNav
+              dataAmount={dataAmount}
+              currentPage={currentPage}
+              dataPerPage={dataPerPage}
+              setCurrentPage={setCurrentPage}
+            />
+          )}
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ export default interface IArticle {
   pricing: "Premium" | "Free";
   category: "Unwind" | "Lawyers Spotlight" | "Curated News";
   title: string;
-  opening?: string;
+  opening: string;
   author: string;
   thumbnail: string;
   content: string[];

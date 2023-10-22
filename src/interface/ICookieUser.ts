@@ -5,6 +5,6 @@ export default interface ICookieUser {
   isAdmin: boolean;
   subscription?: {
     isSubscribed: boolean;
-    expiration: Date;
+    expiration: Date | string;
   };
 }

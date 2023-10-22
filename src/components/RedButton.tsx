@@ -8,6 +8,7 @@ type RedButtonProps = {
   param?: any;
   callback?: any;
   isDisabled?: boolean;
+  isLoading?: boolean;
 };
 
 function RedButton({
@@ -17,7 +18,19 @@ function RedButton({
   param,
   callback,
   isDisabled,
+  isLoading = false,
 }: RedButtonProps) {
+  if (isLoading) {
+    return (
+      <button
+        className={`bg-slate-700 text-slate-500 border-2 rounded-md border-slate-700 focus:outline-none cursor-not-allowed flex items-center justify-center gap-5 ${additionalStyling}`}
+        disabled
+      >
+        Loading{" "}
+        <div className="border-4 border-smokewhite-custom border-b-transparent w-5 h-5 rounded-full animate-spin" />
+      </button>
+    );
+  }
   if (isDisabled) {
     return (
       <button

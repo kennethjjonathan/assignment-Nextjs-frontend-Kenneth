@@ -7,6 +7,9 @@ import GenericTextInput from "@/components/GenericTextInput";
 import PrimaryButton from "@/components/PrimaryButton";
 import PaymentSuccessModal from "@/components/PaymentSuccessModal";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import errorNotify from "@/library/helper/errorNotify";
+import Head from "next/head";
+import NotAbleToGetContent from "@/components/NotAbleToGetContent";
 
 function Index() {
   const [moneyValue, setMoneyValue] = useState<number>(0);
@@ -17,19 +20,26 @@ function Index() {
   );
   const [isSuccessOpen, setIsSuccessOpen] = useState<boolean>(false);
   const [updateToggle, setUpdateToggle] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function getTransaction() {
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/transactions?userId=${cookie.USER.id}&_sort=id&_order=desc&_expand=user`
       );
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
       const data = await response.json();
-      setTransaction(data[0]);
+      if (data.length !== 0) {
+        setTransaction(data[0]);
+      }
     } catch (error) {
       console.error(error);
     }
   }
+
   useEffect(() => {
     getTransaction();
   }, [updateToggle]);
@@ -38,15 +48,15 @@ function Index() {
     if (moneyValue < transaction!.price!) {
       setIsMoneyEnough(false);
       return false;
-    } else {
-      setIsMoneyEnough(true);
-      return true;
     }
+    setIsMoneyEnough(true);
+    return true;
   }
 
   async function handleSubmitMoney(e: React.FormEvent) {
     e.preventDefault();
     if (!moneyAmountValidator()) return;
+    setIsLoading(true);
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/transactions/${transaction?.id}`,
@@ -61,24 +71,42 @@ function Index() {
           }),
         }
       );
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
       setUpdateToggle((prev) => !prev);
       setIsSuccessOpen(true);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
-  if (transaction === undefined) return null;
+  if (transaction === undefined)
+    return (
+      <>
+        <Head>
+          <title>Payment - Teracce</title>
+        </Head>
+        <div className="container mx-auto px-generic-horizontal-mobile pb-generic-bottom-mobile pt-generic-top-mobile sm:pt-40 flex flex-col items-center justify-center">
+          <NotAbleToGetContent text="Not able to load transaction" />
+        </div>
+      </>
+    );
 
   return (
     <>
+      <Head>
+        <title>Payment - Teracce</title>
+      </Head>
       <PaymentSuccessModal
         isOpen={isSuccessOpen}
         setIsOpen={setIsSuccessOpen}
         transaction={transaction}
       />
-      <div className="container mx-auto px-3 pb-16 pt-28 sm:pt-40 flex flex-col items-center justify-center">
+      <div className="container mx-auto px-generic-horizontal-mobile pb-generic-bottom-mobile pt-generic-top-mobile sm:pt-40 flex flex-col items-center justify-center">
         <p className="w-full text-xl text-center font-semibold main-text">
           Bill Details
         </p>
@@ -129,11 +157,13 @@ function Index() {
               inputValue={moneyValue}
               setInputValue={setMoneyValue}
               isValid={isMoneyEnough}
+              blurFunc={moneyAmountValidator}
               errorMessage="Money is not sufficient for the price"
             />
             <PrimaryButton
               additionalStyling="px-2 py-1 w-full mt-3 text-lg flex items-center text-center justify-center md:text-xl"
               type="submit"
+              isLoading={isLoading}
             >
               Submit Money <AiOutlineShoppingCart />
             </PrimaryButton>
@@ -143,26 +173,5 @@ function Index() {
     </>
   );
 }
-
-// export const getServerSideProps = async (context: any) => {
-//   const parsed = cookie.parse(context.req.headers.cookie);
-//   const user = JSON.parse(parsed.USER);
-
-//   const response = await fetch(
-//     `${CONSTANTS.BASELOCALHOST}/transactions?userId=${user.id}&_sort=id&_order=desc`
-//   );
-//   if (!response.ok) throw new Error(response.statusText);
-//   const data = await response.json();
-//   const transaction: ITransaction = data[0];
-//   if (!transaction.id) {
-//     return {
-//       notFound: true,
-//     };
-//   } else {
-//     return {
-//       props: transaction,
-//     };
-//   }
-// };
 
 export default Index;

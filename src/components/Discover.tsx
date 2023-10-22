@@ -9,6 +9,8 @@ import BlackButton from "./BlackButton";
 import { BsFilterLeft } from "react-icons/bs";
 import PostCardSkeleton from "./skeletons/PostCardSkeleton";
 import NotAbleToGetContent from "./NotAbleToGetContent";
+import axios from "axios";
+import DarkPaginationNav from "./DarkPaginationNav";
 
 function Discover() {
   const pricingOptionArr = ["All", "Premium", "Free"];
@@ -26,20 +28,24 @@ function Discover() {
   const [posts, setPosts] = useState<IArticle[]>([]);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [dataAmount, setDataAmount] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const dataPerPage: number = 6;
 
   async function getPosts() {
     setIsLoading(true);
     try {
-      const response = await fetch(
-        `${CONSTANTS.BASELOCALHOST}/posts?${`q=${searchValue}`}${
+      const response = await axios.get(
+        `${
+          CONSTANTS.BASELOCALHOST
+        }/posts?_page=${currentPage}&_limit=${dataPerPage}&_sort=createdAt&_order=${
+          order === "Latest" ? "desc" : "asc"
+        }${searchValue !== "" ? `&q=${searchValue}` : ""}${
           category === "All" ? "" : `&category=${category}`
-        }${
-          pricing === "All" ? "" : `&pricing=${pricing}`
-        }&_sort=createdAt&_order=${order === "Latest" ? "desc" : "asc"}`
+        }${pricing === "All" ? "" : `&pricing=${pricing}`}`
       );
-      if (!response.ok) throw new Error(response.statusText);
-      const data = await response.json();
-      setPosts(data);
+      setDataAmount(response.headers["x-total-count"]);
+      setPosts(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -48,6 +54,7 @@ function Discover() {
 
   useEffect(() => {
     const wait = setTimeout(() => {
+      setCurrentPage(1);
       getPosts();
     }, 1000);
 
@@ -55,8 +62,13 @@ function Discover() {
   }, [searchValue]);
 
   useEffect(() => {
+    setCurrentPage(1);
     getPosts();
   }, [category, pricing, order]);
+
+  useEffect(() => {
+    getPosts();
+  }, [currentPage]);
 
   return (
     <>
@@ -154,6 +166,16 @@ function Discover() {
             ))
           )}
         </div>
+        {dataAmount > 6 && (
+          <div className="w-full mt-8 flex items-center justify-center">
+            <DarkPaginationNav
+              dataAmount={dataAmount}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              dataPerPage={dataPerPage}
+            />
+          </div>
+        )}
         {posts.length === 0 && <NotAbleToGetContent text="No Result" />}
       </div>
     </>

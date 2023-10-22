@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 import { AiFillCheckCircle } from "react-icons/ai";
 import QrCodeModal from "./QrCodeModal";
+import { useCookies } from "react-cookie";
+import CONSTANTS from "@/constants/constants";
+import { useRouter } from "next/router";
 
 type PriceCardProps = {
   bestValue?: boolean;
@@ -21,6 +24,16 @@ function PriceCard({
 }: PriceCardProps) {
   const [isOpenQr, setIsOpenQr] = useState<boolean>(false);
   const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
+  const router = useRouter();
+  const [cookie, _] = useCookies([CONSTANTS.COOKIENAME]);
+
+  function handlePriceButtonClick() {
+    if (cookie.USER === undefined) {
+      router.push("/login");
+      return;
+    }
+    setIsOpenQr(true);
+  }
 
   return (
     <>
@@ -47,7 +60,7 @@ function PriceCard({
         </ul>
         <PrimaryButton
           additionalStyling="w-full py-1 px-2"
-          callback={setIsOpenQr}
+          callback={handlePriceButtonClick}
           param={true}
         >
           <p className="text-xl font-thin">{`IDR ${moneyFormatter(price)} / ${

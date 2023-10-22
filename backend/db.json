@@ -4,18 +4,55 @@
       "id": 2,
       "name": "Agus",
       "email": "agus@gmail.com",
-      "password": "12345678",
-      "isAdmin": false,
+      "password": "Agus.123",
+      "isAdmin": true,
       "address": "Jl. Danau Towuti No. 74",
       "phoneNumber": "0812-3456-7899",
       "subscription": {
-        "isSubscribed": false,
-        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+        "isSubscribed": true,
+        "expiration": ""
       },
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "liked": [],
-      "history": [],
+      "history": [
+        {
+          "title": "What can we learn from introverted Lawyers",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
+          "identifier": "What-can-we-learn-from-introverted-Lawyers",
+          "readTime": "2023-10-22T14:02:44.302Z"
+        },
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-22T22:44:30.220Z"
+        },
+        {
+          "title": "Lawyer Article 1",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697961497/mkdu5nljzo8pvbpp9dti.jpg",
+          "identifier": "Lawyer-Article-1-dy6vmx7ji1us",
+          "readTime": "2023-10-22T22:44:40.046Z"
+        },
+        {
+          "title": "How great Lawyers maintain work-life balance",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
+          "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
+          "readTime": "2023-10-22T22:44:45.275Z"
+        },
+        {
+          "title": "I love christmas",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697773454/nvjhuagotljbly6ehpjm.jpg",
+          "identifier": "I-love-christmas-0fa842xmqkxl",
+          "readTime": "2023-10-22T22:44:48.345Z"
+        },
+        {
+          "title": "Legal Draft Tips for Overseas Contracts",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774062/havqpukhjgevauynwroo.jpg",
+          "identifier": "Legal-Draft-Tips-for-Overseas-Contracts-j6te5r16duv9",
+          "readTime": "2023-10-22T22:44:51.420Z"
+        }
+      ],
       "shared": [],
       "favorite": {
         "Unwind": 0,
@@ -108,8 +145,8 @@
       "address": "Jl. Danau Towuti No. 74",
       "phoneNumber": "0812-3456-7899",
       "subscription": {
-        "isSubscribed": true,
-        "expiration": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)"
+        "isSubscribed": false,
+        "expiration": ""
       },
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
@@ -131,10 +168,10 @@
       "phoneNumber": "0812-9856-2868",
       "subscription": {
         "isSubscribed": true,
-        "expiration": "2023-11-20T12:33:22.422Z"
+        "expiration": "2023-11-22T09:41:05.786Z"
       },
       "createdAt": "2023-10-16T04:47:34.320Z",
-      "updatedAt": "2023-10-20T12:33:22.422Z",
+      "updatedAt": "2023-10-22T09:41:05.786Z",
       "id": 7,
       "liked": [
         12
@@ -157,13 +194,13 @@
     {
       "name": "Jonathan",
       "email": "jonathan@gmail.com",
-      "password": "12345678",
+      "password": "Jonathan.123",
       "isAdmin": false,
       "address": "TUE Mantap",
       "phoneNumber": "1234-5678-9101",
       "subscription": {
         "isSubscribed": false,
-        "expiration": ""
+        "expiration": "2020-10-22T16:45:21.567Z"
       },
       "liked": [
         6,
@@ -176,7 +213,7 @@
         4
       ],
       "createdAt": "2023-10-16T04:48:48.209Z",
-      "updatedAt": "2023-10-16T04:48:48.209Z",
+      "updatedAt": "2023-10-22T16:46:40.502Z",
       "id": 8,
       "history": [
         {
@@ -204,12 +241,6 @@
           "readTime": "2023-10-19T20:39:20.159Z"
         },
         {
-          "title": "What is my favorite color",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
-          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
-          "readTime": "2023-10-19T20:42:55.803Z"
-        },
-        {
           "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "Kenneth-J.-Jonathan-is-the-slickest-Corporate-Lawyer-in-downtown",
@@ -220,6 +251,18 @@
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "What-can-we-learn-from-introverted-Lawyers",
           "readTime": "2023-10-19T22:28:34.471Z"
+        },
+        {
+          "title": "How great Lawyers maintain work-life balance",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
+          "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
+          "readTime": "2023-10-23T00:13:41.977Z"
+        },
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-23T00:56:30.924Z"
         }
       ],
       "shared": [
@@ -250,28 +293,200 @@
       "liked": [],
       "history": [],
       "shared": []
+    },
+    {
+      "name": "Kenneth",
+      "email": "kenneth@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1213-4567-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T14:07:52.715Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T14:07:52.715Z",
+      "updatedAt": "2023-10-21T14:07:52.715Z",
+      "id": 10
+    },
+    {
+      "name": "Kenneth",
+      "email": "kenneth@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1213-4567-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T14:07:53.065Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T14:07:53.065Z",
+      "updatedAt": "2023-10-21T14:07:53.065Z",
+      "id": 11
+    },
+    {
+      "name": "Kenneth",
+      "email": "kenneth@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1213-4567-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T14:07:53.256Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T14:07:53.256Z",
+      "updatedAt": "2023-10-21T14:07:53.256Z",
+      "id": 12
+    },
+    {
+      "name": "Kenneth",
+      "email": "kenneth@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1213-4567-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T14:07:53.379Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T14:07:53.379Z",
+      "updatedAt": "2023-10-21T14:07:53.379Z",
+      "id": 13
+    },
+    {
+      "name": "TesKen",
+      "email": "teskEn@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1234-5678-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T14:15:59.770Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T14:15:59.770Z",
+      "updatedAt": "2023-10-21T14:15:59.770Z",
+      "id": 14
+    },
+    {
+      "name": "TesKen",
+      "email": "tesKEnneth@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1234-5678-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T14:17:02.015Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T14:17:02.015Z",
+      "updatedAt": "2023-10-21T14:17:02.015Z",
+      "id": 15
+    },
+    {
+      "name": "kenneth",
+      "email": "kennethtestbaru@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1234-1234-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T16:00:52.763Z"
+      },
+      "liked": [],
+      "history": [
+        {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-21T23:01:43.677Z"
+        }
+      ],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T16:00:52.763Z",
+      "updatedAt": "2023-10-21T16:00:52.763Z",
+      "id": 16
+    },
+    {
+      "name": "Kenneth",
+      "email": "kennethtestbaru2@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "1234-1234-1234",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-21T16:15:52.692Z"
+      },
+      "liked": [],
+      "history": [],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-21T16:15:52.692Z",
+      "updatedAt": "2023-10-21T16:15:52.692Z",
+      "id": 17
     }
   ],
   "posts": [
-    {
-      "liked": 0,
-      "shared": 0,
-      "pricing": "Premium",
-      "category": "Curated News",
-      "title": "Legally Great",
-      "opening": "Who knew that the best lawyers in town is actually introverts",
-      "author": "Kenneth J. Jonathan",
-      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697775190/hc85fdfdqyw05anmumfw.jpg",
-      "content": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ex a tortor molestie sodales. Quisque viverra dolor ut cursus vestibulum. Donec lacinia sagittis libero, scelerisque pharetra sem consequat vel. Nulla eu sem commodo nibh sagittis iaculis. Aliquam placerat risus ullamcorper efficitur dapibus. Donec quis nisl rutrum, pretium elit eu, imperdiet mauris. Proin imperdiet justo sed eros pulvinar feugiat. In ornare tortor vel eros imperdiet, volutpat tempus nisl viverra. Morbi ultricies neque ac sapien fermentum, ut pharetra tellus scelerisque.",
-        "Aenean porttitor magna quis sagittis tempor. Vivamus tempor gravida tempus. Pellentesque lobortis quis tortor quis convallis. Aliquam tempor lacus sed lorem malesuada iaculis. Nulla vel rhoncus augue. Aenean hendrerit bibendum nunc et rutrum. Morbi vel est ex. Fusce sodales dignissim urna id lacinia. Aliquam pretium augue vel ipsum tristique fringilla. Aliquam imperdiet lacus et diam gravida tempus. Mauris eu pellentesque libero, ac pulvinar purus. Sed sed purus lobortis, tincidunt mauris vitae, auctor risus. Integer efficitur purus eu lacus ornare, non eleifend odio iaculis. Nam dapibus libero in augue elementum, non pulvinar eros commodo.",
-        "Ut eu nunc tempor, vulputate nulla ac, tempor risus. Nunc odio turpis, pharetra sed condimentum eu, lobortis ut arcu. Aenean volutpat ligula eu dui euismod, eget efficitur erat tincidunt. Quisque sodales mi quis tortor commodo volutpat. Etiam sed est vel magna bibendum fringilla. Nam viverra lacinia libero, nec varius sem posuere a. Duis interdum quis dolor non vestibulum. Aenean porta augue nec dolor aliquet, eu aliquet est aliquet. Proin at elemenzxZxZxZxZxZxZxZxZxZXZassasdjjsjjjsjjkenapa radasssssssssssssssssssssssssssssssss gituasdasdasdasdasdastum massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla vel ante ipsum. Nullam suscipit velit et risus maximus, vitae dictum justo facilisis."
-      ],
-      "identifier": "Legally-Great-k5ghahx7khuc",
-      "createdAt": "2023-10-12T17:55:04.346Z",
-      "updatedAt": "2023-10-20T04:13:11.823Z",
-      "id": 1
-    },
     {
       "liked": 8,
       "shared": 1,
@@ -478,6 +693,25 @@
       "createdAt": "2023-10-20T04:08:34.932Z",
       "updatedAt": "2023-10-20T04:08:34.932Z",
       "id": 14
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Curated News",
+      "title": "Lawyer Article 1",
+      "opening": "Some lawyer talk too much",
+      "author": "Kenneth",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697961497/mkdu5nljzo8pvbpp9dti.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis placerat tempus. Donec tempus gravida massa a vehicula. Vestibulum auctor augue id dignissim cursus. Morbi mattis consectetur rutrum. Praesent elementum aliquam justo, a semper orci bibendum quis. Donec eu mi rhoncus, euismod ex nec, bibendum augue. Praesent vitae posuere erat. Mauris et pharetra arcu. Proin feugiat ante at mi ornare pulvinar. Fusce rhoncus hendrerit lacus eget porttitor. Sed in ante sed odio mattis pharetra. Curabitur scelerisque, nunc a dignissim molestie, eros nisi porta eros, sed pretium diam ipsum ac nibh. Donec bibendum sem lacus, vel maximus nunc dignissim vitae.",
+        "Nulla quis libero eu nulla pulvinar dapibus. Integer convallis placerat tempor. Etiam lobortis quis ante sed consectetur. Donec et turpis in odio lobortis bibendum in at metus. Aliquam id dolor odio. Donec ultricies nibh ipsum, eu viverra felis consequat ut. Pellentesque dapibus dui nec tempus tempus.",
+        "Sed velit ipsum, volutpat pretium metus id, tristique bibendum lorem. Nam et ante tellus. Duis sem diam, bibendum eget nunc at, varius cursus leo. Ut a varius leo. Integer accumsan mi turpis, in hendrerit eros ullamcorper ac. Sed ante ligula, luctus a eros vitae, fringilla scelerisque nisi. Nullam nec pulvinar eros. Praesent finibus neque quis malesuada hendrerit. Etiam rutrum vulputate tincidunt. Aliquam cursus a lacus vitae tempus. Morbi ornare massa sem, tincidunt scelerisque turpis gravida ut."
+      ],
+      "identifier": "Lawyer-Article-1-dy6vmx7ji1us",
+      "createdAt": "2023-10-22T07:58:18.251Z",
+      "updatedAt": "2023-10-22T07:58:18.251Z",
+      "id": 15
     }
   ],
   "transactions": [
@@ -493,22 +727,22 @@
     },
     {
       "userId": 7,
-      "status": "process",
+      "status": "canceled",
       "paymentCompletion": false,
       "price": 50000,
       "package": "Monthly",
       "createdAt": "2023-10-16T14:48:22.463Z",
-      "updatedAt": "2023-10-16T14:48:22.463Z",
+      "updatedAt": "2023-10-22T09:25:49.472Z",
       "id": 2
     },
     {
       "userId": 7,
-      "status": "process",
+      "status": "canceled",
       "paymentCompletion": false,
       "price": 50000,
       "package": "Monthly",
       "createdAt": "2023-10-16T14:51:26.410Z",
-      "updatedAt": "2023-10-16T14:51:26.410Z",
+      "updatedAt": "2023-10-22T09:25:56.793Z",
       "id": 3
     },
     {
@@ -570,43 +804,13 @@
     },
     {
       "userId": 7,
-      "status": "process",
+      "status": "completed",
       "paymentCompletion": true,
       "price": 50000,
       "package": "Monthly",
       "createdAt": "2023-10-17T03:40:00.277Z",
-      "updatedAt": "2023-10-17T06:34:21.160Z",
+      "updatedAt": "2023-10-22T09:41:05.202Z",
       "id": 9
-    },
-    {
-      "userId": 1,
-      "status": "process",
-      "paymentCompletion": true,
-      "price": 50000,
-      "package": "Monthly",
-      "createdAt": "2023-10-18T03:10:14.415Z",
-      "updatedAt": "2023-10-18T03:12:31.777Z",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "status": "canceled",
-      "paymentCompletion": false,
-      "price": 50000,
-      "package": "Monthly",
-      "createdAt": "2023-10-19T03:02:29.556Z",
-      "updatedAt": "2023-10-19T03:32:59.786Z",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "status": "process",
-      "paymentCompletion": true,
-      "price": 50000,
-      "package": "Monthly",
-      "createdAt": "2023-10-20T10:05:41.365Z",
-      "updatedAt": "2023-10-20T10:06:14.684Z",
-      "id": 12
     },
     {
       "userId": 7,
@@ -634,6 +838,36 @@
       "createdAt": "2023-10-20T16:54:32.901Z",
       "updatedAt": "2023-10-20T17:04:51.171Z",
       "id": 14
+    },
+    {
+      "userId": 2,
+      "status": "process",
+      "paymentCompletion": true,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-22T15:58:23.993Z",
+      "updatedAt": "2023-10-22T16:13:59.138Z",
+      "id": 15
+    },
+    {
+      "userId": 8,
+      "status": "completed",
+      "paymentCompletion": true,
+      "price": 600000,
+      "package": "Yearly",
+      "createdAt": "2023-10-22T16:44:40.284Z",
+      "updatedAt": "2023-10-22T16:45:21.540Z",
+      "id": 16
+    },
+    {
+      "userId": 8,
+      "status": "completed",
+      "paymentCompletion": true,
+      "price": 600000,
+      "package": "Yearly",
+      "createdAt": "2023-10-22T16:45:53.655Z",
+      "updatedAt": "2023-10-22T16:46:40.480Z",
+      "id": 17
     }
   ]
 }

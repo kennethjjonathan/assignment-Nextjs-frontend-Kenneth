@@ -7,6 +7,7 @@ type PrimaryButtonProps = {
   param?: any;
   callback?: any;
   isDisabled?: boolean;
+  isLoading?: boolean;
 };
 
 function PrimaryButton({
@@ -16,12 +17,24 @@ function PrimaryButton({
   param,
   callback,
   isDisabled,
+  isLoading = false,
 }: PrimaryButtonProps) {
+  if (isLoading) {
+    return (
+      <button
+        className={`bg-slate-700 text-slate-500 border-2 rounded-md border-slate-700 focus:outline-none cursor-not-allowed flex items-center justify-center gap-5 ${additionalStyling}`}
+        disabled
+      >
+        Loading{" "}
+        <div className="border-4 border-smokewhite-custom border-b-transparent w-5 h-5 rounded-full animate-spin" />
+      </button>
+    );
+  }
   if (isDisabled) {
     return (
       <button
-        type={type}
         className={`bg-slate-700 text-slate-500 border-2 rounded-md border-slate-700 focus:outline-none cursor-not-allowed ${additionalStyling}`}
+        disabled
       >
         {children}
       </button>

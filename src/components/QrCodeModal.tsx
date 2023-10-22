@@ -13,6 +13,7 @@ import Image from "next/image";
 import CONSTANTS from "@/constants/constants";
 import Link from "next/link";
 import { useCookies } from "react-cookie";
+import errorNotify from "@/library/helper/errorNotify";
 
 type QrCodeModalProps = {
   isOpen: boolean;
@@ -29,6 +30,7 @@ function QrCodeModal({
   isConfirmed,
   setIsConfirmed,
 }: QrCodeModalProps) {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [cookie, _] = useCookies([CONSTANTS.COOKIENAME]);
   const ref = useRef<Element | null>(null);
   useEffect(() => {
@@ -36,6 +38,7 @@ function QrCodeModal({
   }, []);
 
   async function handleConfirmBuy() {
+    setIsLoading(true);
     try {
       const response = await fetch(`${CONSTANTS.BASELOCALHOST}/transactions`, {
         method: "POST",
@@ -52,10 +55,15 @@ function QrCodeModal({
           updatedAt: new Date(),
         }),
       });
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
       setIsConfirmed(true);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -65,12 +73,14 @@ function QrCodeModal({
         <div className="w-3/4 py-3 bg-smokewhite-custom rounded-xl">
           <div className="w-full border-b-2 border-dark-custom flex justify-between px-3 pb-3 text-lg sm:text-xl md:text-2xl">
             <p>{duration}&apos;s Payment Confirmation</p>
-            <button
-              className="text-blue-500 duration-300 hover:text-blue-800 active:text-blue-950"
-              onClick={() => setIsOpen(false)}
-            >
-              X
-            </button>
+            {!isLoading && (
+              <button
+                className="text-blue-500 duration-300 hover:text-blue-800 active:text-blue-950"
+                onClick={() => setIsOpen(false)}
+              >
+                X
+              </button>
+            )}
           </div>
           <div className="w-full px-3 py-3 flex flex-col justify-center items-center gap-5">
             <h3 className="text-xl sm:text-2xl md:text-3xl text-left w-full font-light">
@@ -90,12 +100,14 @@ function QrCodeModal({
               callback={setIsOpen}
               param={false}
               additionalStyling="text-base py-1 px-1 sm:text-lg md:text-xl"
+              isDisabled={isLoading}
             >
               Cancel
             </RedButton>
             <PrimaryButton
               callback={handleConfirmBuy}
               additionalStyling="text-base py-1 px-1 sm:text-lg md:text-xl"
+              isLoading={isLoading}
             >
               Confirm
             </PrimaryButton>

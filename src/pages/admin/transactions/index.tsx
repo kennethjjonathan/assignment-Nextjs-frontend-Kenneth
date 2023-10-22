@@ -133,26 +133,34 @@ function Index() {
               </tr>
             </thead>
             <tbody>
-              {transacationsList.map((transaction, index) => (
-                <TransactionsRow
-                  currentPage={currentPage}
-                  dataPerPage={dataPerPage}
-                  key={transaction.id}
-                  transaction={transaction}
-                  index={index}
-                  setUpdateToggle={setUpdateToggle}
-                />
-              ))}
+              {transacationsList.length > 0 &&
+                transacationsList.map((transaction, index) => (
+                  <TransactionsRow
+                    currentPage={currentPage}
+                    dataPerPage={dataPerPage}
+                    key={transaction.id}
+                    transaction={transaction}
+                    index={index}
+                    setUpdateToggle={setUpdateToggle}
+                  />
+                ))}
             </tbody>
           </table>
+          {transacationsList.length === 0 && (
+            <div className="w-full text-lg h-10 flex items-center justify-center main-text text-red-custom">
+              No Transaction
+            </div>
+          )}
         </div>
         <div className="mx-auto w-full flex justify-center items-center">
-          <PaginationNav
-            dataAmount={dataAmount}
-            currentPage={currentPage}
-            dataPerPage={dataPerPage}
-            setCurrentPage={setCurrentPage}
-          />
+          {dataAmount > dataPerPage && (
+            <PaginationNav
+              dataAmount={dataAmount}
+              currentPage={currentPage}
+              dataPerPage={dataPerPage}
+              setCurrentPage={setCurrentPage}
+            />
+          )}
         </div>
       </div>
     </>

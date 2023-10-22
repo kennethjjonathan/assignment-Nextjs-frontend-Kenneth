@@ -7,6 +7,8 @@ import ModalBase from "./ModalBase";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 import CONSTANTS from "@/constants/constants";
+import errorNotify from "@/library/helper/errorNotify";
+import successNotify from "@/library/helper/successToast";
 
 type ShareButtonProps = {
   post: IArticle;
@@ -42,7 +44,6 @@ function ShareButton({ post, user }: ShareButtonProps) {
     if (shared) {
       return;
     }
-
     setShareAmount((prev) => prev + 1);
     const newShareArr: number[] = user!.shared.slice();
     newShareArr.push(post.id);
@@ -60,7 +61,10 @@ function ShareButton({ post, user }: ShareButtonProps) {
           }),
         }
       );
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
       const userResponse = await fetch(
         `${CONSTANTS.BASELOCALHOST}/users/${user!.id}`,
         {
@@ -71,7 +75,10 @@ function ShareButton({ post, user }: ShareButtonProps) {
           body: JSON.stringify(newUser),
         }
       );
-      if (!userResponse.ok) throw new Error(userResponse.statusText);
+      if (!userResponse.ok) {
+        errorNotify(userResponse);
+        throw new Error(userResponse.statusText);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -88,6 +95,7 @@ function ShareButton({ post, user }: ShareButtonProps) {
   async function handleCopyToClipBoard() {
     try {
       await navigator.clipboard.writeText(`${CONSTANTS.BASEURL}/${pathname}`);
+      successNotify("Successfully copied to clipboard");
       await handleSharePost();
       setOpenModal(false);
     } catch (error) {

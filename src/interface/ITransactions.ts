@@ -7,7 +7,7 @@ export default interface ITransaction {
   paymentCompletion: boolean;
   price: 50000 | 600000;
   package: "Monthly" | "Yearly";
-  user?: IUser;
+  user: IUser;
   createdAt: Date;
   updatedAt: Date;
 }

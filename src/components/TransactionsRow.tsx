@@ -7,6 +7,9 @@ import CONSTANTS from "@/constants/constants";
 import CompleteTransactionModal from "./CompleteTransactionModal";
 import CancelTransactionModal from "./CancelTransactionModal";
 import generateOneMonth from "@/library/helper/generateOneMonth";
+import errorNotify from "@/library/helper/errorNotify";
+import successNotify from "@/library/helper/successToast";
+import generateOneYear from "@/library/helper/generateOneYear";
 
 type TransactionsRowProps = {
   dataPerPage: number;
@@ -25,6 +28,8 @@ function TransactionsRow({
 }: TransactionsRowProps) {
   const [isCompleteOpen, setIsCompleteOpen] = useState<boolean>(false);
   const [isCancelOpen, setIsCancelOpen] = useState<boolean>(false);
+  const [isCancelLoading, setIsCancelLoading] = useState<boolean>(false);
+  const [isCompleteLoading, setIsCompleteLoading] = useState<boolean>(false);
 
   function completeButtonValidator(): boolean {
     if (transaction.status === "canceled") {
@@ -52,8 +57,36 @@ function TransactionsRow({
   function handleCompleteButtonClick() {
     setIsCompleteOpen(true);
   }
+
+  function manageExpirationDate() {
+    if (transaction.user.isAdmin) return "";
+    if (
+      transaction.user.subscription.isSubscribed &&
+      transaction.package === "Monthly"
+    ) {
+      return generateOneMonth(
+        transaction.user.subscription.expiration.toString()
+      );
+    }
+    if (
+      transaction.user.subscription.isSubscribed &&
+      transaction.package === "Yearly"
+    ) {
+      return generateOneYear(
+        transaction.user.subscription.expiration.toString()
+      );
+    }
+    if (
+      transaction.user.subscription.isSubscribed === false &&
+      transaction.package === "Monthly"
+    ) {
+      return generateOneMonth();
+    }
+    return generateOneYear();
+  }
   async function handleCompleteTransaction() {
     setIsCompleteOpen(false);
+    setIsCompleteLoading(true);
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/transactions/${transaction.id}`,
@@ -65,19 +98,16 @@ function TransactionsRow({
           body: JSON.stringify({
             status: "completed",
             updatedAt: new Date(),
-            user: {
-              subscription: {
-                isSubscribe: true,
-                expiration: generateOneMonth(),
-              },
-              updatedAt: new Date(),
-            },
           }),
         }
       );
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
+      const expirationDate = manageExpirationDate();
       const userResponse = await fetch(
-        `${CONSTANTS.BASELOCALHOST}/users/${transaction.user?.id}`,
+        `${CONSTANTS.BASELOCALHOST}/users/${transaction.user.id}`,
         {
           method: "PATCH",
           headers: {
@@ -87,15 +117,21 @@ function TransactionsRow({
             updatedAt: new Date(),
             subscription: {
               isSubscribed: true,
-              expiration: generateOneMonth(),
+              expiration: expirationDate,
             },
           }),
         }
       );
-      if (!userResponse.ok) throw new Error(userResponse.statusText);
+      if (!userResponse.ok) {
+        errorNotify(userResponse);
+        throw new Error(userResponse.statusText);
+      }
+      successNotify("Transatcion is successfully completed");
       setUpdateToggle((prev) => !prev);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsCompleteLoading(false);
     }
   }
 
@@ -105,6 +141,7 @@ function TransactionsRow({
 
   async function handleCancelTransaction() {
     setIsCancelOpen(false);
+    setIsCancelLoading(true);
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/transactions/${transaction.id}`,
@@ -119,10 +156,16 @@ function TransactionsRow({
           }),
         }
       );
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
+      successNotify("Successfully canceled transaction");
       setUpdateToggle((prev) => !prev);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsCancelLoading(false);
     }
   }
   return (
@@ -179,6 +222,7 @@ function TransactionsRow({
             additionalStyling={`py-1 px-2`}
             callback={handleCompleteButtonClick}
             isDisabled={completeButtonValidator()}
+            isLoading={isCompleteLoading}
           >
             Complete
           </PrimaryButton>
@@ -188,6 +232,7 @@ function TransactionsRow({
             additionalStyling={`px-2 py-1`}
             callback={handleCancelButton}
             isDisabled={cancelButtonValidator()}
+            isLoading={isCancelLoading}
           >
             Cancel
           </RedButton>

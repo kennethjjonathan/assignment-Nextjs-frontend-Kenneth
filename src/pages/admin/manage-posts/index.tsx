@@ -7,12 +7,14 @@ import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "next/router";
 import axios from "axios";
 import PaginationNav from "@/components/PaginationNav";
+import NotAbleToGetContent from "@/components/NotAbleToGetContent";
 
 function Index() {
   const [data, setData] = useState<IArticle[]>([]);
   const dataPerPage: number = 5;
   const [dataAmount, setDataAmount] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [updateToggle, setUpdateToggle] = useState<boolean>(false);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -23,11 +25,11 @@ function Index() {
         setDataAmount(response.headers["x-total-count"]);
         setData(response.data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     getPosts();
-  }, [currentPage]);
+  }, [currentPage, updateToggle]);
 
   const router = useRouter();
 
@@ -82,18 +84,26 @@ function Index() {
                   index={index}
                   currentPage={currentPage}
                   dataPerPage={dataPerPage}
+                  setUpdateToggle={setUpdateToggle}
                 />
               ))}
             </tbody>
           </table>
+          {data.length === 0 && (
+            <div className="w-full text-lg h-10 flex items-center justify-center main-text text-red-custom">
+              No Posts
+            </div>
+          )}
         </div>
         <div className="mx-auto">
-          <PaginationNav
-            dataAmount={dataAmount}
-            currentPage={currentPage}
-            dataPerPage={dataPerPage}
-            setCurrentPage={setCurrentPage}
-          />
+          {dataAmount > dataPerPage && (
+            <PaginationNav
+              dataAmount={dataAmount}
+              currentPage={currentPage}
+              dataPerPage={dataPerPage}
+              setCurrentPage={setCurrentPage}
+            />
+          )}
         </div>
       </div>
     </>

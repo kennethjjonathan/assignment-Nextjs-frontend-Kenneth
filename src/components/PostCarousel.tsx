@@ -86,7 +86,7 @@ function PostCarousel({
           </div>
         </div>
       ))}
-      <div className="w-full absolute bottom-0 flex justify-center items-center gap-2">
+      <div className="w-full absolute bottom-2 flex justify-center items-center gap-2">
         <button onClick={goToPrev}>
           <BsFillArrowLeftCircleFill className="text-text-primary text-xl duration-300 hover:text-blue-custom sm:text-2xl" />
         </button>

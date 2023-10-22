@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef, CSSProperties } from "react";
 import IUser from "@/interface/IUser";
 import CONSTANTS from "@/constants/constants";
 import { useRouter } from "next/router";
+import errorNotify from "@/library/helper/errorNotify";
 
 type LikeButtonProps = {
   post: IArticle;
@@ -93,7 +94,10 @@ function LikeButton({ post, user }: LikeButtonProps) {
             }),
           }
         );
-        if (!response.ok) throw new Error(response.statusText);
+        if (!response.ok) {
+          errorNotify(response);
+          throw new Error(response.statusText);
+        }
         const userResponse = await fetch(
           `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
           {
@@ -104,7 +108,10 @@ function LikeButton({ post, user }: LikeButtonProps) {
             body: JSON.stringify(newUser),
           }
         );
-        if (!userResponse.ok) throw new Error(userResponse.statusText);
+        if (!userResponse.ok) {
+          errorNotify(userResponse);
+          throw new Error(userResponse.statusText);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -126,7 +133,10 @@ function LikeButton({ post, user }: LikeButtonProps) {
             }),
           }
         );
-        if (!response.ok) throw new Error(response.statusText);
+        if (!response.ok) {
+          errorNotify(response);
+          throw new Error(response.statusText);
+        }
         const userResponse = await fetch(
           `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
           {
@@ -137,7 +147,10 @@ function LikeButton({ post, user }: LikeButtonProps) {
             body: JSON.stringify(newUser),
           }
         );
-        if (!userResponse.ok) throw new Error(userResponse.statusText);
+        if (!userResponse.ok) {
+          errorNotify(userResponse);
+          throw new Error(userResponse.statusText);
+        }
       } catch (error) {
         console.error(error);
       }

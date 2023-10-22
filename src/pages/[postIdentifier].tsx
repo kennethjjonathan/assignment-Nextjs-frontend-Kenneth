@@ -11,9 +11,12 @@ import LikeButton from "@/components/LikeButton";
 import historyUpdater from "@/library/helper/historyUpdater";
 import ShareButton from "@/components/ShareButton";
 import PostCard from "@/components/PostCard";
+import Head from "next/head";
+import errorNotify from "@/library/helper/errorNotify";
+import NotAbleToGetContent from "@/components/NotAbleToGetContent";
 
 type PostDetailProps = {
-  post: IArticle;
+  post: IArticle | null;
   user: IUser | null;
   recommendedData: IArticle[] | null;
 };
@@ -22,8 +25,49 @@ const openingParagraphClass: string =
   "first-line:uppercase first-line:tracking-widest first-letter:text-5xl first-letter:font-bold first-letter:text-red-custom first-letter:mr-2 first-letter:float-left sm:first-letter:text-7xl";
 
 function Index({ post, user, recommendedData }: PostDetailProps) {
+  if (post === null) {
+    return (
+      <>
+        <section className="container mx-auto px-generic-horizontal-mobile pt-generic-top-mobile w-full">
+          <NotAbleToGetContent text="Not able to load content" />
+        </section>
+        {recommendedData && (
+          <section className="container mx-auto px-generic-horizontal-mobile pb-generic-bottom-mobile">
+            <div className="w-full flex items-center justify-between gap-1">
+              <div className="h-px w-full bg-text-secondary" />
+              <h3 className="w-full text-center font-light text-xl sm:text-2xl">
+                Read More
+              </h3>
+              <div className="h-px w-full bg-text-secondary" />
+            </div>
+            <div className="w-full grid grid-cols-1 divide-y-2 sm:grid-cols-2 sm:divide-y-0 sm:gap-2 lg:grid-cols-3 sm:mt-5">
+              {recommendedData?.map((article) => (
+                <div
+                  key={article.identifier}
+                  className="h-auto w-full py-5 sm:py-0"
+                >
+                  <PostCard post={article} />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </>
+    );
+  }
   return (
     <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <title>{`${post.title} - Teracce`}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content={post.title} />
+        <meta name="description" content={post.opening} />
+        <meta name="author" content={post.author} />
+        <meta name="og:title" content={`${post.title} - Teracce`} />
+        <meta name="og:description" content={post.opening} />
+        <meta name="og:type" content="website" />
+      </Head>
       <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-generic-top-mobile lg:pb-5">
         <div className="container mx-auto px-generic-horizontal-mobile flex flex-col gap-8 items-center justify-between w-full lg:flex-row">
           <div className="flex flex-col justify-center items-center lg:gap-5">
@@ -70,53 +114,65 @@ function Index({ post, user, recommendedData }: PostDetailProps) {
           <NotSubscribed />
         ) : null}
       </section>
-      <section className="container mx-auto px-6 pb-generic-bottom-mobile">
-        <div className="w-full flex items-center justify-between gap-1">
-          <div className="h-px w-full bg-text-secondary" />
-          <h3 className="w-full text-center font-light text-xl sm:text-2xl">
-            Read More
-          </h3>
-          <div className="h-px w-full bg-text-secondary" />
-        </div>
-        <div className="w-full grid grid-cols-1 divide-y-2 sm:grid-cols-2 sm:divide-y-0 sm:gap-2 lg:grid-cols-3 sm:mt-5">
-          {recommendedData?.map((article) => (
-            <div
-              key={article.identifier}
-              className="h-auto w-full py-5 sm:py-0"
-            >
-              <PostCard post={article} />
-            </div>
-          ))}
-        </div>
-      </section>
+      {recommendedData && (
+        <section className="container mx-auto px-generic-horizontal-mobile pb-generic-bottom-mobile">
+          <div className="w-full flex items-center justify-between gap-1">
+            <div className="h-px w-full bg-text-secondary" />
+            <h3 className="w-full text-center font-light text-xl sm:text-2xl">
+              Read More
+            </h3>
+            <div className="h-px w-full bg-text-secondary" />
+          </div>
+          <div className="w-full grid grid-cols-1 divide-y-2 sm:grid-cols-2 sm:divide-y-0 sm:gap-2 lg:grid-cols-3 sm:mt-5">
+            {recommendedData?.map((article) => (
+              <div
+                key={article.identifier}
+                className="h-auto w-full py-5 sm:py-0"
+              >
+                <PostCard post={article} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async ({
   req,
+  res,
   params,
 }) => {
   let favoriteCategory: string = "";
-  let user: IUser | null;
+  let user: IUser | null = null;
   let recommendedData: IArticle[] | null = null;
+  let post: IArticle | null = null;
   const cookieData = cookie.parse(req.headers.cookie!);
 
-  if (cookieData.USER === undefined) {
-    user = null;
-  } else {
+  if (cookieData.USER !== undefined) {
     user = JSON.parse(cookieData.USER);
   }
 
-  const response = await fetch(
-    `${CONSTANTS.BASELOCALHOST}/posts?identifier=${params?.postIdentifier}`
-  );
-  if (!response.ok) throw new Error(response.statusText);
-  const data = await response.json();
-  const post = data[0];
+  if (params?.postIdentifier !== undefined) {
+    try {
+      const response = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/posts?identifier=${params?.postIdentifier}`
+      );
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
+      const data = await response.json();
+      post = data[0];
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   if (
-    (user === undefined || !user?.subscription?.isSubscribed) &&
+    post !== null &&
+    (user === null || !user?.subscription?.isSubscribed) &&
     post.pricing === "Premium"
   ) {
     post.content = [
@@ -124,57 +180,76 @@ export const getServerSideProps: GetServerSideProps = async ({
     ];
   }
 
-  if (user !== null && post.id) {
-    const getUserResponse = await fetch(
-      `${CONSTANTS.BASELOCALHOST}/users/${user.id}`
-    );
-    if (!getUserResponse.ok) throw new Error(getUserResponse.statusText);
-    const userData = await getUserResponse.json();
-    const newUser = historyUpdater(userData, post);
-    user = newUser;
-
-    const userResponse = await fetch(
-      `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
+  if (user !== null && post !== null) {
+    try {
+      const getUserResponse = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/users/${user.id}`
+      );
+      if (!getUserResponse.ok) {
+        errorNotify(getUserResponse);
+        throw new Error(getUserResponse.statusText);
       }
-    );
-
-    if (!userResponse.ok) throw new Error(userResponse.statusText);
-    let favoriteNumber: number = 0;
-
-    for (let k in user.favorite) {
-      if (user.favorite[k as keyof typeof user.favorite] > favoriteNumber) {
-        favoriteCategory = k;
-        favoriteNumber = user.favorite[k as keyof typeof user.favorite];
+      const userData = await getUserResponse.json();
+      const newUser = historyUpdater(userData, post);
+      user = newUser;
+      const userResponse = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/users/${user.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        }
+      );
+      if (!userResponse.ok) {
+        errorNotify(userResponse);
+        throw new Error(userResponse.statusText);
       }
+      let favoriteNumber: number = 0;
+      for (let k in user.favorite) {
+        if (user.favorite[k as keyof typeof user.favorite] > favoriteNumber) {
+          favoriteCategory = k;
+          favoriteNumber = user.favorite[k as keyof typeof user.favorite];
+        }
+      }
+      const recommendedResponse = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/posts?_sort=createdAt&_order=desc${
+          favoriteCategory === "" ? "" : `&category_like=${favoriteCategory}`
+        }&id_ne=${post.id}&_limit=3`
+      );
+      if (!recommendedResponse.ok) {
+        errorNotify(recommendedResponse);
+        throw new Error(recommendedResponse.statusText);
+      }
+      recommendedData = await recommendedResponse.json();
+    } catch (error) {
+      console.error(error);
     }
-    const recommendedResponse = await fetch(
-      `${CONSTANTS.BASELOCALHOST}/posts?_sort=createdAt&_order=desc${
-        favoriteCategory === "" ? "" : `&category_like=${favoriteCategory}`
-      }&id_ne=${post.id}&_limit=3`
-    );
-    if (!userResponse.ok) throw new Error(userResponse.statusText);
-    recommendedData = await recommendedResponse.json();
   }
 
-  if (!post.id) {
-    return {
-      notFound: true,
-    };
-  } else {
-    return {
-      props: {
-        post: post,
-        user: user || null,
-        recommendedData: recommendedData || null,
-      },
-    };
+  if (user === null && post !== null) {
+    try {
+      const recommendedResponse = await fetch(
+        `${CONSTANTS.BASELOCALHOST}/posts?_sort=createdAt&_order=desc&category_like=${post.category}&id_ne=${post.id}&_limit=3`
+      );
+      if (!recommendedResponse.ok) {
+        errorNotify(recommendedResponse);
+        throw new Error(recommendedResponse.statusText);
+      }
+      recommendedData = await recommendedResponse.json();
+    } catch (error) {
+      console.error(error);
+    }
   }
+
+  return {
+    props: {
+      post: post || null,
+      user: user || null,
+      recommendedData: recommendedData || null,
+    },
+  };
 };
 
 export default Index;

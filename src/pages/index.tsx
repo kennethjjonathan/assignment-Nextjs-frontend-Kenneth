@@ -15,7 +15,24 @@ export default function Home({ topFivePosts }: HomeProps) {
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
         <title>Terrace</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="keywords"
+          content="Teracce, Legal, Indonesian Legal, Hukum, Majalah Hukum"
+        />
+        <meta
+          name="description"
+          content="Terrace is an award winning Indonesian legal journalism"
+        />
+        <meta name="author" content="Teracce" />
+        <meta name="og:title" content="Teracce" />
+        <meta
+          name="og:description"
+          content="Terrace is an award winning Indonesian legal journalism"
+        />
+        <meta name="og:type" content="website" />
       </Head>
       <main>
         <section className="w-full">

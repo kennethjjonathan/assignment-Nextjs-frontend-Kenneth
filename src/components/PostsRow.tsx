@@ -1,5 +1,5 @@
 import IArticle from "@/interface/IArticle";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { BsInfoLg } from "react-icons/bs";
 import { TbEdit } from "react-icons/tb";
 import { BiTrash } from "react-icons/bi";
@@ -8,20 +8,31 @@ import { useRouter } from "next/router";
 import CONSTANTS from "@/constants/constants";
 import DeleteConfirmationModal from "./DeleteConfirmationModal";
 import Link from "next/link";
+import errorNotify from "@/library/helper/errorNotify";
+import successNotify from "@/library/helper/successToast";
 
 type PostsRowProps = {
   currentPage: number;
   dataPerPage: number;
   post: IArticle;
   index: number;
+  setUpdateToggle: Dispatch<SetStateAction<boolean>>;
 };
 
-function PostsRow({ currentPage, dataPerPage, post, index }: PostsRowProps) {
-  const router = useRouter();
+function PostsRow({
+  currentPage,
+  dataPerPage,
+  post,
+  index,
+  setUpdateToggle,
+}: PostsRowProps) {
   const [isDetailOpen, setIsDetailOpen] = useState<boolean>(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState<boolean>(false);
+  const [isDeletLoading, setIsDeleteLoading] = useState<boolean>(false);
 
   async function handleDeletePost() {
+    setIsDeleteOpen(false);
+    setIsDeleteLoading(true);
     try {
       const response = await fetch(
         `${CONSTANTS.BASELOCALHOST}/posts/${post.id}`,
@@ -29,10 +40,16 @@ function PostsRow({ currentPage, dataPerPage, post, index }: PostsRowProps) {
           method: "DELETE",
         }
       );
-      if (!response.ok) throw new Error(response.statusText);
-      router.reload();
+      if (!response.ok) {
+        errorNotify(response);
+        throw new Error(response.statusText);
+      }
+      successNotify("Delete successful");
+      setUpdateToggle((prev) => !prev);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsDeleteLoading(false);
     }
   }
 
@@ -82,9 +99,13 @@ function PostsRow({ currentPage, dataPerPage, post, index }: PostsRowProps) {
           </Link>
         </td>
         <td className="border-[1px] border-text-primary py-2 px-2 text-red-custom duration-300 hover:text-red-900 text-sm sm:text-base lg:text-lg">
-          <button onClick={() => setIsDeleteOpen(true)}>
-            <BiTrash />
-          </button>
+          {isDeletLoading ? (
+            <div className="w-5 h-5 border-4 border-red-custom border-b-transparent rounded-full cursor-not-allowed mx-auto animate-spin" />
+          ) : (
+            <button onClick={() => setIsDeleteOpen(true)}>
+              <BiTrash />
+            </button>
+          )}
         </td>
       </tr>
     </>
