@@ -11,6 +11,7 @@ import errorNotify from "@/library/helper/errorNotify";
 import errorNotifyString from "@/library/helper/errorNotifyString";
 import successNotify from "@/library/helper/successToast";
 import checkIfDateHasPassed from "@/library/helper/checkIfDateHasPassed";
+import infoNotify from "@/library/helper/infoNotify";
 
 function Login() {
   const [emailValue, setEmailValue] = useState<string>("");
@@ -107,7 +108,7 @@ function Login() {
           errorNotify(revalidResponse);
           throw new Error(revalidResponse.statusText);
         }
-        successNotify(
+        infoNotify(
           "Your subscription has expired, you are now a non-premium user"
         );
       }

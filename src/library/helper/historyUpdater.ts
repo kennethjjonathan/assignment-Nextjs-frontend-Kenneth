@@ -5,8 +5,8 @@ import IUser from "@/interface/IUser";
 function historyUpdater(user: IUser, post: IArticle): IUser {
   const helperDate = new Date();
   const newHistory: IHistory = {
+    id: post.id,
     title: post.title,
-    imagerSrc: post.thumbnail,
     identifier: post.identifier,
     readTime: new Date(
       helperDate.getTime() - helperDate.getTimezoneOffset() * 60000
@@ -19,12 +19,12 @@ function historyUpdater(user: IUser, post: IArticle): IUser {
   const newHistoryArr: IHistory[] = user.history.slice();
 
   for (let i = 0; i < newHistoryArr.length; i++) {
-    if (newHistoryArr[i].identifier === newHistory.identifier) {
+    if (newHistoryArr[i].id === newHistory.id) {
       newHistoryArr.splice(i, 1);
       break;
     }
   }
-  newHistoryArr.push(newHistory);
+  newHistoryArr.unshift(newHistory);
   const newUser = { ...user, history: newHistoryArr };
   return newUser;
 }

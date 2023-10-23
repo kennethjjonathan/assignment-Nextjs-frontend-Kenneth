@@ -28,7 +28,7 @@ function Index({ post, user, recommendedData }: PostDetailProps) {
   if (post === null) {
     return (
       <>
-        <section className="container mx-auto px-generic-horizontal-mobile pt-generic-top-mobile w-full">
+        <section className="container mx-auto px-generic-horizontal-mobile pt-generic-top-mobile w-full pb-generic-bottom-mobile">
           <NotAbleToGetContent text="Not able to load content" />
         </section>
         {recommendedData && (

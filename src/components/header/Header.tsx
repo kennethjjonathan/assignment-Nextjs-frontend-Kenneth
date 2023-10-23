@@ -82,22 +82,32 @@ function Header() {
             {user === undefined ? (
               <>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500`}
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500`}
                   onClick={() => setIsNavOpen(false)}
                 >
                   <Link href="/login">Login</Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500`}
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500`}
                   onClick={() => setIsNavOpen(false)}
                 >
                   <Link href="/register">Register</Link>
+                </li>
+                <li
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                    /\/subscribe/gi.test(pathname)
+                      ? "underline decoration-red-custom"
+                      : ""
+                  }`}
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  <Link href="/subscribe">Subscribe</Link>
                 </li>
               </>
             ) : /\/admin\/*/gi.test(pathname) ? (
               <>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
                     pathname === "/admin"
                       ? "underline decoration-red-custom"
                       : ""
@@ -107,7 +117,7 @@ function Header() {
                   <Link href="/admin">Hello, {cookie.USER.name}</Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
                     pathname === "/admin/customers"
                       ? "underline decoration-red-custom"
                       : ""
@@ -117,7 +127,7 @@ function Header() {
                   <Link href="/admin/customers">Customers</Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
                     /\/admin\/manage-posts/gi.test(pathname)
                       ? "underline decoration-red-custom"
                       : ""
@@ -127,7 +137,7 @@ function Header() {
                   <Link href="/admin/manage-posts">Manage Posts</Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
                     pathname === "/admin/transactions"
                       ? "underline decoration-red-custom"
                       : ""
@@ -137,7 +147,7 @@ function Header() {
                   <Link href="/admin/transactions">Transactions</Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 cursor-pointer`}
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 cursor-pointer`}
                   onClick={() => setIslogOutOpen(true)}
                 >
                   Log Out
@@ -146,19 +156,23 @@ function Header() {
             ) : (
               <>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
                     pathname === "/profile"
                       ? "underline decoration-red-custom"
                       : ""
                   }`}
                   onClick={() => setIsNavOpen(false)}
                 >
-                  <Link href={cookie.USER.isAdmin ? "/admin" : "/profile"}>
+                  <Link
+                    href={
+                      cookie.USER && cookie.USER.isAdmin ? "/admin" : "/profile"
+                    }
+                  >
                     Hello, {cookie.USER.name}
                   </Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 ${
                     /\/subscribe/gi.test(pathname)
                       ? "underline decoration-red-custom"
                       : ""
@@ -168,7 +182,7 @@ function Header() {
                   <Link href="/subscribe">Subscribe</Link>
                 </li>
                 <li
-                  className={`main-text font-[800] decoration-2 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 cursor-pointer`}
+                  className={`main-text font-[800] decoration-2 mt-2 lg:mt-0 text-xl lg:text-base duration-300 hover:underline hover:decoration-blue-500 cursor-pointer`}
                   onClick={() => setIslogOutOpen(true)}
                 >
                   Log Out

@@ -1,6 +1,6 @@
 interface IHistory {
+  id: number;
   title: string;
-  imagerSrc: string;
   identifier: string;
   readTime: string;
 }

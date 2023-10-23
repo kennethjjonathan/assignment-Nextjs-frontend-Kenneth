@@ -14,28 +14,19 @@ type HistoryRowProps = {
 function HistoryRow({ history, index }: HistoryRowProps) {
   return (
     <tr
-      className={`border-2 border-gray-300 px-2 py-1 text-left ${
+      className={`border-2 border-gray-300 text-left ${
         index % 2 === 0 ? "bg-smokewhite-custom" : "bg-gray-300"
       }`}
     >
-      <td className="text-center text-text-secondary text-base lg:text-lg">
+      <td className="text-center text-text-secondary text-base lg:text-lg py-2 px-1">
         {checkIfToday(history.readTime.toString())
           ? hourFormatter(history.readTime.toString())
           : dateOnlyFormatter(history.readTime.toString())}{" "}
       </td>
       <td className="text-lg lg:text-xl">
-        <Link href={`/${history.identifier}`} className="underline">
+        <Link href={`/${history.identifier}`} className="underline py-2 px-1">
           {history.title}
         </Link>
-      </td>
-      <td className="grid place-items-center">
-        <div className="relative w-12 h-12 rounded-full overflow-hidden lg:w-16 lg:h-16">
-          <Image
-            src={history.imagerSrc}
-            alt="Thumgnail of the post"
-            fill={true}
-          />
-        </div>
       </td>
     </tr>
   );

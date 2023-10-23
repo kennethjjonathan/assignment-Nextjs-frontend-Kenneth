@@ -10,6 +10,7 @@ import { BsFilterLeft } from "react-icons/bs";
 import PrimaryButton from "@/components/PrimaryButton";
 import axios from "axios";
 import PaginationNav from "@/components/PaginationNav";
+import SearchBar from "@/components/SearchBar";
 
 function Index() {
   const statusOptionArr: string[] = ["All", "process", "canceled", "completed"];
@@ -22,6 +23,7 @@ function Index() {
   const dataPerPage: number = 5;
   const [dataAmount, setDataAmount] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   function addADay(input: string) {
     const date: Date = new Date(input);
@@ -32,9 +34,9 @@ function Index() {
   async function getTransactions() {
     try {
       const response = await axios.get(
-        `${
-          CONSTANTS.BASELOCALHOST
-        }/transactions?_expand=user&_page=${currentPage}&_limit=${dataPerPage}${
+        `${CONSTANTS.BASELOCALHOST}/transactions?_expand=user${
+          searchValue === "" ? "" : `&q=${searchValue}`
+        }&_page=${currentPage}&_limit=${dataPerPage}${
           status === "All" ? "" : `&status=${status}`
         }${fromDate === "" ? "" : `&createdAt_gte=${fromDate}`}${
           toDate === "" ? "" : `&createdAt_lte=${addADay(toDate)}`
@@ -51,6 +53,15 @@ function Index() {
     getTransactions();
   }, [updateToggle, status, fromDate, toDate, currentPage]);
 
+  useEffect(() => {
+    const wait = setTimeout(() => {
+      setCurrentPage(1);
+      getTransactions();
+    }, 1000);
+
+    return () => clearTimeout(wait);
+  }, [searchValue]);
+
   return (
     <>
       <Head>
@@ -64,6 +75,8 @@ function Index() {
         setStatus={setStatus}
         fromDate={fromDate}
         setFromDate={setFromDate}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
         toDate={toDate}
         setToDate={setToDate}
       />
@@ -71,7 +84,7 @@ function Index() {
         <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
           Manage Transactions
         </h1>
-        <div className="w-full items-center gap-2 mt-3 hidden sm:flex justify-between">
+        <div className="w-full items-end gap-2 mt-3 hidden sm:flex justify-between">
           <div>
             <SelectOptions
               label="By Status"
@@ -92,6 +105,13 @@ function Index() {
               id="transaction-to-date"
               inputValue={toDate}
               setInputValue={setToDate}
+            />
+          </div>
+          <div>
+            <SearchBar
+              placeHolder="Search non user keyword..."
+              inputValue={searchValue}
+              setInputValue={setSearchValue}
             />
           </div>
         </div>

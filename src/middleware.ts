@@ -34,7 +34,11 @@ export async function middleware(req: NextRequest) {
   if (!cookieData && isPaymentRoute(pathname)) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
-  
+
+  if (!cookieData && isAdminRoute(pathname)) {
+    return NextResponse.redirect(new URL("/login", req.url));
+  }
+
   if (cookieData !== undefined) {
     user = JSON.parse(cookieData);
   }

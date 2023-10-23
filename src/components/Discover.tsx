@@ -156,6 +156,15 @@ function Discover() {
               <div className="mt-3 h-full">
                 <PostCardSkeleton />
               </div>
+              <div className="mt-3 h-full">
+                <PostCardSkeleton />
+              </div>
+              <div className="mt-3 h-full">
+                <PostCardSkeleton />
+              </div>
+              <div className="mt-3 h-full">
+                <PostCardSkeleton />
+              </div>
             </>
           ) : (
             posts.length > 0 &&

@@ -14,19 +14,35 @@
       },
       "createdAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
       "updatedAt": "Thu Oct 12 2023 23:15:30 GMT+0700 (Western Indonesia Time)",
-      "liked": [],
+      "liked": [
+        10,
+        12,
+        13
+      ],
       "history": [
+        {
+          "id": 19,
+          "title": "The best lawyer",
+          "identifier": "The-best-lawyer-u8tqsb28j92u",
+          "readTime": "2023-10-24T00:13:58.939Z"
+        },
+        {
+          "id": 17,
+          "title": "Article 3",
+          "identifier": "Article-3-0qzqjawvll2n",
+          "readTime": "2023-10-24T00:07:02.711Z"
+        },
+        {
+          "id": 18,
+          "title": "Test?specialCharacter///Test:&Test.",
+          "identifier": "TestchrspecialCharacterchrchrchrTestchrchrTestchr-hqzgsq40hkgd",
+          "readTime": "2023-10-24T00:06:46.502Z"
+        },
         {
           "title": "What can we learn from introverted Lawyers",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
           "identifier": "What-can-we-learn-from-introverted-Lawyers",
           "readTime": "2023-10-22T14:02:44.302Z"
-        },
-        {
-          "title": "What is my favorite color",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
-          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
-          "readTime": "2023-10-22T22:44:30.220Z"
         },
         {
           "title": "Lawyer Article 1",
@@ -41,23 +57,46 @@
           "readTime": "2023-10-22T22:44:45.275Z"
         },
         {
+          "title": "What is my favorite color",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-23T22:17:55.706Z"
+        },
+        {
           "title": "I love christmas",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697773454/nvjhuagotljbly6ehpjm.jpg",
           "identifier": "I-love-christmas-0fa842xmqkxl",
-          "readTime": "2023-10-22T22:44:48.345Z"
+          "readTime": "2023-10-23T22:18:24.960Z"
         },
         {
           "title": "Legal Draft Tips for Overseas Contracts",
           "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774062/havqpukhjgevauynwroo.jpg",
           "identifier": "Legal-Draft-Tips-for-Overseas-Contracts-j6te5r16duv9",
-          "readTime": "2023-10-22T22:44:51.420Z"
+          "readTime": "2023-10-23T22:18:55.345Z"
+        },
+        {
+          "title": "Test?specialCharacter///Test:&Test.",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698075328/eyxoe8lmuk7jvsf13vxm.jpg",
+          "identifier": "TestchrspecialCharacterchrchrchrTestchrchrTestchr-flvlzjf9dkrb",
+          "readTime": "2023-10-23T22:35:49.936Z"
+        },
+        {
+          "title": "Test?specialCharacter///Test:&Test.",
+          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698075969/u2wju5xcppy4unxxuyto.jpg",
+          "identifier": "TestchrspecialCharacterchrchrchrTestchrchrTestchr-hqzgsq40hkgd",
+          "readTime": "2023-10-23T22:46:19.862Z"
         }
       ],
-      "shared": [],
+      "shared": [
+        10,
+        12,
+        13,
+        17
+      ],
       "favorite": {
         "Unwind": 0,
-        "Lawyers Spotlight": 0,
-        "Curated News": 0
+        "Lawyers Spotlight": 3,
+        "Curated News": 2
       }
     },
     {
@@ -217,52 +256,10 @@
       "id": 8,
       "history": [
         {
-          "title": "Joaquin leads the way in court debate",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Joaquin-leads-the-way-in-court-debate",
-          "readTime": "2023-10-18T16:10:18.204Z"
-        },
-        {
-          "title": "Why emphaty is an underated skill for lawyers",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Why-emphaty-is-an-underated-skill-for-lawyers",
-          "readTime": "2023-10-19T02:56:38.108Z"
-        },
-        {
-          "title": "Merge and Acquisition is revolutionized",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Merge-and-Acquisition-is-revolutionized",
-          "readTime": "2023-10-19T17:56:36.170Z"
-        },
-        {
-          "title": "The new regulation for private law",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "The-new-regulation-for-private-law",
-          "readTime": "2023-10-19T20:39:20.159Z"
-        },
-        {
-          "title": "Kenneth J. Jonathan is the slickest Corporate Lawyer in downtown",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "Kenneth-J.-Jonathan-is-the-slickest-Corporate-Lawyer-in-downtown",
-          "readTime": "2023-10-19T21:41:43.883Z"
-        },
-        {
-          "title": "What can we learn from introverted Lawyers",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697168142/xyk7m8clfwoznzfek3g0.jpg",
-          "identifier": "What-can-we-learn-from-introverted-Lawyers",
-          "readTime": "2023-10-19T22:28:34.471Z"
-        },
-        {
-          "title": "How great Lawyers maintain work-life balance",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
-          "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
-          "readTime": "2023-10-23T00:13:41.977Z"
-        },
-        {
+          "id": 10,
           "title": "What is my favorite color",
-          "imagerSrc": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697695905/wtddk5ez41f6celvxbpt.jpg",
           "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
-          "readTime": "2023-10-23T00:56:30.924Z"
+          "readTime": "2023-10-23T23:54:07.022Z"
         }
       ],
       "shared": [
@@ -602,8 +599,8 @@
       "id": 9
     },
     {
-      "liked": 2,
-      "shared": 0,
+      "liked": 4,
+      "shared": 1,
       "pricing": "Premium",
       "category": "Curated News",
       "title": "What is my favorite color",
@@ -638,8 +635,8 @@
       "id": 11
     },
     {
-      "liked": 2,
-      "shared": 1,
+      "liked": 3,
+      "shared": 2,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
       "title": "I love christmas",
@@ -657,8 +654,8 @@
       "id": 12
     },
     {
-      "liked": 1,
-      "shared": 0,
+      "liked": 2,
+      "shared": 1,
       "pricing": "Premium",
       "category": "Lawyers Spotlight",
       "title": "Legal Draft Tips for Overseas Contracts",
@@ -666,7 +663,9 @@
       "author": "Kenneth J. Jonathan",
       "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774062/havqpukhjgevauynwroo.jpg",
       "content": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.\nAenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.\n"
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.",
+        "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.",
+        "Aenean et ante eget velit vulputate bibendum vel eget nisl. Maecenas rhoncus iaculis magna. Nunc a lacus porttitor, gravida erat a, mollis lacus. Duis lobortis pharetra diam id eleifend. Maecenas condimentum urna et viverra venenatis. Quisque lacinia aliquet ex at porttitor. Morbi vel nisi venenatis, aliquam velit et, venenatis enim. Donec et justo eu ligula ullamcorper mattis eget vel nibh. Nam id orci sit amet urna rutrum molestie sit amet non felis. Vestibulum vehicula vehicula orci sed lobortis. Integer sed ullamcorper mi. Vestibulum tristique lectus ac neque convallis, sit amet viverra est pellentesque."
       ],
       "identifier": "Legal-Draft-Tips-for-Overseas-Contracts-j6te5r16duv9",
       "createdAt": "2023-10-20T03:54:23.566Z",
@@ -684,9 +683,7 @@
       "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1697774912/w4bqkagj5schdtij35c8.jpg",
       "content": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis metus ex, dictum faucibus leo dignissim eu. Mauris dolor sem, vulputate lacinia gravida sed, finibus vitae metus. Ut in risus at velit sollicitudin egestas. Duis feugiat lectus at feugiat ornare. Fusce ac tortor sit amet arcu molestie feugiat nec a eros. Quisque at quam viverra, condimentum purus non, sagittis orci. Aenean venenatis erat at sem auctor bibendum. Nulla tincidunt odio elit, vehicula gravida massa sodales sed. Nam eu augue et est posuere vestibulum. Phasellus ac mauris eu felis hendrerit cursus consequat non ante. Sed egestas orci at nulla luctus, vitae luctus mauris sollicitudin. Aliquam sit amet sagittis quam. Praesent iaculis tincidunt metus sit amet convallis. Sed a venenatis dolor. Nunc sapien ante, gravida ac tempus sed, mattis eget nulla.",
-        "",
         "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus.",
-        "",
         "Aenean non lacus eget erat iaculis venenatis a sed neque. Quisque fringilla mi eu ante condimentum, et laoreet odio accumsan. Nulla molestie tempor neque, ut volutpat ex laoreet in. Ut nisl diam, elementum sed condimentum ac, euismod non purus. Quisque pharetra dui et nisi pretium placerat. Praesent id risus dignissim, sagittis orci eu, volutpat enim. Sed sollicitudin accumsan enim eget vulputate. Vivamus cursus diam in sem porta accumsan sit amet quis eros. Morbi tempus mollis lorem congue facilisis. Cras magna nisl, malesuada in laoreet at, sodales et nisi. Nullam ex arcu, egestas vitae tellus vitae, ornare aliquam lacus. Suspendisse potenti. Quisque erat mauris, iaculis id pretium vitae, pharetra eu tellus."
       ],
       "identifier": "How-great-Lawyers-maintain-work-life-balance-nle6gmu97dnn",
@@ -712,6 +709,85 @@
       "createdAt": "2023-10-22T07:58:18.251Z",
       "updatedAt": "2023-10-22T07:58:18.251Z",
       "id": 15
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Curated News",
+      "title": "Lawyer Article 2",
+      "opening": "Lawyers are the best",
+      "author": "Kenneth",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698073400/wfjb7xnwvvaegvunmtd8.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, maximus vitae magna lobortis, suscipit ullamcorper lacus. Aliquam ac turpis faucibus, tristique justo nec, condimentum est. Nam tempor molestie leo quis pretium. Cras at sapien dolor. Aliquam ac ornare neque. Phasellus ultrices ex lectus, eget vehicula leo hendrerit ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec vestibulum purus in purus laoreet, eget tincidunt ligula feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ut cursus justo. Donec efficitur diam facilisis turpis lobortis, ut dapibus ante feugiat.",
+        "Praesent sed ante in massa ornare sagittis. Proin nec sodales arcu. Nullam egestas mattis massa varius sodales. Maecenas vitae nisi viverra, sodales mauris eu, lobortis risus. Proin pharetra malesuada pretium. Pellentesque aliquet nec ex id volutpat. Proin consequat lacus sit amet arcu scelerisque dignissim. Pellentesque vel ultricies risus, ac congue nisl.",
+        "Suspendisse eget risus in diam blandit finibus. Mauris ornare, felis id interdum tincidunt, turpis ante convallis libero, sit amet fringilla dui tellus a magna. Fusce id odio enim. Donec maximus nisl eu pellentesque pharetra. Praesent ornare, metus a scelerisque accumsan, risus mauris ultrices ex, et elementum diam nunc a ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla tincidunt pretium lacus vel consectetur. Donec vitae justo ante. Nulla vel malesuada elit. Aliquam id lectus massa. Curabitur ultricies vehicula leo ut fermentum. Cras pharetra elit eget dictum elementum.",
+        "Phasellus egestas sapien sit amet eros tristique, a varius sem congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque sed ex ac eros condimentum efficitur. Mauris posuere urna at iaculis lacinia. Nunc vel porta nisl. Donec fringilla commodo ligula. Curabitur placerat diam a justo aliquam varius. Curabitur at vulputate neque. Morbi condimentum ut dolor a consectetur. Fusce scelerisque orci eget nunc iaculis venenatis. Vivamus id ligula et sapien maximus finibus. Quisque quis dui consequat, hendrerit tellus in, hendrerit libero. Vestibulum faucibus arcu dui, eu feugiat arcu maximus eget. Aliquam mollis aliquet tellus, ut sagittis lacus pellentesque ut."
+      ],
+      "identifier": "Lawyer-Article-2-vdov1pazgj0d",
+      "createdAt": "2023-10-23T15:03:22.158Z",
+      "updatedAt": "2023-10-23T15:03:22.158Z",
+      "id": 16
+    },
+    {
+      "liked": 1,
+      "shared": 1,
+      "pricing": "Free",
+      "category": "Lawyers Spotlight",
+      "title": "Article 3",
+      "opening": "Hot news in capital market law",
+      "author": "Kenneth",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698073746/w0wchppc7rhq1qnjfb5m.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, maximus vitae magna lobortis, suscipit ullamcorper lacus. Aliquam ac turpis faucibus, tristique justo nec, condimentum est. Nam tempor molestie leo quis pretium. Cras at sapien dolor. Aliquam ac ornare neque. Phasellus ultrices ex lectus, eget vehicula leo hendrerit ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec vestibulum purus in purus laoreet, eget tincidunt ligula feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ut cursus justo. Donec efficitur diam facilisis turpis lobortis, ut dapibus ante feugiat.",
+        "Praesent sed ante in massa ornare sagittis. Proin nec sodales arcu. Nullam egestas mattis massa varius sodales. Maecenas vitae nisi viverra, sodales mauris eu, lobortis risus. Proin pharetra malesuada pretium. Pellentesque aliquet nec ex id volutpat. Proin consequat lacus sit amet arcu scelerisque dignissim. Pellentesque vel ultricies risus, ac congue nisl.",
+        "Suspendisse eget risus in diam blandit finibus. Mauris ornare, felis id interdum tincidunt, turpis ante convallis libero, sit amet fringilla dui tellus a magna. Fusce id odio enim. Donec maximus nisl eu pellentesque pharetra. Praesent ornare, metus a scelerisque accumsan, risus mauris ultrices ex, et elementum diam nunc a ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla tincidunt pretium lacus vel consectetur. Donec vitae justo ante. Nulla vel malesuada elit. Aliquam id lectus massa. Curabitur ultricies vehicula leo ut fermentum. Cras pharetra elit eget dictum elementum.",
+        "Phasellus egestas sapien sit amet eros tristique, a varius sem congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque sed ex ac eros condimentum efficitur. Mauris posuere urna at iaculis lacinia. Nunc vel porta nisl. Donec fringilla commodo ligula. Curabitur placerat diam a justo aliquam varius. Curabitur at vulputate neque. Morbi condimentum ut dolor a consectetur. Fusce scelerisque orci eget nunc iaculis venenatis. Vivamus id ligula et sapien maximus finibus. Quisque quis dui consequat, hendrerit tellus in, hendrerit libero. Vestibulum faucibus arcu dui, eu feugiat arcu maximus eget. Aliquam mollis aliquet tellus, ut sagittis lacus pellentesque ut."
+      ],
+      "identifier": "Article-3-0qzqjawvll2n",
+      "createdAt": "2023-10-23T15:07:51.421Z",
+      "updatedAt": "2023-10-23T15:09:07.667Z",
+      "id": 17
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Free",
+      "category": "Lawyers Spotlight",
+      "title": "Test?specialCharacter///Test:&Test.",
+      "opening": "Test special characters title",
+      "author": "Kenneth",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698075969/u2wju5xcppy4unxxuyto.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, maximus vitae magna lobortis, suscipit ullamcorper lacus. Aliquam ac turpis faucibus, tristique justo nec, condimentum est. Nam tempor molestie leo quis pretium. Cras at sapien dolor. Aliquam ac ornare neque. Phasellus ultrices ex lectus, eget vehicula leo hendrerit ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec vestibulum purus in purus laoreet, eget tincidunt ligula feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ut cursus justo. Donec efficitur diam facilisis turpis lobortis, ut dapibus ante feugiat.",
+        "Praesent sed ante in massa ornare sagittis. Proin nec sodales arcu. Nullam egestas mattis massa varius sodales. Maecenas vitae nisi viverra, sodales mauris eu, lobortis risus. Proin pharetra malesuada pretium. Pellentesque aliquet nec ex id volutpat. Proin consequat lacus sit amet arcu scelerisque dignissim. Pellentesque vel ultricies risus, ac congue nisl.",
+        "Suspendisse eget risus in diam blandit finibus. Mauris ornare, felis id interdum tincidunt, turpis ante convallis libero, sit amet fringilla dui tellus a magna. Fusce id odio enim. Donec maximus nisl eu pellentesque pharetra. Praesent ornare, metus a scelerisque accumsan, risus mauris ultrices ex, et elementum diam nunc a ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla tincidunt pretium lacus vel consectetur. Donec vitae justo ante. Nulla vel malesuada elit. Aliquam id lectus massa. Curabitur ultricies vehicula leo ut fermentum. Cras pharetra elit eget dictum elementum.",
+        "Phasellus egestas sapien sit amet eros tristique, a varius sem congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque sed ex ac eros condimentum efficitur. Mauris posuere urna at iaculis lacinia. Nunc vel porta nisl. Donec fringilla commodo ligula. Curabitur placerat diam a justo aliquam varius. Curabitur at vulputate neque. Morbi condimentum ut dolor a consectetur. Fusce scelerisque orci eget nunc iaculis venenatis. Vivamus id ligula et sapien maximus finibus. Quisque quis dui consequat, hendrerit tellus in, hendrerit libero. Vestibulum faucibus arcu dui, eu feugiat arcu maximus eget. Aliquam mollis aliquet tellus, ut sagittis lacus pellentesque ut."
+      ],
+      "identifier": "TestchrspecialCharacterchrchrchrTestchrchrTestchr-hqzgsq40hkgd",
+      "createdAt": "2023-10-23T15:35:29.356Z",
+      "updatedAt": "2023-10-23T15:46:09.936Z",
+      "id": 18
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Curated News",
+      "title": "The best lawyer",
+      "opening": "A good Lawyer Indeed",
+      "author": "Kenneth",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698081218/h7mxdrhkohhtx2vowlgs.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, maximus vitae magna lobortis, suscipit ullamcorper lacus. Aliquam ac turpis faucibus, tristique justo nec, condimentum est. Nam tempor molestie leo quis pretium. Cras at sapien dolor. Aliquam ac ornare neque. Phasellus ultrices ex lectus, eget vehicula leo hendrerit ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec vestibulum purus in purus laoreet, eget tincidunt ligula feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ut cursus justo. Donec efficitur diam facilisis turpis lobortis, ut dapibus ante feugiat.",
+        "Praesent sed ante in massa ornare sagittis. Proin nec sodales arcu. Nullam egestas mattis massa varius sodales. Maecenas vitae nisi viverra, sodales mauris eu, lobortis risus. Proin pharetra malesuada pretium. Pellentesque aliquet nec ex id volutpat. Proin consequat lacus sit amet arcu scelerisque dignissim. Pellentesque vel ultricies risus, ac congue nisl.",
+        "Suspendisse eget risus in diam blandit finibus. Mauris ornare, felis id interdum tincidunt, turpis ante convallis libero, sit amet fringilla dui tellus a magna. Fusce id odio enim. Donec maximus nisl eu pellentesque pharetra. Praesent ornare, metus a scelerisque accumsan, risus mauris ultrices ex, et elementum diam nunc a ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla tincidunt pretium lacus vel consectetur. Donec vitae justo ante. Nulla vel malesuada elit. Aliquam id lectus massa. Curabitur ultricies vehicula leo ut fermentum. Cras pharetra elit eget dictum elementum."
+      ],
+      "identifier": "The-best-lawyer-u8tqsb28j92u",
+      "createdAt": "2023-10-23T17:13:38.853Z",
+      "updatedAt": "2023-10-23T17:13:38.853Z",
+      "id": 19
     }
   ],
   "transactions": [
@@ -868,6 +944,16 @@
       "createdAt": "2023-10-22T16:45:53.655Z",
       "updatedAt": "2023-10-22T16:46:40.480Z",
       "id": 17
+    },
+    {
+      "userId": 2,
+      "status": "process",
+      "paymentCompletion": true,
+      "price": 50000,
+      "package": "Monthly",
+      "createdAt": "2023-10-23T17:08:04.683Z",
+      "updatedAt": "2023-10-23T17:08:19.414Z",
+      "id": 18
     }
   ]
 }

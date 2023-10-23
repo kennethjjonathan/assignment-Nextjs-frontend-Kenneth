@@ -66,7 +66,7 @@ function Index() {
             </PrimaryButton>
             <div className="w-1/3">
               <SearchBar
-                placeHolder="Search post"
+                placeHolder="Search post..."
                 inputValue={searchValue}
                 setInputValue={setSearchValue}
               />

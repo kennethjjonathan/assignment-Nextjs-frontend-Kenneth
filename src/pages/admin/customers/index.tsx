@@ -5,7 +5,6 @@ import Head from "next/head";
 import UsersRow from "@/components/UsersRow";
 import PaginationNav from "@/components/PaginationNav";
 import axios from "axios";
-import NotAbleToGetContent from "@/components/NotAbleToGetContent";
 import SearchBar from "@/components/SearchBar";
 
 function Index() {

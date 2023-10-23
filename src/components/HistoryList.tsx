@@ -23,13 +23,12 @@ function HistoryList({ history }: HistoryListProps) {
       )}
       {history.length > 0 && (
         <>
-          <div className="mt-2 w-full hidden sm:block">
+          <div className="mt-2 w-full hidden sm:block max-h-96 overflow-y-auto">
             <table className="w-full">
               <thead>
                 <tr className="text-left px-2 py-1 text-text-secondary main-text text-lg lg:text-xl">
                   <th className="text-center">Time</th>
                   <th>Title</th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -43,15 +42,15 @@ function HistoryList({ history }: HistoryListProps) {
               </tbody>
             </table>
           </div>
-          <div className="mt-2 w-full sm:hidden">
+          <div className="mt-2 w-full sm:hidden max-h-96 overflow-y-auto">
             {history.map((item, index) => (
               <div
                 key={item.identifier}
                 className={`${
                   index % 2 === 0 ? "bg-smokewhite-custom" : "bg-gray-300"
-                } flex items-center p-2 justify-between gap-2 border-[1px] border-gray-300`}
+                } flex items-center px-2 justify-between gap-2 border-[1px] border-gray-300 py-5`}
               >
-                <div className="text-sm text-text-secondary">
+                <div className="text-sm text-text-secondary min-w-[5rem] text-center">
                   {checkIfToday(item.readTime.toString())
                     ? hourFormatter(item.readTime.toString())
                     : dateOnlyFormatter(item.readTime.toString())}
@@ -60,17 +59,10 @@ function HistoryList({ history }: HistoryListProps) {
                   href={`/${item.identifier}`}
                   className="underline w-full text-justify"
                 >
-                  <p className="leading-none text-ellipsis line-clamp-2 w-full">
+                  <p className="leading-none text-ellipsis line-clamp-2]">
                     {item.title}
                   </p>
                 </Link>
-                <div className="relative rounded-full overflow-hidden w-12 h-12">
-                  <Image
-                    src={item.imagerSrc}
-                    alt="Thumbnail for the post"
-                    fill={true}
-                  />
-                </div>
               </div>
             ))}
           </div>

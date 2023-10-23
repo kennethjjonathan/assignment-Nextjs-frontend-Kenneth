@@ -1,6 +1,4 @@
-import { useCookies } from "react-cookie";
 import CONSTANTS from "@/constants/constants";
-import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 import IUser from "@/interface/IUser";
 import * as cookie from "cookie";

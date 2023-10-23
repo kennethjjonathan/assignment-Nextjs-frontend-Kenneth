@@ -80,7 +80,7 @@
     width: 80%;
     height: 100%;
     gap: 1rem;
-    padding: 3rem 5rem;
+    padding: 1rem 2rem;
     flex-direction: column;
     justify-content: baseline;
     align-items: baseline;
@@ -88,15 +88,15 @@
   }
 
   .nav__menu__active {
-    background-color: whitesmoke;
+    background-color: white;
     position: fixed;
     z-index: 50;
     right: 0;
     top: 4.6rem;
     width: 80%;
     height: 100%;
-    gap: 1rem;
-    padding: 3rem 5rem;
+    gap: 10rem;
+    padding: 1rem 2rem;
     flex-direction: column;
     justify-content: baseline;
     align-items: baseline;

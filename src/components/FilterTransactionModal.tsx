@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import ModalBase from "./ModalBase";
 import SelectOptions from "./SelectOptions";
 import DateInput from "./DateInput";
+import SearchBar from "./SearchBar";
 
 type FilterTransactionModalProps = {
   statusOptionArr: string[];
@@ -11,6 +12,8 @@ type FilterTransactionModalProps = {
   setFromDate: Dispatch<SetStateAction<string>>;
   toDate: string;
   setToDate: Dispatch<SetStateAction<string>>;
+  searchValue: string;
+  setSearchValue: Dispatch<SetStateAction<string>>;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
@@ -24,6 +27,8 @@ function FilterTransactionModal({
   toDate,
   setToDate,
   isOpen,
+  searchValue,
+  setSearchValue,
   setIsOpen,
 }: FilterTransactionModalProps) {
   return (
@@ -57,6 +62,13 @@ function FilterTransactionModal({
             inputValue={toDate}
             setInputValue={setToDate}
           />
+          <div className="mt-3">
+            <SearchBar
+              placeHolder="Search non user keyword..."
+              inputValue={searchValue}
+              setInputValue={setSearchValue}
+            />
+          </div>
         </div>
       </div>
     </ModalBase>

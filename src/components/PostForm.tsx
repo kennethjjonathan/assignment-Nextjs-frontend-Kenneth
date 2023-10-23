@@ -39,7 +39,7 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
     isEdit ? data!.pricing : pricingArr[0]
   );
   const [content, setContent] = useState<string>(
-    isEdit ? data!.content.join("\n") : ""
+    isEdit ? data!.content.join("\n\n") : ""
   );
   const [isLoading, setIsLoading] = useState<boolean>(false);
   useEffect(() => {
@@ -119,9 +119,14 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
               opening: openingValue,
               author: author,
               thumbnail: thumbnailURL,
-              content: content.split("\n"),
+              content: content.split(/\n+/g),
               identifier:
-                titleValue.split(" ").join("-") + "-" + generateRandomString(),
+                titleValue
+                  .replace(/[^a-zA-Z\d\s]/g, "chr")
+                  .split(" ")
+                  .join("-") +
+                "-" +
+                generateRandomString(),
               createdAt: data!.createdAt,
               updatedAt: new Date(),
             }),
@@ -155,9 +160,14 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
             opening: openingValue,
             author: author,
             thumbnail: thumbnailURL,
-            content: content.split("\n"),
+            content: content.split(/\n+/g),
             identifier:
-              titleValue.split(" ").join("-") + "-" + generateRandomString(),
+              titleValue
+              .replace(/[^a-zA-Z\d\s]/g, "chr")
+              .split(" ")
+                .join("-") +
+              "-" +
+              generateRandomString(),
             createdAt: new Date(),
             updatedAt: new Date(),
           }),
@@ -166,8 +176,8 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
           errorNotify(response);
           throw new Error(response.statusText);
         }
-        successNotify(`Successfully created ${titleValue}`);
         router.replace("/admin/manage-posts");
+        successNotify(`Successfully created ${titleValue}`);
       } catch (error) {
         console.error(error);
       } finally {
@@ -234,7 +244,7 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
   return (
     <>
       <Head>
-        <title>Edit A Post</title>
+        <title>{isEdit ? "Edit A Post" : "Create A Post"}</title>
       </Head>
       <div className="container mx-auto px-generic-horizontal-mobile pt-generic-top-mobile pb-generic-bottom-mobile">
         <PrimaryButton
