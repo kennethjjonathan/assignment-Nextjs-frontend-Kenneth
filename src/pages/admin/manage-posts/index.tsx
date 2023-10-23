@@ -7,7 +7,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "next/router";
 import axios from "axios";
 import PaginationNav from "@/components/PaginationNav";
-import NotAbleToGetContent from "@/components/NotAbleToGetContent";
+import SearchBar from "@/components/SearchBar";
 
 function Index() {
   const [data, setData] = useState<IArticle[]>([]);
@@ -15,21 +15,34 @@ function Index() {
   const [dataAmount, setDataAmount] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [updateToggle, setUpdateToggle] = useState<boolean>(false);
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const getPosts = async () => {
+    try {
+      const response = await axios.get(
+        `${CONSTANTS.BASELOCALHOST}/posts?${
+          searchValue === "" ? "" : `&q=${searchValue}&`
+        }_page=${currentPage}&_limit=${dataPerPage}`
+      );
+      setDataAmount(response.headers["x-total-count"]);
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const response = await axios.get(
-          `${CONSTANTS.BASELOCALHOST}/posts?_page=${currentPage}&_limit=${dataPerPage}`
-        );
-        setDataAmount(response.headers["x-total-count"]);
-        setData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getPosts();
   }, [currentPage, updateToggle]);
+
+  useEffect(() => {
+    const wait = setTimeout(() => {
+      setCurrentPage(1);
+      getPosts();
+    }, 1000);
+
+    return () => clearTimeout(wait);
+  }, [searchValue]);
 
   const router = useRouter();
 
@@ -43,13 +56,22 @@ function Index() {
           <h1 className="text-2xl font-[800] sm:text-3xl md:text-5xl">
             Manage Posts
           </h1>
-          <PrimaryButton
-            callback={router.push}
-            param={"/admin/manage-posts/create"}
-            additionalStyling="px-2 py-1 text-lg"
-          >
-            Create a Post
-          </PrimaryButton>
+          <div className="w-full flex items-baseline justify-between">
+            <PrimaryButton
+              callback={router.push}
+              param={"/admin/manage-posts/create"}
+              additionalStyling="px-2 py-1 text-lg"
+            >
+              Create a Post
+            </PrimaryButton>
+            <div className="w-1/3">
+              <SearchBar
+                placeHolder="Search post"
+                inputValue={searchValue}
+                setInputValue={setSearchValue}
+              />
+            </div>
+          </div>
         </div>
         <div className="mt-8 w-full overflow-x-auto h-96">
           <table className="w-full border-collapse border-[1px] border-text-primary">

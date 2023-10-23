@@ -11,6 +11,7 @@ import PostCardSkeleton from "./skeletons/PostCardSkeleton";
 import NotAbleToGetContent from "./NotAbleToGetContent";
 import axios from "axios";
 import DarkPaginationNav from "./DarkPaginationNav";
+import SearchBar from "./SearchBar";
 
 function Discover() {
   const pricingOptionArr = ["All", "Premium", "Free"];
@@ -128,8 +129,7 @@ function Discover() {
             />
           </div>
           <div className="w-full lg:w-fit flex items-center">
-            <GenericTextInput
-              type="text"
+            <SearchBar
               inputValue={searchValue}
               setInputValue={setSearchValue}
               placeHolder="Search..."
