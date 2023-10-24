@@ -27,7 +27,7 @@ function Index() {
       setDataAmount(response.headers["x-total-count"]);
       setData(response.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

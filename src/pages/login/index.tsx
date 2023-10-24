@@ -131,7 +131,7 @@ function Login() {
         router.replace("/");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setIsLoading(false);
     }

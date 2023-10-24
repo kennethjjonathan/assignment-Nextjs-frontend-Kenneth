@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   let transaction: ITransaction | null = null;
   const cookieData = cookie.parse(req.headers.cookie!);
 
-  if (cookieData.USER) {
+  if (cookieData.USER !== undefined) {
     try {
       user = JSON.parse(cookieData.USER);
       const userResponse = await fetch(
