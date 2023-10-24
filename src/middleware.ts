@@ -18,6 +18,10 @@ const isRegisterRoute = (pathname: string) => {
   return pathname.startsWith("/register");
 };
 
+const isProfileRoute = (pathname: string) => {
+  return pathname.startsWith("/profile");
+};
+
 export async function middleware(req: NextRequest) {
   const cookieData = req.cookies.get(CONSTANTS.COOKIENAME)?.value!;
   const { pathname } = req.nextUrl;
@@ -36,6 +40,10 @@ export async function middleware(req: NextRequest) {
   }
 
   if (!cookieData && isAdminRoute(pathname)) {
+    return NextResponse.redirect(new URL("/login", req.url));
+  }
+
+  if (!cookieData && isProfileRoute(pathname)) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
