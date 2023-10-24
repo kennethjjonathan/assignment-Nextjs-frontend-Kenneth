@@ -5,8 +5,8 @@ const nextConfig = {
     domains: ['res.cloudinary.com']
   },
   env: {
-    FRONTEND: "http://localhost:3000",
-    BACKEND: "http://localhost:7000",
+    FRONTEND: "https://assignment-nextjs-frontend-kenneth.vercel.app",
+    BACKEND: "https://json-server-nextjs-kenneth.vercel.app",
   }
 }
 

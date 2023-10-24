@@ -22,7 +22,7 @@ function Index() {
     async function getUser() {
       if (cookie && cookie.USER !== undefined) {
         try {
-          let user =cookie.USER;
+          let user = cookie.USER;
           const userResponse = await fetch(
             `${CONSTANTS.BASELOCALHOST}/users/${user.id}`
           );
