@@ -122,7 +122,7 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
               content: content.split(/\n+/g),
               identifier:
                 titleValue
-                  .replace(/[^a-zA-Z\d\s]/g, "chr")
+                  .replace(/[^\w]|_/gi, "-")
                   .split(" ")
                   .join("-") +
                 "-" +
@@ -163,8 +163,8 @@ function PostForm({ data, isEdit = false }: PostFormProps) {
             content: content.split(/\n+/g),
             identifier:
               titleValue
-              .replace(/[^a-zA-Z\d\s]/g, "chr")
-              .split(" ")
+                .replace(/[^\w]|_/gi, "-")
+                .split(" ")
                 .join("-") +
               "-" +
               generateRandomString(),

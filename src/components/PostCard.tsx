@@ -3,6 +3,7 @@ import IArticle from "@/interface/IArticle";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import dateOnlyFormatter from "@/library/helper/dateOnlyFormatter";
 
 type PostCardProps = {
   post: IArticle;
@@ -30,7 +31,7 @@ function PostCard({ post }: PostCardProps) {
             {post.opening}
           </p>
           <p className="main-text font-[300] leading-none text-sm text-text-secondary sm:text-lg lg:text-xl">
-            By {post.author}
+            By {post.author}, {dateOnlyFormatter(post.createdAt.toString())}
           </p>
         </div>
         <div className="w-[80px] h-[80px] relative sm:w-full sm:h-52 lg:h-72">

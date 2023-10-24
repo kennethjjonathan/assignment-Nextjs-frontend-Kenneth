@@ -124,7 +124,7 @@ function Login() {
         maxAge: 3600,
         sameSite: true,
       });
-      successNotify("Log in is successful");
+      successNotify("Login is successful");
       if (data[0].isAdmin) {
         router.replace("/admin");
       } else {
@@ -136,6 +136,7 @@ function Login() {
       setIsLoading(false);
     }
   };
+  
   return (
     <div className="flex flex-col justify-center items-center px-3 pb-5 pt-20 container mx-auto sm:pt-40">
       <h1 className="font-[800] text-3xl">Log In</h1>

@@ -69,15 +69,15 @@ function Index({ post, user, recommendedData }: PostDetailProps) {
         <meta name="og:type" content="website" />
       </Head>
       <section className="w-full bg-dark-custom text-smokewhite-custom flex flex-col justify-center items-center pt-generic-top-mobile lg:pb-5">
-        <div className="container mx-auto px-generic-horizontal-mobile flex flex-col gap-8 items-center justify-between w-full lg:flex-row">
-          <div className="flex flex-col justify-center items-center lg:gap-5">
+        <div className="container mx-auto px-generic-horizontal-mobile flex flex-col gap-8 items-center justify-around w-full lg:flex-row">
+          <div className="flex flex-col justify-center items-center lg:gap-5 break-words">
             <p className="text-xl text-center text-red-custom sm:text-2xl lg:text-3xl">
               {post.category}
             </p>
-            <p className="text-2xl text-center font-[500] mt-3 sm:text-3xl lg:text-5xl">
+            <p className="text-2xl text-center font-[500] mt-3 sm:text-3xl lg:text-5xl break-all">
               {post.title.toUpperCase()}
             </p>
-            <p className="text-base text-center font-[300] mt-3 italic sm:text-xl lg:text-2xl">
+            <p className="text-base text-center font-[300] mt-3 italic sm:text-xl lg:text-2xl break-all">
               {post.opening}
             </p>
             <p className="text-sm font-[800] mt-3 sm:text-base lg:text-xl">{`${

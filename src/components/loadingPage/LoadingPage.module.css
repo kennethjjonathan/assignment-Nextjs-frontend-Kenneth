@@ -1,0 +1,18 @@
+.textBackground {
+  padding: 2rem 2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.07);
+  animation: breathe 2s linear infinite;
+}
+
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 50px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 50px rgba(0, 0, 0, 0.05);
+  }
+}

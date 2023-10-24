@@ -21,6 +21,12 @@
       ],
       "history": [
         {
+          "id": 18,
+          "title": "Test?specialCha__cter///Test:&Test.",
+          "identifier": "Test-specialCha--cter---Test--Test--jcjlzoor5e3k",
+          "readTime": "2023-10-24T12:05:07.803Z"
+        },
+        {
           "id": 19,
           "title": "The best lawyer",
           "identifier": "The-best-lawyer-u8tqsb28j92u",
@@ -31,12 +37,6 @@
           "title": "Article 3",
           "identifier": "Article-3-0qzqjawvll2n",
           "readTime": "2023-10-24T00:07:02.711Z"
-        },
-        {
-          "id": 18,
-          "title": "Test?specialCharacter///Test:&Test.",
-          "identifier": "TestchrspecialCharacterchrchrchrTestchrchrTestchr-hqzgsq40hkgd",
-          "readTime": "2023-10-24T00:06:46.502Z"
         },
         {
           "title": "What can we learn from introverted Lawyers",
@@ -755,19 +755,19 @@
       "shared": 0,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
-      "title": "Test?specialCharacter///Test:&Test.",
+      "title": "Test?specialCha__cter///Test:&Test.",
       "opening": "Test special characters title",
       "author": "Kenneth",
-      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698075969/u2wju5xcppy4unxxuyto.jpg",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1698123897/skjzvlslv1bounuxucx5.jpg",
       "content": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, maximus vitae magna lobortis, suscipit ullamcorper lacus. Aliquam ac turpis faucibus, tristique justo nec, condimentum est. Nam tempor molestie leo quis pretium. Cras at sapien dolor. Aliquam ac ornare neque. Phasellus ultrices ex lectus, eget vehicula leo hendrerit ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec vestibulum purus in purus laoreet, eget tincidunt ligula feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ut cursus justo. Donec efficitur diam facilisis turpis lobortis, ut dapibus ante feugiat.",
         "Praesent sed ante in massa ornare sagittis. Proin nec sodales arcu. Nullam egestas mattis massa varius sodales. Maecenas vitae nisi viverra, sodales mauris eu, lobortis risus. Proin pharetra malesuada pretium. Pellentesque aliquet nec ex id volutpat. Proin consequat lacus sit amet arcu scelerisque dignissim. Pellentesque vel ultricies risus, ac congue nisl.",
         "Suspendisse eget risus in diam blandit finibus. Mauris ornare, felis id interdum tincidunt, turpis ante convallis libero, sit amet fringilla dui tellus a magna. Fusce id odio enim. Donec maximus nisl eu pellentesque pharetra. Praesent ornare, metus a scelerisque accumsan, risus mauris ultrices ex, et elementum diam nunc a ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla tincidunt pretium lacus vel consectetur. Donec vitae justo ante. Nulla vel malesuada elit. Aliquam id lectus massa. Curabitur ultricies vehicula leo ut fermentum. Cras pharetra elit eget dictum elementum.",
         "Phasellus egestas sapien sit amet eros tristique, a varius sem congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque sed ex ac eros condimentum efficitur. Mauris posuere urna at iaculis lacinia. Nunc vel porta nisl. Donec fringilla commodo ligula. Curabitur placerat diam a justo aliquam varius. Curabitur at vulputate neque. Morbi condimentum ut dolor a consectetur. Fusce scelerisque orci eget nunc iaculis venenatis. Vivamus id ligula et sapien maximus finibus. Quisque quis dui consequat, hendrerit tellus in, hendrerit libero. Vestibulum faucibus arcu dui, eu feugiat arcu maximus eget. Aliquam mollis aliquet tellus, ut sagittis lacus pellentesque ut."
       ],
-      "identifier": "TestchrspecialCharacterchrchrchrTestchrchrTestchr-hqzgsq40hkgd",
+      "identifier": "Test-specialCha--cter---Test--Test--jcjlzoor5e3k",
       "createdAt": "2023-10-23T15:35:29.356Z",
-      "updatedAt": "2023-10-23T15:46:09.936Z",
+      "updatedAt": "2023-10-24T05:04:58.288Z",
       "id": 18
     },
     {
