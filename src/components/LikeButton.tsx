@@ -177,15 +177,19 @@ function LikeButton({ post, user }: LikeButtonProps) {
   }
 
   return (
-    <button
-      className="flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl duration-300 hover:text-blue-custom"
-      onClick={handleLike}
-    >
-      <div ref={heartRef}>
-        <AiOutlineHeart className="text-2xl md:text-3xl" />
-      </div>
-      {likeAmount}
-    </button>
+    <>
+      <style>{keyframe}</style>
+      {flyClone}
+      <button
+        className="flex items-center gap-1 main-text text-lg md:text-xl lg:text-2xl duration-300 hover:text-blue-custom"
+        onClick={handleLike}
+      >
+        <div ref={heartRef}>
+          <AiOutlineHeart className="text-2xl md:text-3xl" />
+        </div>
+        {likeAmount}
+      </button>
+    </>
   );
 }
 
