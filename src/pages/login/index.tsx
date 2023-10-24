@@ -71,7 +71,7 @@ function Login() {
       const response = await fetch(
         `${
           CONSTANTS.BASELOCALHOST
-        }/auth/login?email=${emailValue.toLowerCase()}&password=${passwordValue}`
+        }users?email=${emailValue.toLowerCase()}&password=${passwordValue}`
       );
       if (!response.ok) {
         errorNotify(response);
@@ -136,7 +136,7 @@ function Login() {
       setIsLoading(false);
     }
   };
-  
+
   return (
     <div className="flex flex-col justify-center items-center px-3 pb-5 pt-20 container mx-auto sm:pt-40">
       <h1 className="font-[800] text-3xl">Log In</h1>
