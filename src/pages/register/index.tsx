@@ -91,7 +91,7 @@ function Index() {
   }
 
   function validatePhoneNumber(): boolean {
-    const regex = /[0-9]{4}-[0-9]{4}-[0-9]{4}/g;
+    const regex = /[0-9]{12}/g;
     if (!regex.test(phoneNumberValue)) {
       setIsPhoneNumberValid(false);
       return false;
@@ -287,7 +287,7 @@ function Index() {
             isValid={isPhoneNumberValid}
             blurFunc={validatePhoneNumber}
             setInputValue={setPhoneNumberValue}
-            errorMessage="Please put the phone number in the required format (XXXX-XXXX-XXXX)"
+            errorMessage="Please put the phone number in the required format (XXXXXXXXXXXX)"
           />
         </div>
         <div className="mt-5">

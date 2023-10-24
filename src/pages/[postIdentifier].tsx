@@ -141,16 +141,19 @@ function Index({ post, user, recommendedData }: PostDetailProps) {
 
 export const getServerSideProps: GetServerSideProps = async ({
   req,
-  res,
   params,
 }) => {
   let favoriteCategory: string = "";
   let user: IUser | null = null;
   let recommendedData: IArticle[] | null = null;
   let post: IArticle | null = null;
-  const cookieData = cookie.parse(req.headers.cookie!);
+  let cookieData: undefined | Record<string, string>;
 
-  if (cookieData.USER !== undefined) {
+  if (req.headers.cookie !== undefined) {
+    cookieData = cookie.parse(req.headers.cookie);
+  }
+
+  if (cookieData && cookieData.USER !== undefined) {
     user = JSON.parse(cookieData.USER);
   }
 

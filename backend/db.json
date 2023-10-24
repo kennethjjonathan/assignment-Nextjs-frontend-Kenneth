@@ -481,6 +481,88 @@
       "createdAt": "2023-10-21T16:15:52.692Z",
       "updatedAt": "2023-10-21T16:15:52.692Z",
       "id": 17
+    },
+    {
+      "name": "Kevin Pulung",
+      "email": "kevin.pulung@mail.com",
+      "password": "Kevin123",
+      "isAdmin": false,
+      "address": "Apa aja lah",
+      "phoneNumber": "0813-8364-6337",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-24T06:10:13.565Z"
+      },
+      "liked": [],
+      "history": [
+        {
+          "id": 19,
+          "title": "The best lawyer",
+          "identifier": "The-best-lawyer-u8tqsb28j92u",
+          "readTime": "2023-10-24T13:39:29.755Z"
+        },
+        {
+          "id": 18,
+          "title": "Test?specialCha__cter///Test:&Test.",
+          "identifier": "Test-specialCha--cter---Test--Test--jcjlzoor5e3k",
+          "readTime": "2023-10-24T13:15:02.184Z"
+        },
+        {
+          "id": 10,
+          "title": "What is my favorite color",
+          "identifier": "What-is-my-favorite-color-kuiyzbag3xx5",
+          "readTime": "2023-10-24T13:10:47.336Z"
+        }
+      ],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-10-24T06:10:13.565Z",
+      "updatedAt": "2023-10-24T06:10:13.565Z",
+      "id": 18
+    },
+    {
+      "name": "kenneth",
+      "email": "kennethgitu@gmail.com",
+      "password": "Kenneth.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "081208120812",
+      "subscription": {
+        "isSubscribed": false,
+        "expiration": "2023-10-24T06:27:52.446Z"
+      },
+      "liked": [
+        19,
+        18,
+        18
+      ],
+      "history": [
+        {
+          "id": 18,
+          "title": "Test?specialCha__cter///Test:&Test.",
+          "identifier": "Test-specialCha--cter---Test--Test--jcjlzoor5e3k",
+          "readTime": "2023-10-24T13:39:24.911Z"
+        },
+        {
+          "id": 19,
+          "title": "The best lawyer",
+          "identifier": "The-best-lawyer-u8tqsb28j92u",
+          "readTime": "2023-10-24T13:37:20.813Z"
+        }
+      ],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 1,
+        "Curated News": 7
+      },
+      "shared": [],
+      "createdAt": "2023-10-24T06:27:52.446Z",
+      "updatedAt": "2023-10-24T06:27:52.446Z",
+      "id": 19
     }
   ],
   "posts": [
@@ -751,7 +833,7 @@
       "id": 17
     },
     {
-      "liked": 0,
+      "liked": 1,
       "shared": 0,
       "pricing": "Free",
       "category": "Lawyers Spotlight",
@@ -771,8 +853,8 @@
       "id": 18
     },
     {
-      "liked": 0,
-      "shared": 0,
+      "liked": 7,
+      "shared": 1,
       "pricing": "Premium",
       "category": "Curated News",
       "title": "The best lawyer",
@@ -954,6 +1036,36 @@
       "createdAt": "2023-10-23T17:08:04.683Z",
       "updatedAt": "2023-10-23T17:08:19.414Z",
       "id": 18
+    },
+    {
+      "userId": 19,
+      "status": "process",
+      "paymentCompletion": false,
+      "price": 600000,
+      "package": "Yearly",
+      "createdAt": "2023-10-24T06:29:06.048Z",
+      "updatedAt": "2023-10-24T06:29:06.048Z",
+      "id": 19
+    },
+    {
+      "userId": 19,
+      "status": "process",
+      "paymentCompletion": true,
+      "price": 600000,
+      "package": "Yearly",
+      "createdAt": "2023-10-24T06:30:50.800Z",
+      "updatedAt": "2023-10-24T06:31:19.085Z",
+      "id": 20
+    },
+    {
+      "userId": 18,
+      "status": "process",
+      "paymentCompletion": true,
+      "price": 600000,
+      "package": "Yearly",
+      "createdAt": "2023-10-24T06:39:06.985Z",
+      "updatedAt": "2023-10-24T06:39:16.326Z",
+      "id": 21
     }
   ]
 }
