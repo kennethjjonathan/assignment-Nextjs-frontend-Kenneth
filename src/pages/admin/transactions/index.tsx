@@ -50,6 +50,7 @@ function Index() {
   }
 
   useEffect(() => {
+    setCurrentPage(1);
     getTransactions();
   }, [updateToggle, status, fromDate, toDate, currentPage]);
 
