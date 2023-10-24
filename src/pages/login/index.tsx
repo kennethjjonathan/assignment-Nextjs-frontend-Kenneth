@@ -71,7 +71,7 @@ function Login() {
       const response = await fetch(
         `${
           CONSTANTS.BASELOCALHOST
-        }users?email=${emailValue.toLowerCase()}&password=${passwordValue}`
+        }/users?email=${emailValue.toLowerCase()}&password=${passwordValue}`
       );
       if (!response.ok) {
         errorNotify(response);
