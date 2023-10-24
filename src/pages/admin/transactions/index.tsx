@@ -50,9 +50,13 @@ function Index() {
   }
 
   useEffect(() => {
+    getTransactions();
+  }, [currentPage]);
+
+  useEffect(() => {
     setCurrentPage(1);
     getTransactions();
-  }, [updateToggle, status, fromDate, toDate, currentPage]);
+  }, [updateToggle, status, fromDate, toDate]);
 
   useEffect(() => {
     const wait = setTimeout(() => {
