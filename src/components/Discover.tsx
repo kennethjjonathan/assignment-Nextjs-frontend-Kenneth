@@ -185,7 +185,9 @@ function Discover() {
             />
           </div>
         )}
-        {posts.length === 0 && <NotAbleToGetContent text="No Result" />}
+        {posts.length === 0 && !isLoading && (
+          <NotAbleToGetContent text="No Result" />
+        )}
       </div>
     </>
   );
