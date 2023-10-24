@@ -1,6 +1,6 @@
 const CONSTANTS = {
-  BASEURL: "https://q9dpdp1l-3000.asse.devtunnels.ms",
-  BASELOCALHOST: "https://q9dpdp1l-7000.asse.devtunnels.ms",
+  BASEURL: process.env.FRONTEND,
+  BASELOCALHOST: process.env.BACKEND,
   COOKIENAME: "USER",
 };
 
