@@ -7,7 +7,6 @@ import ITransaction from "@/interface/ITransactions";
 import Profile from "@/components/Profile";
 import { useCookies } from "react-cookie";
 import errorNotify from "@/library/helper/errorNotify";
-import LoadingPage from "@/components/loadingPage/LoadingPage";
 
 type ProfileProps = {
   user: IUser | null;
@@ -23,7 +22,7 @@ function Index() {
     async function getUser() {
       if (cookie && cookie.USER !== undefined) {
         try {
-          let user = JSON.parse(cookie.USER);
+          let user =cookie.USER;
           const userResponse = await fetch(
             `${CONSTANTS.BASELOCALHOST}/users/${user.id}`
           );
