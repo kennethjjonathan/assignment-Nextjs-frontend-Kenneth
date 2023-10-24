@@ -1,9 +1,9 @@
 import errorNotify from "./errorNotify";
 
 const urlToFileConverter = async (url: string, imageName: string) => {
-  const newUrl: string = url.replace("http", "https");
+  url = url.replace(/^http:\/\//i, "https://");
   try {
-    const response = await fetch(newUrl);
+    const response = await fetch(url);
     if (!response.ok) {
       errorNotify(response);
       throw new Error(response.statusText);
