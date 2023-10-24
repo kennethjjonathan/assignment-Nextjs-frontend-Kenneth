@@ -176,11 +176,11 @@ export const getServerSideProps: GetServerSideProps = async ({
   if (
     post !== null &&
     (user === null || !user?.subscription?.isSubscribed) &&
-    post.pricing === "Premium"
+    post.pricing === "Premium" &&
+    post.content[0] !== undefined
   ) {
-    post.content = [
-      post.content[0].slice(0, post.content[0].length / 2) + "...",
-    ];
+    const cutLength: number = post.content[0].length / 2;
+    post.content = [post.content[0].slice(0, cutLength) + "..."];
   }
 
   if (user !== null && post !== null) {

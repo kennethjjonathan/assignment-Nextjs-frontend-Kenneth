@@ -171,7 +171,7 @@ function Profile({ user, transaction }: ProfileProps) {
           </div>
         </div>
 
-        <HistoryList history={user.history} />
+        {user.history && <HistoryList history={user.history} />}
       </div>
     </>
   );
