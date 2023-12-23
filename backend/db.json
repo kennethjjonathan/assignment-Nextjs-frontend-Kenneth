@@ -563,6 +563,36 @@
       "createdAt": "2023-10-24T06:27:52.446Z",
       "updatedAt": "2023-10-24T06:27:52.446Z",
       "id": 19
+    },
+    {
+      "name": "Kenneth",
+      "email": "kenneth234@gmail.com",
+      "password": "Password.123",
+      "isAdmin": false,
+      "address": "TUE",
+      "phoneNumber": "081278945612",
+      "subscription": {
+        "isSubscribed": true,
+        "expiration": "2024-01-10T10:25:06.493Z"
+      },
+      "liked": [],
+      "history": [
+        {
+          "id": 19,
+          "title": "The best lawyer",
+          "identifier": "The-best-lawyer-u8tqsb28j92u",
+          "readTime": "2023-12-10T17:25:36.942Z"
+        }
+      ],
+      "favorite": {
+        "Unwind": 0,
+        "Lawyers Spotlight": 0,
+        "Curated News": 0
+      },
+      "shared": [],
+      "createdAt": "2023-12-10T10:19:37.066Z",
+      "updatedAt": "2023-12-10T10:25:06.493Z",
+      "id": 20
     }
   ],
   "posts": [
@@ -870,6 +900,106 @@
       "createdAt": "2023-10-23T17:13:38.853Z",
       "updatedAt": "2023-10-23T17:13:38.853Z",
       "id": 19
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Curated News",
+      "title": "Wielding the Power of Data in Justice Court",
+      "opening": "A whole new META for the litigation game",
+      "author": "Calvin Joe",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1702206463/jwsnzqvvwv6fpws482dl.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ornare tortor, a consequat est. Nulla lacinia posuere neque ut sollicitudin. Etiam sem quam, imperdiet at scelerisque suscipit, finibus quis arcu. Ut rhoncus sapien dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum faucibus eleifend nibh. Cras eget fringilla diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc ut orci id elit mattis tempor ac eu dolor. Nullam gravida est quis ligula ornare porta. Ut eros dolor, congue quis est a, feugiat venenatis urna. Praesent imperdiet risus sit amet viverra aliquam. Nullam rutrum tempor fringilla. Curabitur tristique nunc convallis sapien iaculis rutrum. Mauris nec nisi venenatis, tincidunt libero sit amet, finibus nisl.",
+        "Quisque malesuada vehicula elit sed euismod. Aliquam egestas ligula sed dolor malesuada tincidunt. Nullam blandit erat lacinia justo fringilla condimentum. Maecenas dapibus vel mi vitae gravida. Sed interdum lobortis diam, a convallis ipsum sollicitudin nec. In rutrum mattis arcu, eu posuere libero auctor sed. Phasellus congue turpis ut dolor faucibus sagittis. Duis eget enim vitae est dapibus tincidunt. Duis luctus urna vitae tortor rutrum tristique. Quisque sagittis quam ut tincidunt aliquam. Suspendisse vitae risus at mauris luctus posuere.",
+        "Vestibulum sed blandit nulla. Integer aliquam tortor et odio suscipit, vitae luctus mauris hendrerit. Duis consequat sit amet nunc vel congue. Sed ac consectetur nisl. Vestibulum tristique purus nec sem mattis, et scelerisque velit rhoncus. Sed massa dolor, finibus vel lacinia et, malesuada sed lacus. Fusce est arcu, dapibus sit amet vestibulum imperdiet, vehicula ac justo. Donec malesuada risus sagittis tellus viverra consectetur ut non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin nec pharetra turpis, eget consectetur arcu. Morbi rhoncus turpis et lacus tristique ultricies. Mauris ut dolor id neque gravida aliquet. Sed ultricies feugiat metus, at condimentum enim eleifend sed. Maecenas at blandit eros. Sed vehicula sed diam placerat fringilla.",
+        "In quis neque hendrerit lacus consequat facilisis sed quis orci. Donec vitae erat eget justo bibendum pharetra sed et dolor. Morbi tincidunt nibh felis, sit amet cursus velit mollis maximus. Ut vitae nisl laoreet, posuere urna ut, porttitor erat. Aliquam fermentum nulla et elit vulputate dapibus. Mauris at magna lectus. Morbi tincidunt magna nisi, eget elementum justo vehicula et. Vivamus pulvinar nunc ac aliquet finibus. Mauris vel semper diam, vitae imperdiet leo. In quis tortor nulla. Donec porttitor, justo nec cursus fermentum, sem arcu eleifend urna, non congue enim tellus vitae nibh. Duis ac auctor mauris. Proin semper fermentum tincidunt. Cras ac tellus odio. Aliquam fermentum diam ac consectetur pulvinar."
+      ],
+      "identifier": "Wielding-the-Power-of-Data-in-Justice-Court-6yzbyfmd8l8d",
+      "createdAt": "2023-12-10T11:07:44.377Z",
+      "updatedAt": "2023-12-10T11:07:44.377Z",
+      "id": 20
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Lawyers Spotlight",
+      "title": "Stock Market Law",
+      "opening": "One of the biggest line in Law",
+      "author": "Kenneth J. Jonathan",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1702206671/ziyvjov266ymtnfeiosd.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ornare tortor, a consequat est. Nulla lacinia posuere neque ut sollicitudin. Etiam sem quam, imperdiet at scelerisque suscipit, finibus quis arcu. Ut rhoncus sapien dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum faucibus eleifend nibh. Cras eget fringilla diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc ut orci id elit mattis tempor ac eu dolor. Nullam gravida est quis ligula ornare porta. Ut eros dolor, congue quis est a, feugiat venenatis urna. Praesent imperdiet risus sit amet viverra aliquam. Nullam rutrum tempor fringilla. Curabitur tristique nunc convallis sapien iaculis rutrum. Mauris nec nisi venenatis, tincidunt libero sit amet, finibus nisl.",
+        "Quisque malesuada vehicula elit sed euismod. Aliquam egestas ligula sed dolor malesuada tincidunt. Nullam blandit erat lacinia justo fringilla condimentum. Maecenas dapibus vel mi vitae gravida. Sed interdum lobortis diam, a convallis ipsum sollicitudin nec. In rutrum mattis arcu, eu posuere libero auctor sed. Phasellus congue turpis ut dolor faucibus sagittis. Duis eget enim vitae est dapibus tincidunt. Duis luctus urna vitae tortor rutrum tristique. Quisque sagittis quam ut tincidunt aliquam. Suspendisse vitae risus at mauris luctus posuere.",
+        "Vestibulum sed blandit nulla. Integer aliquam tortor et odio suscipit, vitae luctus mauris hendrerit. Duis consequat sit amet nunc vel congue. Sed ac consectetur nisl. Vestibulum tristique purus nec sem mattis, et scelerisque velit rhoncus. Sed massa dolor, finibus vel lacinia et, malesuada sed lacus. Fusce est arcu, dapibus sit amet vestibulum imperdiet, vehicula ac justo. Donec malesuada risus sagittis tellus viverra consectetur ut non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin nec pharetra turpis, eget consectetur arcu. Morbi rhoncus turpis et lacus tristique ultricies. Mauris ut dolor id neque gravida aliquet. Sed ultricies feugiat metus, at condimentum enim eleifend sed. Maecenas at blandit eros. Sed vehicula sed diam placerat fringilla.",
+        "In quis neque hendrerit lacus consequat facilisis sed quis orci. Donec vitae erat eget justo bibendum pharetra sed et dolor. Morbi tincidunt nibh felis, sit amet cursus velit mollis maximus. Ut vitae nisl laoreet, posuere urna ut, porttitor erat. Aliquam fermentum nulla et elit vulputate dapibus. Mauris at magna lectus. Morbi tincidunt magna nisi, eget elementum justo vehicula et. Vivamus pulvinar nunc ac aliquet finibus. Mauris vel semper diam, vitae imperdiet leo. In quis tortor nulla. Donec porttitor, justo nec cursus fermentum, sem arcu eleifend urna, non congue enim tellus vitae nibh. Duis ac auctor mauris. Proin semper fermentum tincidunt. Cras ac tellus odio. Aliquam fermentum diam ac consectetur pulvinar."
+      ],
+      "identifier": "Stock-Market-Law-9x55vzuh7fr7",
+      "createdAt": "2023-12-10T11:11:12.460Z",
+      "updatedAt": "2023-12-10T11:11:12.460Z",
+      "id": 21
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Free",
+      "category": "Unwind",
+      "title": "Maintain sanity in the Big Law",
+      "opening": "Adapt and survive",
+      "author": "Calvin Joe",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1702206800/itra7g01rw4l107cvh5a.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ornare tortor, a consequat est. Nulla lacinia posuere neque ut sollicitudin. Etiam sem quam, imperdiet at scelerisque suscipit, finibus quis arcu. Ut rhoncus sapien dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum faucibus eleifend nibh. Cras eget fringilla diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc ut orci id elit mattis tempor ac eu dolor. Nullam gravida est quis ligula ornare porta. Ut eros dolor, congue quis est a, feugiat venenatis urna. Praesent imperdiet risus sit amet viverra aliquam. Nullam rutrum tempor fringilla. Curabitur tristique nunc convallis sapien iaculis rutrum. Mauris nec nisi venenatis, tincidunt libero sit amet, finibus nisl.",
+        "Quisque malesuada vehicula elit sed euismod. Aliquam egestas ligula sed dolor malesuada tincidunt. Nullam blandit erat lacinia justo fringilla condimentum. Maecenas dapibus vel mi vitae gravida. Sed interdum lobortis diam, a convallis ipsum sollicitudin nec. In rutrum mattis arcu, eu posuere libero auctor sed. Phasellus congue turpis ut dolor faucibus sagittis. Duis eget enim vitae est dapibus tincidunt. Duis luctus urna vitae tortor rutrum tristique. Quisque sagittis quam ut tincidunt aliquam. Suspendisse vitae risus at mauris luctus posuere.",
+        "Vestibulum sed blandit nulla. Integer aliquam tortor et odio suscipit, vitae luctus mauris hendrerit. Duis consequat sit amet nunc vel congue. Sed ac consectetur nisl. Vestibulum tristique purus nec sem mattis, et scelerisque velit rhoncus. Sed massa dolor, finibus vel lacinia et, malesuada sed lacus. Fusce est arcu, dapibus sit amet vestibulum imperdiet, vehicula ac justo. Donec malesuada risus sagittis tellus viverra consectetur ut non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin nec pharetra turpis, eget consectetur arcu. Morbi rhoncus turpis et lacus tristique ultricies. Mauris ut dolor id neque gravida aliquet. Sed ultricies feugiat metus, at condimentum enim eleifend sed. Maecenas at blandit eros. Sed vehicula sed diam placerat fringilla.",
+        "In quis neque hendrerit lacus consequat facilisis sed quis orci. Donec vitae erat eget justo bibendum pharetra sed et dolor. Morbi tincidunt nibh felis, sit amet cursus velit mollis maximus. Ut vitae nisl laoreet, posuere urna ut, porttitor erat. Aliquam fermentum nulla et elit vulputate dapibus. Mauris at magna lectus. Morbi tincidunt magna nisi, eget elementum justo vehicula et. Vivamus pulvinar nunc ac aliquet finibus. Mauris vel semper diam, vitae imperdiet leo. In quis tortor nulla. Donec porttitor, justo nec cursus fermentum, sem arcu eleifend urna, non congue enim tellus vitae nibh. Duis ac auctor mauris. Proin semper fermentum tincidunt. Cras ac tellus odio. Aliquam fermentum diam ac consectetur pulvinar."
+      ],
+      "identifier": "Maintain-sanity-in-the-Big-Law-ldyllrxczne3",
+      "createdAt": "2023-12-10T11:13:21.260Z",
+      "updatedAt": "2023-12-10T11:13:21.260Z",
+      "id": 22
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Premium",
+      "category": "Lawyers Spotlight",
+      "title": "Another article on the Big Law",
+      "opening": "Big Law cultures that you need to know",
+      "author": "Calvin Joe",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1702206884/cba9ys7vpncvqoek9stw.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ornare tortor, a consequat est. Nulla lacinia posuere neque ut sollicitudin. Etiam sem quam, imperdiet at scelerisque suscipit, finibus quis arcu. Ut rhoncus sapien dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum faucibus eleifend nibh. Cras eget fringilla diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc ut orci id elit mattis tempor ac eu dolor. Nullam gravida est quis ligula ornare porta. Ut eros dolor, congue quis est a, feugiat venenatis urna. Praesent imperdiet risus sit amet viverra aliquam. Nullam rutrum tempor fringilla. Curabitur tristique nunc convallis sapien iaculis rutrum. Mauris nec nisi venenatis, tincidunt libero sit amet, finibus nisl.",
+        "Quisque malesuada vehicula elit sed euismod. Aliquam egestas ligula sed dolor malesuada tincidunt. Nullam blandit erat lacinia justo fringilla condimentum. Maecenas dapibus vel mi vitae gravida. Sed interdum lobortis diam, a convallis ipsum sollicitudin nec. In rutrum mattis arcu, eu posuere libero auctor sed. Phasellus congue turpis ut dolor faucibus sagittis. Duis eget enim vitae est dapibus tincidunt. Duis luctus urna vitae tortor rutrum tristique. Quisque sagittis quam ut tincidunt aliquam. Suspendisse vitae risus at mauris luctus posuere.",
+        "Vestibulum sed blandit nulla. Integer aliquam tortor et odio suscipit, vitae luctus mauris hendrerit. Duis consequat sit amet nunc vel congue. Sed ac consectetur nisl. Vestibulum tristique purus nec sem mattis, et scelerisque velit rhoncus. Sed massa dolor, finibus vel lacinia et, malesuada sed lacus. Fusce est arcu, dapibus sit amet vestibulum imperdiet, vehicula ac justo. Donec malesuada risus sagittis tellus viverra consectetur ut non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin nec pharetra turpis, eget consectetur arcu. Morbi rhoncus turpis et lacus tristique ultricies. Mauris ut dolor id neque gravida aliquet. Sed ultricies feugiat metus, at condimentum enim eleifend sed. Maecenas at blandit eros. Sed vehicula sed diam placerat fringilla.",
+        "In quis neque hendrerit lacus consequat facilisis sed quis orci. Donec vitae erat eget justo bibendum pharetra sed et dolor. Morbi tincidunt nibh felis, sit amet cursus velit mollis maximus. Ut vitae nisl laoreet, posuere urna ut, porttitor erat. Aliquam fermentum nulla et elit vulputate dapibus. Mauris at magna lectus. Morbi tincidunt magna nisi, eget elementum justo vehicula et. Vivamus pulvinar nunc ac aliquet finibus. Mauris vel semper diam, vitae imperdiet leo. In quis tortor nulla. Donec porttitor, justo nec cursus fermentum, sem arcu eleifend urna, non congue enim tellus vitae nibh. Duis ac auctor mauris. Proin semper fermentum tincidunt. Cras ac tellus odio. Aliquam fermentum diam ac consectetur pulvinar."
+      ],
+      "identifier": "Another-article-on-the-Big-Law-2786pegmjk78",
+      "createdAt": "2023-12-10T11:14:45.645Z",
+      "updatedAt": "2023-12-10T11:14:45.645Z",
+      "id": 23
+    },
+    {
+      "liked": 0,
+      "shared": 0,
+      "pricing": "Free",
+      "category": "Lawyers Spotlight",
+      "title": "Private Law or Criminal Law",
+      "opening": "How to choose a field for your career",
+      "author": "Calvin Joe",
+      "thumbnail": "http://res.cloudinary.com/dzao5y5ah/image/upload/v1702206979/rlclnqqr3tqdjxc1vqlp.jpg",
+      "content": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ornare tortor, a consequat est. Nulla lacinia posuere neque ut sollicitudin. Etiam sem quam, imperdiet at scelerisque suscipit, finibus quis arcu. Ut rhoncus sapien dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum faucibus eleifend nibh. Cras eget fringilla diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc ut orci id elit mattis tempor ac eu dolor. Nullam gravida est quis ligula ornare porta. Ut eros dolor, congue quis est a, feugiat venenatis urna. Praesent imperdiet risus sit amet viverra aliquam. Nullam rutrum tempor fringilla. Curabitur tristique nunc convallis sapien iaculis rutrum. Mauris nec nisi venenatis, tincidunt libero sit amet, finibus nisl.",
+        "Quisque malesuada vehicula elit sed euismod. Aliquam egestas ligula sed dolor malesuada tincidunt. Nullam blandit erat lacinia justo fringilla condimentum. Maecenas dapibus vel mi vitae gravida. Sed interdum lobortis diam, a convallis ipsum sollicitudin nec. In rutrum mattis arcu, eu posuere libero auctor sed. Phasellus congue turpis ut dolor faucibus sagittis. Duis eget enim vitae est dapibus tincidunt. Duis luctus urna vitae tortor rutrum tristique. Quisque sagittis quam ut tincidunt aliquam. Suspendisse vitae risus at mauris luctus posuere.",
+        "Vestibulum sed blandit nulla. Integer aliquam tortor et odio suscipit, vitae luctus mauris hendrerit. Duis consequat sit amet nunc vel congue. Sed ac consectetur nisl. Vestibulum tristique purus nec sem mattis, et scelerisque velit rhoncus. Sed massa dolor, finibus vel lacinia et, malesuada sed lacus. Fusce est arcu, dapibus sit amet vestibulum imperdiet, vehicula ac justo. Donec malesuada risus sagittis tellus viverra consectetur ut non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin nec pharetra turpis, eget consectetur arcu. Morbi rhoncus turpis et lacus tristique ultricies. Mauris ut dolor id neque gravida aliquet. Sed ultricies feugiat metus, at condimentum enim eleifend sed. Maecenas at blandit eros. Sed vehicula sed diam placerat fringilla.",
+        "In quis neque hendrerit lacus consequat facilisis sed quis orci. Donec vitae erat eget justo bibendum pharetra sed et dolor. Morbi tincidunt nibh felis, sit amet cursus velit mollis maximus. Ut vitae nisl laoreet, posuere urna ut, porttitor erat. Aliquam fermentum nulla et elit vulputate dapibus. Mauris at magna lectus. Morbi tincidunt magna nisi, eget elementum justo vehicula et. Vivamus pulvinar nunc ac aliquet finibus. Mauris vel semper diam, vitae imperdiet leo. In quis tortor nulla. Donec porttitor, justo nec cursus fermentum, sem arcu eleifend urna, non congue enim tellus vitae nibh. Duis ac auctor mauris. Proin semper fermentum tincidunt. Cras ac tellus odio. Aliquam fermentum diam ac consectetur pulvinar."
+      ],
+      "identifier": "Private-Law-or-Criminal-Law-7jevd3ehrq1v",
+      "createdAt": "2023-12-10T11:16:20.277Z",
+      "updatedAt": "2023-12-10T11:16:20.277Z",
+      "id": 24
     }
   ],
   "transactions": [
@@ -1068,24 +1198,14 @@
       "id": 21
     },
     {
-      "userId": 2,
-      "status": "process",
+      "userId": 20,
+      "status": "completed",
       "paymentCompletion": true,
       "price": 50000,
       "package": "Monthly",
-      "createdAt": "2023-10-24T11:25:18.792Z",
-      "updatedAt": "2023-10-24T11:25:31.655Z",
+      "createdAt": "2023-12-10T10:20:32.761Z",
+      "updatedAt": "2023-12-10T10:25:06.483Z",
       "id": 22
-    },
-    {
-      "userId": 2,
-      "status": "process",
-      "paymentCompletion": true,
-      "price": 600000,
-      "package": "Yearly",
-      "createdAt": "2023-10-24T11:25:49.814Z",
-      "updatedAt": "2023-10-24T11:25:57.826Z",
-      "id": 23
     }
   ]
 }
